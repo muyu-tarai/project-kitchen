@@ -27,7 +27,7 @@
   </main>
   <div class="footer">
     <footer>
-      <p class="medium">
+      <p class="small">
         © 2023 キッチンカー情報局 Inc
       </p>
     </footer>
