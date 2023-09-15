@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+
+.panel-heading {
+  font-size: 4rem;
+  font-family: Courier;
+  text-align: center;
+
+}
+
+.form-group {
+ max-width: 45.6rem;
+  
+  margin: 0 auto;
+  
+}
+
+.form-control {
+  border-radius: 999.9rem;
+  width: 45.6rem;
+  height: 4.8rem;
+}
+
+.about {
+  font-size: 3rem;
+  
+}
+
+.input {
+  color: aquamarine;
+}
+
+.container {
+  background-image: url(/pubilc/images/truck5.jpg);
+}
