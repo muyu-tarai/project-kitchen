@@ -15,13 +15,26 @@ class CreateStoresTable extends Migration
     {
         Schema::create('stores', function (Blueprint $table) {
             $table->increments('id');
+            $table->bigInteger('user_id')
+                ->unsigned();
             $table->foreign('user_id')
-            ->references('id')
-            ->on('users')
-            ->onUpdate('CASCADE')
-            ->onDelete('CASCADE');
+                ->references('id')
+                ->on('users')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
             $table->string('store_name', 20);
-            $table->string('store_image', 255)->nullable(false)
+            $table->string('store_image', 255)
+                ->nullable(true);
+            $table->text('store_comment')
+                ->length(100)
+                ->nullable(true);
+            $table->text('current_location')
+                ->nullable(true);
+            $table->tinyInteger('opening_flag')
+                ->default(0)
+                ->comment('0:閉店,1:開店');
+            $table->timestamp('closing_datetime')
+                ->nullable(true);
             $table->timestamps();
         });
     }
