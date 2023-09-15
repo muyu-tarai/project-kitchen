@@ -1,100 +1,41 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>店舗詳細</title>
+    <link rel="stylesheet" href="/css/store_view.css" >
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+    <div class = "wrapper">
+        <div class="title-bar">
+                <h1>フレッツアメリカ  渋川店</h1>
+                <p id="update-at">2020年4月15日更新</p>
+        </div>
+        <div class="contents1">
+            <p id="closing-datetime">22日14:30閉店予定</p>
+            <div id="current-location">
+                <img src="/images/map.png" alt="location">
             </div>
         </div>
+            <h2 class="content-bar">フレッツアメリカ  渋川店  詳細</h2>
+        <div class="detail-content">
+            <img alt="store-pic" src="/images/trucks/truck1.jpg">
+            <p id="store-comment">フレッツアメリカはアメリカ発のクレープ店です。二本のの各農家から産地直送で果物を購入しているので果物の鮮度には自身があります。</p>
+        </div>
+        <h2 class="content-bar">メニュー</h2>
+        <div class="menu-content">
+            <div class="menu">
+                <div class="menu-img">
+                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
+                </div>
+                <p id="menu">600円</p>
+                <p id="price"></p>
+                <p id="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
+            </div>
+        </div>
+
+
+    </div>
     </body>
 </html>

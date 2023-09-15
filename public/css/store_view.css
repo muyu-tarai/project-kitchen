@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  background-color: #FFF8F9;
+  line-height: 1.5;
+
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+a a:hover {
+  opacity: .4;
+}
+/* ここから具体的にいじるもの */
+.wrapper{
+  max-width: 80%;
+  margin-left: 10%;
+}
+.title-bar{
+  display:flex;
+  padding-bottom: 0px;
+  border-bottom: solid thin;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1px;
+}
+#update-at{
+  margin-left: 58%;
+  padding-top: 40px;
+  margin-bottom: 1px;
+}
+#closing-datetime{
+  font-size: 2rem;
+}
+#current-location{
+  text-align:center;
+}
+.content-bar{
+  font-size: 2rem;
+  border-bottom: solid thin;
+}
+.detail-content{
+  display: flex;
+}
+
+
+
+.menu-img{
+  height:200px;
+  width:100px;
+}
