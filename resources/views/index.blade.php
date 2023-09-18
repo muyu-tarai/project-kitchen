@@ -1,4 +1,10 @@
 @extends('layout')
+@section('css')
+<link rel="stylesheet" href="/css/murai.css">
+@endsection
+<link rel="stylesheet" href="/css/murai.css">
 @section('content')
-<p>aaaa</p>
+<div>
+
+</div>
 @endsection

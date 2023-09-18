@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>キッチンカー情報局</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="/css/murai.css">
+  @yield('css')
   <script src="https://kit.fontawesome.com/66cf41360e.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <meta name="csrf-token" content="{{ csrf_token() }}">
