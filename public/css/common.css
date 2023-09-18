@@ -1,0 +1,45 @@
+/* 共通 */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.x-large {
+  font-size: 3rem;
+}
+
+.large {
+  font-size: 2.5rem;
+}
+
+.medium {
+  font-size: 2rem;
+}
+
+/* ヘッダー */
+.header {
+  height: 8rem;
+  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+}
+
+.header-right {
+  margin-left: auto;
+  display: flex;
+}
+
+.header-right a {
+  margin: 2rem;
+}
+
+/* フッター */
+.footer {
+  text-align: center;
+  padding: 2rem;
+}
