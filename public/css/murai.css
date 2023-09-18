@@ -33,6 +33,11 @@ a{
 }
 
 /* ヘッダー */
+.header{
+  height: 8rem;
+  padding: 1rem;
+}
+
 .navbar {
   display: flex;
 }
@@ -40,7 +45,10 @@ a{
 .header-right {
   margin-left: auto;
   display: flex;
-  gap: 2rem;
+}
+
+.header-right a{
+  margin: 2rem;
 }
 
 /* メイン */
