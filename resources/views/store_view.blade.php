@@ -20,8 +20,14 @@
         </div>
             <h2 class="content-bar">フレッツアメリカ  渋川店  詳細</h2>
         <div class="detail-content">
-            <img alt="store-pic" src="/images/trucks/truck1.jpg">
-            <p id="store-comment">フレッツアメリカはアメリカ発のクレープ店です。二本のの各農家から産地直送で果物を購入しているので果物の鮮度には自身があります。</p>
+            <div class="store-img-div">
+                <img class="store-img"  alt="store-img" src="/images/trucks/truck1.jpg">
+            </div>
+            <div class="store-comment-div">
+                <p id="store-comment">
+                当店は新鮮な材料と職人の技術を駆使して、薄くてふわふわのクレープを提供しています。甘いデザートクレープからヘルシーなサヴォリークレープまで、多彩なバリエーションが揃っており、どんな好みにも合わせられます。また、カフェメニューもご用意しており、美味しいコーヒーや紅茶を楽しむこともできます。リラックスした雰囲気の店内で、友人や家族と特別なひとときを過ごしませんか？日常の喧騒から離れて、一口で幸せを味わうために、ぜひ当店にお越しください。
+                 </p>
+            </div>
         </div>
         <h2 class="content-bar">メニュー</h2>
         <div class="menu-content">
@@ -29,9 +35,61 @@
                 <div class="menu-img">
                     <img src="/images/foods/Crepe1.jpg" alt="menu-img">
                 </div>
-                <p id="menu">600円</p>
-                <p id="price"></p>
-                <p id="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
+                <div class="menu-text">
+                    <p class="menu-name">チョコバナナクレープ</p>
+                    <p class="price">600円</p>
+                    <p class="menu-comment">濃厚なチョコと甘いバナナの絶妙な組み合わせ。</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-img">
+                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
+                </div>
+                <div class="menu-text">
+                    <p class="menu-name">チョコバナナクレープ</p>
+                    <p class="price">600円</p>
+                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-img">
+                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
+                </div>
+                <div class="menu-text">
+                    <p class="menu-name">チョコバナナクレープ</p>
+                    <p class="price">600円</p>
+                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-img">
+                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
+                </div>
+                <div class="menu-text">
+                    <p class="menu-name">チョコバナナクレープ</p>
+                    <p class="price">600円</p>
+                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-img">
+                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
+                </div>
+                <div class="menu-text">
+                    <p class="menu-name">チョコバナナクレープ</p>
+                    <p class="price">600円</p>
+                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
+                </div>
+            </div>
+            <div class="menu">
+                <div class="menu-img">
+                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
+                </div>
+                <div class="menu-text">
+                    <p class="menu-name">チョコバナナクレープ</p>
+                    <p class="price">600円</p>
+                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
+                </div>
             </div>
         </div>
 

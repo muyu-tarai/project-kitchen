@@ -49,14 +49,43 @@ h1 {
 .content-bar{
   font-size: 2rem;
   border-bottom: solid thin;
+  margin-top:30px;
 }
 .detail-content{
   display: flex;
 }
+.store-img-div{
+  width:50%;
+  margin-right:10%;
+}
 
-
-
-.menu-img{
-  height:200px;
-  width:100px;
+.store-comment-div{
+  width: 40%;
+}
+#store-comment{
+  font-size:2rem;
+}
+.menu-content{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.menu{
+  width:250px;
+  height:320px;
+  border:solid thin;
+  margin-left:15%;
+  margin-top:50px;
+  background-color:white;
+}
+.menu-text{
+  font-size:1.5rem;
+  width:80%;
+  margin-left:10%;
+}
+.menu-name{
+  margin:0;
+}
+.price{
+  margin-top:10px;
+  margin-bottom:10px;
 }
