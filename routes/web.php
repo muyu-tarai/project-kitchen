@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,14 @@
 |
 */
 
+<<<<<<< HEAD
 Route::get('/', function () {
     return view('store_update');
 });
+=======
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'indexController@index')->name('index');
+>>>>>>> origin
