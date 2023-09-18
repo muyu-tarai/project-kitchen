@@ -7,9 +7,9 @@ html {
   font-size: 62.5%;
 }
 
-a{
+a {
   color: black;
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .x-large {
@@ -33,7 +33,7 @@ a{
 }
 
 /* ヘッダー */
-.header{
+.header {
   height: 8rem;
   padding: 1rem;
 }
@@ -47,14 +47,23 @@ a{
   display: flex;
 }
 
-.header-right a{
+.header-right a {
   margin: 2rem;
 }
 
 /* メイン */
-.main{
+.main {
   background-color: #FFF8F9;
   min-height: 90vh;
+}
+
+.top-section {
+  background-image: url("/images/trucks/hero2.jpg");
+  background-color: #BBBBBB;
+  background-blend-mode: overlay;
+  background-position: center;
+  background-size: cover;
+  height: 33rem;
 }
 
 
