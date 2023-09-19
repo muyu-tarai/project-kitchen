@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>店舗詳細</title>
-    <link rel="stylesheet" href="/css/store_view.css" >
-    </head>
-    <body>
+@extends('layout')
+@section('css')
+<link rel="stylesheet" href="/css/store_view.css" >
+@endsection
+@section('content')
     <div class = "wrapper">
         <div class="title-bar">
                 <h1>フレッツアメリカ  渋川店</h1>
@@ -92,8 +88,10 @@
                 </div>
             </div>
         </div>
+        <div class="return-img">
+            <img src="/images/icons/return_top.svg">
+            </div>
 
 
     </div>
-    </body>
-</html>
+    @endsection

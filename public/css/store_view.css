@@ -1,32 +1,15 @@
-* {
-  box-sizing: border-box;
-}
-html {
-  font-size: 62.5%;
-}
-body {
-  background-color: #FFF8F9;
-  line-height: 1.5;
-
-}
 img {
   max-width: 100%;
   height: auto;
 }
-a {
-  text-decoration: none;
-  color: #333;
-  display: block;
-}
-a a:hover {
-  opacity: .4;
-}
 /* ここから具体的にいじるもの */
 .wrapper{
-  max-width: 80%;
-  margin-left: 10%;
+  background-color: #FFF8F9;
+  line-height: 1.5;
 }
 .title-bar{
+  padding-top:20px;
+  margin:0 5% 50px; 
   display:flex;
   padding-bottom: 0px;
   border-bottom: solid thin;
@@ -36,27 +19,31 @@ h1 {
   margin-bottom: 1px;
 }
 #update-at{
-  margin-left: 58%;
-  padding-top: 40px;
+  font-size:1.5rem;
+  margin-left: 65%;
+  padding-top: 30px;
   margin-bottom: 1px;
 }
 #closing-datetime{
-  font-size: 2rem;
+  margin-left:10%;
+  font-size: 2.5rem;
 }
 #current-location{
   text-align:center;
 }
 .content-bar{
-  font-size: 2rem;
+  margin:50px 5% 50px; 
+  font-size: 3rem;
   border-bottom: solid thin;
   margin-top:30px;
 }
 .detail-content{
+  margin:50px 10% 50px; 
   display: flex;
 }
 .store-img-div{
   width:50%;
-  margin-right:10%;
+  margin-right:8%;
 }
 
 .store-comment-div{
@@ -68,24 +55,26 @@ h1 {
 .menu-content{
   display:grid;
   grid-template-columns: 1fr 1fr 1fr;
+  gap:100px;
+  margin:10px 10% 50px;
 }
 .menu{
-  width:250px;
-  height:320px;
   border:solid thin;
-  margin-left:15%;
-  margin-top:50px;
   background-color:white;
 }
 .menu-text{
   font-size:1.5rem;
   width:80%;
-  margin-left:10%;
 }
-.menu-name{
-  margin:0;
-}
+
 .price{
   margin-top:10px;
   margin-bottom:10px;
+}
+.return-img{
+  width:50px;
+  height:50px;
+  text-align:center;
+  margin:50px auto 0;
+  padding-bottom:100px;
 }
