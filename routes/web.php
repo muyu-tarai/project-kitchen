@@ -18,3 +18,4 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'indexController@index')->name('index');
+Route::get('/storeRegister', 'storeRegisterController@storeRegister')->name('storeRegister');
