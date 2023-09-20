@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row">
         <div class="col col-md-offset-3 col-md-6">
-          <nav class="panel panel-default">
+          
             <div class="panel-heading">SIGN UP</div>
             <div class="panel-body">
               <form action="{{ route('register') }}" method="POST">
@@ -65,7 +65,7 @@
         </div>
         </form>
       </div>
-      </nav>
+      
     </div>
   </div>
   </div>
