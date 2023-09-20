@@ -5,43 +5,43 @@
 @section('content')
     <div class = "wrapper">
         <div class="title-bar">
-                <h1>{{ $task->due_date }}</h1>
-                <p id="update-at">{{ $task->due_date }}更新</p>
+                <h1>{{ $store_items->store_name }}</h1>
+                <p id="update-at">{{$format_upadate }} 更新</p>
         </div>
         <div class="contents1">
-            <p id="closing-datetime">22日14:30閉店予定</p>
+            <p id="closing-datetime">{{ $store_items->closing_datetime }} 閉店予定</p>
             <div id="current-location">
                 <img src="/images/map.png" alt="location">
             </div>
         </div>
-            <h2 class="content-bar">{{ $task->due_date }}  詳細</h2>
+            <h2 class="content-bar">{{$store_items->store_name }}  詳細</h2>
         <div class="detail-content">
             <div class="store-img-div">
-                <img class="store-img"  alt="store-img" src="/images/trucks/truck1.jpg">
+                <img class="store-img"  alt="store-img" src="{{$store_items->store_image}}">
             </div>
             <div class="store-comment-div">
                 <p id="store-comment">
-                {{ $task->due_date }}
-                 </p>
+                {{ $store_items->store_comment }}
+                </p>
             </div>
         </div>
         <h2 class="content-bar">メニュー</h2>
         <div class="menu-content">
-            @foreach($tasks as $task)
+            @foreach($menu_items  as $menu_items )
                 <div class="menu">
                     <div class="menu-img">
-                        <img src="{{ $task->due_date }}" alt="menu-img">
+                        <img src="{{ $menu_items->menu_image }}" alt="menu-img">
                     </div>
                     <div class="menu-text">
-                        <p class="menu-name">{{ $task->due_date }}</p>
-                        <p class="price">{{ $task->due_date }}</p>
-                        <p class="menu-comment">{{ $task->due_date }}</p>
+                        <p class="menu-name">{{ $menu_items ->menu_name }}</p>
+                        <p class="price">{{ $menu_items ->price }}</p>
+                        <p class="menu-comment">{{ $menu_items ->menu_comment }}</p>
                     </div>
                 </div>
             @endforeach
         </div>
         <div class="return-img">
-            <img src="/images/icons/return_top.svg">
+        <a href="#"><img src="/images/icons/return_top.svg"></a>
             </div>
 
 
