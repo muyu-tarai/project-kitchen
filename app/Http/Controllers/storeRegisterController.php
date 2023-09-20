@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Store;
 use App\Menu;
 
@@ -19,19 +20,21 @@ class storeRegisterController extends Controller
         // フォルダモデルのインスタンスを作成する
         $store = new Store();
         $menu = new Menu();
+        $user_id = 1;
         // タイトルに入力値を代入する
-        $store->user_id = 1;
-        $store->store_name = $request->store_name;
-        $store->store_image = $request->store_image;
-        $store->store_comment = $request->store_comment;
-        $menu->menu_name = $request->menu_name;
-        $menu->menu_image = $request->menu_image;
-        $menu->price = $request->menu_price;
-        $menu->menu_comment = $request->menu_comment;
-        // インスタンスの状態をデータベースに書き込む
-        $store->save();
-        $menu->save();
-
+        $storeForId = $store->create([
+            'user_id' => $user_id,
+            'store_name' => $request->store_name,
+            'store_image' => $request->store_image,
+            'store_comment' => $request->store_comment,
+        ]);
+        $menu->create([
+            'store_id' => $storeForId->id,
+            'menu_name' => $request->menu_name,
+            'menu_image' => $request->menu_image,
+            'price' => $request->menu_price,
+            'menu_comment' => $request->menu_comment,
+        ]);
         return view('tmp');
     }
 }
