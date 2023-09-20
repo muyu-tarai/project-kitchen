@@ -10,4 +10,10 @@ class storeRegisterController extends Controller
     {
         return view('storeRegister');
     }
+
+    public function tmp(Request $request)
+    {
+        dd($request);
+        return view('tmp');
+    }
 }

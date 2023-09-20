@@ -19,3 +19,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'indexController@index')->name('index');
 Route::get('/storeRegister', 'storeRegisterController@storeRegister')->name('storeRegister');
+
+/******* 動作確認用 *******/
+Route::post('/tmp', 'storeRegisterController@tmp')->name('tmp');
