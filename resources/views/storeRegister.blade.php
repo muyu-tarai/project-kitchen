@@ -11,13 +11,13 @@
     <h2>店舗名</h2>
     <input type="text" name="store_name">
     <h2>店舗画像</h2>
-    <img src="/images/icons/noImage.jpg" class="store-img" alt="">
+    <img src="/images/icons/noImage.jpg" class="store-figure" id="store-figure" alt="">
     <div class="for-button">
       <label>
         <button></button>画像を削除
       </label>
       <label>
-        <input type="file" name="store_image">写真を選択
+        <input type="file" name="store_image" id="store-image" accept="image/">写真を選択
       </label>
     </div>
   </div>
@@ -26,7 +26,7 @@
       <h2>店舗紹介コメント</h2>
       <textarea name="store_comment" id="" cols="30" rows="10"></textarea>
     </div>
-    <div class="stores-items">
+    <div class="stores-items" id="stores-items">
       <div class="stores-item">
         <img src="/images/foods/Crepe1.jpg" alt="クレープ">
         <p class="menu-title">チョコバナナ生クレープ</p>
@@ -74,34 +74,34 @@
     <div class="inner-add-menu">
       <div class="add-menu-image">
         <h3>メニュー画像</h3>
-        <img src="/images/icons/noImage.jpg" class="store-img" alt="">
+        <img src="/images/icons/noImage.jpg" class="store-figure" id="menu-figure" alt="">
         <div class="for-button">
           <label>
             <button></button>画像を削除
           </label>
           <label>
-            <input type="file" name="menu_image">写真を選択
+            <input type="file" name="menu_image" id="add-menu-image">写真を選択
           </label>
         </div>
       </div>
       <div>
         <h3>メニュー名</h3>
-        <input type="text" name="menu_name">
+        <input type="text" name="menu_name" id="add-menu-name">
       </div>
       <div>
         <h3>メニュー金額</h3>
         <div class="add-menu-price">
-          <input type="text" name="menu_price">
+          <input type="text" name="menu_price" id="add-menu-price">
           <p>円</p>
         </div>
       </div>
       <div>
         <h3>メニュー紹介コメント</h3>
-        <textarea name="menu_comment" id="" cols="30" rows="10"></textarea>
+        <textarea name="menu_comment" id="add-menu-comment" cols="30" rows="10"></textarea>
       </div>
       <div class="for-button">
         <label>
-          <button></button>メニューを追加する
+          <button type="button" id="add-menu"></button>メニューを追加する
         </label>
       </div>
     </div>
@@ -112,4 +112,7 @@
     </div>
   </div>
 </form>
+@section('js')
+<script src="/js/storeRegister.js"></script>
+@endsection
 @endsection
