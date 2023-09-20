@@ -126,7 +126,7 @@ textarea {
 }
 
 .menu-title,
-.menu-amount,
+.menu-price,
 .menu-text {
   font-size: 2rem;
 }
@@ -135,7 +135,7 @@ textarea {
   margin-top: 2rem;
 }
 
-.menu-amount {
+.menu-price {
   margin-top: 2rem;
 }
 
@@ -157,7 +157,7 @@ textarea {
   padding: 0 15rem 5rem 15rem;
 }
 
-.add-menu-amount{
+.add-menu-price{
   width: 50%;
   display: flex;
   font-size: 3rem;
