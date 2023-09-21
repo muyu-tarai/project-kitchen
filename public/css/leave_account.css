@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+.container {
+
+  background-color: white;
+  max-width: 60%;
+  margin: 0 auto;
+  padding-bottom: 1%;
+  opacity: 0.95;
+  border-radius: 6rem;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+.Withdrawal {
+  font-size: 1.3rem;
+
+}
+
+.Withdrawal2 {
+  font-size: 3.5rem;
+  margin-top: 20px;
+}
+
+.row {
+  padding: 50px 50px;
+}
+
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20%;
+}
+
+.yes {
+  margin: 0 50px 0 0;
+  width: 161px;
+  height: 56px;
+  background-color: #2F3F93;
+  border-radius: 2rem;
+  font-size: 3.2rem;
+  color: white;
+  border: none;
+}
+
+.no {
+  margin: 0 0 0 50px;
+  width: 161px;
+  height: 56px;
+  background-color: #E43F3F;
+  border-radius: 2rem;
+  font-size: 3.2rem;
+  color: white;
+  border: none;
+}

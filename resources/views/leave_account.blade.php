@@ -8,7 +8,7 @@
 
 
 <body>
-  <div class="imag-car">
+ 
     <div class="container">
       <div class="row">
         <div class="Withdrawal">
@@ -19,7 +19,12 @@
         </div>
       </div>
       <div class="button">
+      <div class="button2">
         <button type="submit" class="yes">はい</button>
+      </div>
+      <div class="button2">
+        <button type="submit" class="no">いいえ</button>
+        </div>
       </div>
     </div>
   </div>

@@ -17,14 +17,14 @@ body {
 
 .form-group {
   max-width: 45.6rem;
-  margin: 5rem auto;
+  margin: 4rem auto;
 
 }
 
 .form-control {
   border-radius: 999rem;
-  width: 45.6rem;
-  height: 5rem;
+  width: 456px;
+  height: 48px;
   background-color: rgb(219, 222, 222);
   border: none;
  
