@@ -5,11 +5,11 @@
 @section('content')
     <div class = "wrapper">
         <div class="title-bar">
-                <h1>{{ $store_items->store_name }}</h1>
-                <p id="update-at">{{$format_upadate }} 更新</p>
+                <h1>{{ $store_items->store_name  }}</h1>
+                <p id="update-at">{{$carbonUpate}} 更新</p>
         </div>
         <div class="contents1">
-            <p id="closing-datetime">{{ $store_items->closing_datetime }} 閉店予定</p>
+            <p id="closing-datetime">{{ $carbon_close }} 閉店予定</p>
             <div id="current-location">
                 <img src="/images/map.png" alt="location">
             </div>

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\store_view;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ViewController extends Controller
 {
@@ -18,11 +18,15 @@ class ViewController extends Controller
 
 
         $format_update = $store_items->updated_at;
-        //$format_update = $format_update->format('Y年m月d日 G:i');
+        $carbonUpdate = Carbon::createFromFormat('Y-m-d H:i:s', $format_update)->format('Y/m/d H:i');
+        $format_close = $store_items->closing_datetime;
+        $carbon_close = Carbon::createFromFormat('Y-m-d H:i:s', $format_close)->format('n月j日 H:i');
+
         return view('store_view', [
             'store_items' => $store_items,
             'menu_items' => $menu_items,
-            'format_update' => $format_update,
+            'carbonUpate' => $carbonUpdate,
+            'carbon_close' => $carbon_close,
         ]);
     }
 }
