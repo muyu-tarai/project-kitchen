@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class leave_accountController extends Controller
+class Leave_accountController extends Controller
 {
 public function index()
 {

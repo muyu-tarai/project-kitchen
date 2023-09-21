@@ -13,17 +13,19 @@
   border-radius: 6rem;
 }
 
-body {
-  background-color: #F5F5F5;
+.y {
+  background-color: #FFF8F9;
+  padding: 5px;
 }
 
 .Withdrawal {
   font-size: 1.3rem;
+  margin-top: 50px;
 
 }
 
 .Withdrawal2 {
-  font-size: 3.5rem;
+  font-size: 3rem;
   margin-top: 20px;
 }
 
@@ -42,7 +44,7 @@ body {
 .yes {
   margin: 0 50px 0 0;
   width: 161px;
-  height: 56px;
+  height: 50px;
   background-color: #2F3F93;
   border-radius: 2rem;
   font-size: 3.2rem;
@@ -53,7 +55,7 @@ body {
 .no {
   margin: 0 0 0 50px;
   width: 161px;
-  height: 56px;
+  height: 50px;
   background-color: #E43F3F;
   border-radius: 2rem;
   font-size: 3.2rem;

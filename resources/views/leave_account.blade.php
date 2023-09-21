@@ -8,8 +8,8 @@
 
 
 <body>
- 
-    <div class="container">
+  <div class="y">
+     <div class="container">
       <div class="row">
         <div class="Withdrawal">
           <p>登録された内容は全て消去されますが</p>
@@ -27,6 +27,7 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
   </body>
 @endsection
