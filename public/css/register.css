@@ -22,16 +22,17 @@ body {
 }
 
 .form-control {
+  font-size: 2.5rem;
   border-radius: 999rem;
   width: 456px;
   height: 48px;
   background-color: rgb(219, 222, 222);
   border: none;
- 
+ padding-left: 10px;
 }
 
 .about {
-  font-size: 2rem;
+  font-size: 1.7rem;
 
 }
 
@@ -72,3 +73,8 @@ max-height: 100%;
   font-size: 2rem;
  
 }
+
+.alert {
+  font-size: 2rem;
+}
+

@@ -1,12 +1,10 @@
 @extends('preLoginLayout')
 @section('css')
-<link rel="stylesheet" href="/css/leave_account.css
+<link rel="stylesheet" href="/css/leave_account_complete.css
 ">
 @endsection
 
 @section('content')
-
-
 <body>
   <div class="y">
      <div class="container">
@@ -17,8 +15,6 @@
         <div class="Withdrawal2">
           <p>本当に退会しますか？</p>
         </div>
-        <form action="{{ route('members.withdraw', $id) }}" method="POST">
-        @csrf
       </div>
       <div class="button">
       <div class="button2">

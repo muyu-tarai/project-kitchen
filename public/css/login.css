@@ -27,7 +27,8 @@ body {
   height: 5rem;
   background-color: rgb(219, 222, 222);
   border: none;
- 
+ font-size: 2.5rem;
+ padding: 20px;
 }
 
 .about {

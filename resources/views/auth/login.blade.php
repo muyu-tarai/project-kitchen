@@ -17,14 +17,21 @@
             <div class="panel-heading">LOG IN</div>
 
             <form action="{{ route('login') }}" method="POST">
+              
               @csrf
               <div class="form-group">
                 <label for="email" class="label">mail</label>
+                @error('email')
+                    <span role="alert">{{ $message }}</span>
+                    @enderror
                 <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" />
               </div>
               <div class="form-group">
                 <label for="password" class="label
                 ">password</label>
+                @error('password')
+                    <span role="alert">{{ $message }}</span>
+                    @enderror
                 <input type="password" class="form-control" id="password" name="password" />
               </div>
               <div class="text-right">
