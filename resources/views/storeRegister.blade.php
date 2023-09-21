@@ -9,63 +9,39 @@
   @csrf
   <div class="inner-top">
     <h2>店舗名</h2>
-    <input type="text" name="store_name">
+    <input type="text" name="store_name" value="{{ isset($storeName) ? $storeName : '' }}">
     <h2>店舗画像</h2>
-    <img src="/images/icons/noImage.jpg" class="store-figure" id="store-figure" alt="">
+    <img src="{{ isset($storeImage) ? $storeImage : '/images/icons/noImage.jpg' }}" class="store-figure" id="store-figure" alt="">
     <div class="for-button">
       <label>
         <button></button>画像を削除
       </label>
       <label>
-        <input type="file" name="store_image" id="store-image" accept="image/">写真を選択
+        <input type="file" name="store_image" id="add-store-image" accept="image/">写真を選択
       </label>
     </div>
   </div>
   <div class="inner-middle">
     <div>
       <h2>店舗紹介コメント</h2>
-      <textarea name="store_comment" id="" cols="30" rows="10"></textarea>
+      <textarea name="store_comment" id="" cols="30" rows="10">{{ isset($storeComment) ? $storeComment : '' }}</textarea>
     </div>
     <div class="stores-items" id="stores-items">
+      @if(isset($menus))
+      @foreach($menus as $menu)
       <div class="stores-item">
-        <img src="/images/foods/Crepe1.jpg" alt="クレープ">
-        <p class="menu-title">チョコバナナ生クレープ</p>
-        <p class="menu-price">4600円</p>
-        <p class="menu-text">
-          クレープの王道チョコバナナ！
-          チョコの甘さと特製生クリームの
-          さっぱりとした甘さの相性が抜群
-          です。
-        </p>
-        <div class="menu-delete"><label><button></button>削除</label></div>
+        <img src=" {{ isset($menu->menu_image) ? $menu->menu_image : '/images/icons/noImage.jpg' }}" class="store-figure" id="added-menu-figure" alt="">
+        <p class="menu-title">{{ $menu->menu_name }}</p>
+        <p class="menu-price">{{ $menu->price }}</p>
+        <p class="menu-text">{{ $menu->menu_comment }}</p>
+        <input type="hidden" value="{{ $menu->menu_image }}" name="send_menu_image[]">
+        <input type="hidden" value="{{ $menu->menu_name }}" name="send_menu_name[]">
+        <input type="hidden" value="{{ $menu->price }}" name="send_menu_price[]">
+        <input type="hidden" value="{{ $menu->menu_comment }}" name="send_menu_comment[]">
+        <div class="menu-delete"><label><button type="button" onclick="removeItem(this)"></button>削除</label></div>
       </div>
-      <div class="stores-item">
-        <img src="/images/foods/Crepe4.jpg" alt="クレープ">
-        <p class="menu-title">クラシックストロベリー</p>
-        <p class="menu-price">400円</p>
-        <p class="menu-text">
-          新鮮な苺とホイップクリームの贅沢な組み合わせ。
-        </p>
-        <div class="menu-delete"><label><button></button>削除</label></div>
-      </div>
-      <div class="stores-item">
-        <img src="/images/foods/Crepe3.jpg" alt="クレープ">
-        <p class="menu-title">サボテンのオアシス</p>
-        <p class="menu-price">660円</p>
-        <p class="menu-text">
-          クリームチーズとキウイの爽やかなハーモニー。
-        </p>
-        <div class="menu-delete"><label><button></button>削除</label></div>
-      </div>
-      <div class="stores-item">
-        <img src="/images/foods/Crepe4.jpg" alt="クレープ">
-        <p class="menu-title">シナモンアップルクラシック</p>
-        <p class="menu-price">500円</p>
-        <p class="menu-text">
-          シナモン調のりんごとシロップの美味しさ。
-        </p>
-        <div class="menu-delete"><label><button></button>削除</label></div>
-      </div>
+      @endforeach
+      @endif
     </div>
   </div>
 
