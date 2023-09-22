@@ -1,0 +1,80 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+/* ここから具体的にいじるもの */
+.wrapper{
+  background-color: #FFF8F9;
+  line-height: 1.5;
+}
+.title-bar{
+  padding-top:20px;
+  margin:0 5% 50px; 
+  display:flex;
+  padding-bottom: 0px;
+  border-bottom: solid thin;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1px;
+}
+#update-at{
+  font-size:1.5rem;
+  margin-left: 65%;
+  padding-top: 30px;
+  margin-bottom: 1px;
+}
+#closing-datetime{
+  margin-left:10%;
+  font-size: 2.5rem;
+}
+#current-location{
+  text-align:center;
+}
+.content-bar{
+  margin:50px 5% 50px; 
+  font-size: 3rem;
+  border-bottom: solid thin;
+  margin-top:30px;
+}
+.detail-content{
+  margin:50px 10% 50px; 
+  display: flex;
+}
+.store-img-div{
+  width:50%;
+  margin-right:8%;
+}
+
+.store-comment-div{
+  width: 40%;
+}
+#store-comment{
+  font-size:2rem;
+}
+.menu-content{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap:100px;
+  margin:10px 10% 50px;
+}
+.menu{
+  border:solid thin;
+  background-color:white;
+}
+.menu-text{
+  font-size:1.5rem;
+  width:80%;
+}
+
+.price{
+  margin-top:10px;
+  margin-bottom:10px;
+}
+.return-img{
+  width:50px;
+  height:50px;
+  text-align:center;
+  margin:50px auto 0;
+  padding-bottom:100px;
+}

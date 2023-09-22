@@ -1,0 +1,93 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  max-height: 100%;
+}
+
+.panel-heading {
+  font-size: 4rem;
+  font-family: Courier;
+  text-align: center;
+  padding-top: 5px;
+ color: #2333c3;
+}
+
+.form-group {
+  max-width: 45.6rem;
+  margin: 50px auto 0  ;
+
+}
+
+.form-control {
+  border-radius: 999rem;
+  width: 45.6rem;
+  height: 5rem;
+  background-color: rgb(219, 222, 222);
+  border: none;
+ font-size: 2.5rem;
+ padding: 20px;
+}
+
+.about {
+  font-size: 2rem;
+
+}
+
+
+
+.imag-car {
+  background-image: url(../images/trucks/truck8.jpg);
+  background-size: cover;
+  max-height: 100%;
+  background-repeat: no-repeat;
+  background-position: 0 -200px;
+}
+
+.text-right {
+  text-align: center;
+  padding-bottom: 10rem;
+  }
+  .text-right {
+    margin-top: 3rem;
+    }
+.container {
+  color: rgb(238, 41, 41);
+  background-color: white;
+  max-width: 64.3rem;
+  margin: 0 auto;
+max-height: 100%;
+}
+
+
+
+.btn-primary {
+  padding: 1rem 3rem ;
+  border-radius: 999.9rem;
+  border: none;
+  background-color: #5f63b7;
+  color: white;
+  font-size: 2.5rem;
+ 
+}
+
+.label {
+  font-size: 2rem;
+  color: #2333c3;
+  
+}
+
+.text-center {
+  text-align: right;
+  padding-top: 10px;
+  }
+
+  .guest {
+    background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: #020abd;
+  padding: none;
+  }

@@ -1,0 +1,107 @@
+main{
+  background-color: #FFF8F9;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.contents1{
+  display:flex;
+  padding:20px;
+}
+.o-c-btn{
+  display:flex;
+  font-size:3rem;
+  color:white;
+  text-align: center;
+  margin-left:10px;
+  margin-right:25%;
+}
+.o-btn{
+  padding-top:10px;
+  padding-bottom:10px;
+  width:120px;
+  background-color: #FF994F;
+}
+.c-btn{
+  padding-top:10px;
+  padding-bottom:10px;
+  width:120px;
+  background-color:#3ADFF5;
+}
+.update-btn{
+  padding-top:10px;
+  padding-bottom:10px;
+  width:120px;
+  height:50px;
+  margin-left:45%;
+  font-size:3rem;
+  color:white;
+  text-align: center;
+  background-color:#CD3030;
+  border-radius: 30px;
+}
+
+.store-contents{
+  margin:20px 40px;
+  font-size:2rem;
+}
+.close-time{
+  display:flex;
+  margin:30px 10%;
+}
+.text{
+  font-size: 3rem;
+  width: 50px;
+  padding: 3px 7px;
+  border-radius: 5px;
+  border: none;
+  background-color:#D9D9D9;
+  margin-right:15px;
+  text-align:center;
+  color:rgb(36, 36, 36);
+}
+.hour-secound{
+  width:150px;
+}
+.hour-secound::-webkit-calendar-picker-indicator {
+  display: none;
+}
+.under-take{
+  margin-top:18px;
+  margin-right:40px;
+  font-size:3rem;
+}
+.geo-api{
+  width: 718px;
+  height: 464px;
+  margin: auto;
+  display: block;
+}
+h2{
+  font-size:2.5rem;
+  padding-bottom:5px;
+  margin:10px 20px;
+  border-bottom:solid thin;
+}
+
+.menu-contents{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 50px;
+  margin: 20px 10%;
+  text-align:center;
+  font-size: 2rem;
+}
+.food-wrp{
+  margin-bottom:10px;
+  border-radius: 30px;
+}
+
+.under-botton{
+  margin:70px 45%;
+}
+.last{
+  padding-bottom:30px;
+}
