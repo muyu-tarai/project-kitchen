@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use App\Store;
 use App\Menu;
 
@@ -73,12 +74,16 @@ class storeRegisterController extends Controller
     public function update(Request $request)
     {
         $user_id = 1; //Authで取ってくる
-
+        
         $store = Store::firstWhere('user_id', $user_id);
         $store->store_name = $request->store_name;
         $store->store_image = $request->store_image;
         $store->store_comment = $request->store_comment;
         $store->save();
+
+        $postText = $request->send_menu_name;
+        $item = Menu::whereNotIn('menu_name', [isset($postText) ? $postText : ''])->get();
+        dd($postText);
 
         $send_menus = [];
         for ($i = 0; $i < count($request->send_menu_name); $i++) {
@@ -89,16 +94,20 @@ class storeRegisterController extends Controller
             ];
         }
 
-        $menu = Menu::where('store_id', $store->store_id)->get();
-dd($menu);
+        $menus = Menu::where('store_id', $store->id)->get();
+
+
         foreach ($send_menus as $send_menu) {
-            Menu::create([
-                'store_id' => $store->id,
-                'menu_name' => $send_menu['name'],
-                'menu_image' => $request->menu_image,
-                'price' => $send_menu['price'],
-                'menu_comment' => $send_menu['comment'],
-            ]);
+            $exists = Menu::where('menu_name', $send_menu['name'])->exists();
+            if (!$exists) {
+                Menu::create([
+                    'store_id' => $store->id,
+                    'menu_name' => $send_menu['name'],
+                    'menu_image' => $request->menu_image,
+                    'price' => $send_menu['price'],
+                    'menu_comment' => $send_menu['comment'],
+                ]);
+            }
         }
         return view('tmp');
     }
