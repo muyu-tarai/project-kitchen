@@ -11,7 +11,7 @@
     <h2>店舗名</h2>
     <input type="text" name="store_name" value="{{ isset($storeName) ? $storeName : '' }}">
     <h2>店舗画像</h2>
-    <img src="{{ isset($storeImage) ? $storeImage : '/images/icons/noImage.jpg' }}" class="store-figure" id="store-figure" alt="">
+    <img src="/images/icons/noImage.jpg" class="store-figure" id="store-figure" alt="">
     <div class="for-button">
       <label>
         <button></button>画像を削除
@@ -30,7 +30,7 @@
       @if(isset($menus))
       @foreach($menus as $menu)
       <div class="stores-item">
-        <img src=" {{ isset($menu->menu_image) ? $menu->menu_image : '/images/icons/noImage.jpg' }}" class="store-figure" id="added-menu-figure" alt="">
+        <img src="/images/icons/noImage.jpg" class="store-figure" id="added-menu-figure" alt="">
         <p class="menu-title">{{ $menu->menu_name }}</p>
         <p class="menu-price">{{ $menu->price }}</p>
         <p class="menu-text">{{ $menu->menu_comment }}</p>
