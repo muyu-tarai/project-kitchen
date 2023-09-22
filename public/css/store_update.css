@@ -112,3 +112,6 @@ h2{
 .hide{
   display:none;
 }
+.dark{
+  background-color:black;
+}

@@ -5,12 +5,15 @@
 
 @section('content')
 <div class="wrapper">
+<form action="/submit" method="post">
+    @csrf
     <div class="contents1">
         <div class=o-c-btn>
                 <p class="o-btn" id="open">OPEN</p>
-                <p class="c-btn out" id="close">CLOSE</p>
+                <p class="c-btn" id="close">CLOSE</p>
+                <input type="hidden" id="o_flag" name="o_flag" value="{{ $store_items->opening_flag }}">
         </div>
-        <p class="update-btn">更新</p>
+        <input type="submit" class="update-btn">
     </div>
     <div id="hide-content">
         <h2>出店情報</h2>
@@ -27,15 +30,20 @@
         </img>
         <h2>メニュー</h2>
         <div class="menu-contents">
-            <div class="menu-item">
-            <div class="food-wrp"><img alt="item" src="/images/foods/Crepe1.jpg">
+        @foreach($menu_items  as $menu_items )
+            <div class="menu-item" id="munu{{ $menu_items->id }}">
+                <div class="food-wrp"><img alt="item" src="{{ $menu_items->menu_image }}">
+                </div>
+                <p>{{ $menu_items ->menu_name }}</p>
+                <input type="hidden" class="menu_id" name="menu_id" value="{{ $menu_items->id }}">
+                <input type="hidden" class="menu_flag" name="menu_flag" value="{{ $menu_items->sold_out_flag }}">
             </div>
-            <p>チョコバナナ</p>
-            </div>
+        @endforeach
         </div>
         <div class="last">
-        <p class="update-btn under-botton">更新</p>
+        <input type="submit" class="update-btn under-botton">
         </div>
+        </form>
     </div>
 </div>
 @endsection

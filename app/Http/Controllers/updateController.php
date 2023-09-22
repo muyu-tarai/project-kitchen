@@ -2,12 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\store_update;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class updateController extends Controller
 {
-     public function update()
+     public function store_update()
     {
+        $id=1;
+        $store_items = \DB::table('stores')->find($id);
+        $menu_items = \DB::table('menus')
+        ->where('store_id', $store_items->id)->get();
+
+        return view('store_update', [
+            'menu_items' => $menu_items,
+            'store_items' => $store_items,
+
+        ]);
+    }
+
+    public function update() {
         return view('store_update');
     }
 }
