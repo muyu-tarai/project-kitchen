@@ -1,6 +1,6 @@
 @extends('layout')
 @section('css')
-<link rel="stylesheet" href="/css/murai.css">
+<link rel="stylesheet" href="/css/index.css">
 @endsection
 @section('content')
 <div class="top-section">
