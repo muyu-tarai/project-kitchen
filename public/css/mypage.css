@@ -63,6 +63,7 @@ padding-left: 60px;
 }
 
 .button {
+  display: flex;
   text-align: center;
   margin-right: 15rem;
   padding-bottom: 9rem;
