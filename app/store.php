@@ -1,10 +1,9 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Update extends Model
+use Carbon\Carbon;
+class store extends Model
 {
     //
 }

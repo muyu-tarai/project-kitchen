@@ -37,24 +37,33 @@ function closeClick(){
   o_flag.value = 0;
 }
 
-let menu_flags = document.getElementsByClassName("menu_flag");
-let menu_items = document.getElementsByClassName("menu-item")
+ let menu_flags = document.getElementsByClassName("menu_flag");
+ let menu_items = document.getElementsByClassName("menu-item")
 
 for (let i = 0; i < menu_items.length; i++) {
-  menu_items[i].addEventListener('click', menuClick);
   if(menu_flags[i].value=='1'){
-    console.log(menu_flags[i].value)
     menu_items[i].classList.add('dark');
   }
 }
 
- function menuClick(){
-  const clickedElement = event.target;}
-// if(menu_flag.value=='0'){
-//   menu_flag.value=1;
-//   menu_items[i].classList.add('dark');
-// } else if(menu_flag.value=='1'){
-//   menu_flag.value=0;
-//   menu_items[i].classList.remove('dark');
-// }}
 
+ function menuClick(){
+if(menu_flag.value=='0'){
+  menu_flag.value=1;
+  menu_items[i].classList.add('dark');
+} else if(menu_flag.value=='1'){
+  menu_flag.value=0;
+  menu_items[i].classList.remove('dark');
+}}
+
+$('.menu-item').on('click',function(){
+let m_flag=$(this).children('.menu_flag').val();
+if(m_flag==0){
+  $(this).children('.menu_flag').val(1);
+  this.classList.add('dark');
+}else{
+    $(this).children('.menu_flag').val(0);
+    this.classList.remove('dark');
+  }
+
+})

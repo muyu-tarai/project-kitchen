@@ -5,7 +5,7 @@
 
 @section('content')
 <div class="wrapper">
-<form action="/submit" method="post">
+<form action="/store_update" method="post">
     @csrf
     <div class="contents1">
         <div class=o-c-btn>
@@ -13,18 +13,18 @@
                 <p class="c-btn" id="close">CLOSE</p>
                 <input type="hidden" id="o_flag" name="o_flag" value="{{ $store_items->opening_flag }}">
         </div>
-        <input type="submit" class="update-btn">
+        <input type="submit" class="update-btn" value="更新">
     </div>
     <div id="hide-content">
         <h2>出店情報</h2>
         <div class="store-contents">
             <p>閉店時間</p>
             <div class="close-time">
-                <input type="text" class="month text" id="month">
+                <input type="text" class="month text" id="month" name="month">
                 <p class="under-take">月</p>
-                <input type="text" class="day text" id="day">
+                <input type="text" class="day text" id="day" name="day">
                 <p class="under-take">日</p>
-                <input type="time" class="hour-secound text" id="time">
+                <input type="time" class="hour-secound text" id="time" name="time">
             </div>
             <img class="geo-api" src="/images/trucks/truck5.jpg" alt="api">
         </img>
@@ -35,13 +35,13 @@
                 <div class="food-wrp"><img alt="item" src="{{ $menu_items->menu_image }}">
                 </div>
                 <p>{{ $menu_items ->menu_name }}</p>
-                <input type="hidden" class="menu_id" name="menu_id" value="{{ $menu_items->id }}">
-                <input type="hidden" class="menu_flag" name="menu_flag" value="{{ $menu_items->sold_out_flag }}">
+                <input type="hidden" class="menu_id" name="menu_id[]" value="{{ $menu_items->id }}">
+                <input type="hidden" class="menu_flag" name="menu_flag[]" value="{{ $menu_items->sold_out_flag }}">
             </div>
         @endforeach
         </div>
         <div class="last">
-        <input type="submit" class="update-btn under-botton">
+        <input type="submit" class="update-btn under-botton" value="更新">
         </div>
         </form>
     </div>
