@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use App\Store;
 use App\Menu;
 
@@ -10,20 +9,10 @@ use Illuminate\Http\Request;
 
 class storeRegisterController extends Controller
 {
-    // 前のページのURL取得
-
-    // もしユーザー登録からきてたら
-    // 店舗もメニューも新規登録
-
-    // もしログインから来てたら
-    // 店舗は更新
-    // メニューは元々あるやつを消したらデリート
-    // ほかは新規登録
-
     public function storeRegisterDisplay()
     {
-        $userId = 1;    //Authで取ってくる
-        $a = 0;
+        $userId = 2;    //Authで取ってくる
+        $a = 0;    //ログイン画面から遷移してきたら
         if ($a == 1) {
             return view('storeRegister');
         } elseif ($a == 0) {
@@ -43,7 +32,7 @@ class storeRegisterController extends Controller
 
     public function tmp(Request $request)
     {
-        $user_id = 1; //Authで取ってくる
+        $user_id = 2; //Authで取ってくる
 
         $storeForId = Store::create([
             'user_id' => $user_id,
@@ -73,8 +62,8 @@ class storeRegisterController extends Controller
     }
     public function update(Request $request)
     {
-        $user_id = 1; //Authで取ってくる
-        
+        $user_id = 2; //Authで取ってくる
+
         $store = Store::firstWhere('user_id', $user_id);
         $store->store_name = $request->store_name;
         $store->store_image = $request->store_image;
@@ -82,7 +71,7 @@ class storeRegisterController extends Controller
         $store->save();
 
         $postText = $request->send_menu_name;
-        $item = Menu::whereNotIn('menu_name', ...[isset($postText) ? $postText : ''])->delete();
+        Menu::where('store_id', $store->id)->whereNotIn('menu_name', ...[isset($postText) ? $postText : ''])->delete();
 
         $send_menus = [];
         for ($i = 0; $i < count($request->send_menu_name); $i++) {
@@ -93,7 +82,7 @@ class storeRegisterController extends Controller
             ];
         }
 
-        $menus = Menu::where('store_id', $store->id)->get();
+        Menu::where('store_id', $store->id)->get();
 
 
         foreach ($send_menus as $send_menu) {

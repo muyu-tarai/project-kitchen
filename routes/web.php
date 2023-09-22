@@ -20,5 +20,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'indexController@index')->name('index');
 Route::get('/storeRegister', 'storeRegisterController@storeRegisterDisplay')->name('storeRegister');
 
-/******* 動作確認用 *******/
+/*******
+もしユーザー登録からきたら
+Route::post('/tmp', 'storeRegisterController@tmp')->name('tmp');
+*/
+
+/********
+ もしログインから来たら
+ ********/
 Route::post('/tmp', 'storeRegisterController@update')->name('tmp');
