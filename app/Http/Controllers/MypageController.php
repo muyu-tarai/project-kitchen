@@ -6,10 +6,9 @@ use Illuminate\Http\Request;
 
 class MypageController extends Controller
 {
-    public function index()
+    public function mypage()
     {
-        return view('mypage');
-        // $users = User::all();
-        // return view('mypage', ['email' => $email])
+      return view('mypage');
     }
+
 }
