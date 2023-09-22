@@ -82,8 +82,7 @@ class storeRegisterController extends Controller
         $store->save();
 
         $postText = $request->send_menu_name;
-        $item = Menu::whereNotIn('menu_name', [isset($postText) ? $postText : ''])->get();
-        dd($postText);
+        $item = Menu::whereNotIn('menu_name', ...[isset($postText) ? $postText : ''])->delete();
 
         $send_menus = [];
         for ($i = 0; $i < count($request->send_menu_name); $i++) {
