@@ -1,7 +1,10 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+
+Auth::routes();
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,14 +21,15 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', 'indexController@index')->name('index');
-Route::get('/storeRegister', 'storeRegisterController@storeRegisterDisplay')->name('storeRegister');
+Route::get('/store_register', 'storeRegisterController@storeRegisterDisplay')->name('store_register');
+Route::get('/logout', 'LogoutController@logout')->name('logout');
 
-/*******
-もしユーザー登録からきたら
-Route::post('/tmp', 'storeRegisterController@tmp')->name('tmp');
-*/
+
+// もしユーザー登録からきたら
+Route::post('/store_register_after', 'storeRegisterController@registerOrUpdateJudge')->name('after');
+
 
 /********
  もしログインから来たら
  ********/
-Route::post('/tmp', 'storeRegisterController@update')->name('tmp');
+Route::post('/update_store', 'storeRegisterController@registerOrUpdateJudge')->name('update_store');

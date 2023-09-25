@@ -5,7 +5,7 @@
 @section('content')
 <h1 class="top-title">詳細登録画面</h1>
 <hr>
-<form action="/tmp" method="POST">
+<form action="/store_register_after" method="POST">
   @csrf
   <div class="inner-top">
     <h2>店舗名</h2>

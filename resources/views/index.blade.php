@@ -8,8 +8,8 @@
     <h1 class="large">出店様へ</h1>
     <p class="medium">このサイトはフードカーを盛り上げるために制作さ<br>れたサイトです。もし興味がありましたら、下のア<br>イコンから登録をお願いします。</p>
     <div class="top-section-buttons">
-      <a class="x-large" href="#"><img src="/images/icons/サインインボタン.png"></a>
-      <a class="x-large" href="#"><img src="/images/icons/ログインボタン.png"></a>
+      <a class="x-large" href="/register"><img src="/images/icons/サインインボタン.png"></a>
+      <a class="x-large" href="/login"><img src="/images/icons/ログインボタン.png"></a>
     </div>
   </div>
 </div>
