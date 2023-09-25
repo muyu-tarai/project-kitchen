@@ -15,11 +15,11 @@
         </div>
         <input type="submit" class="update-btn" value="更新">
     </div>
-    <div id="hide-content">
-        <h2>出店情報</h2>
+    <div id="hide-content"></h2>
         <div class="store-contents">
-            <p>閉店時間</p>
+            <p>{{$store_items->closing_datetime }} 閉店予定 </p>
             <div class="close-time">
+                <input type="hidden" id="year" name="year">
                 <input type="text" class="month text" id="month" name="month">
                 <p class="under-take">月</p>
                 <input type="text" class="day text" id="day" name="day">

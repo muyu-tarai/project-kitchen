@@ -1,10 +1,12 @@
 var now = new Date();
+var year = now.getFullYear();
 var month = now.getMonth() + 1;
 var day = now.getDate();
 var hour = now.getHours().toString().padStart(2, '0');;
 var minute = now.getMinutes().toString().padStart(2, '0');;
 var time = hour+':'+minute;
 
+document.getElementById("year").value = year;
 document.getElementById("month").value = month;
 document.getElementById("day").value = day;
 document.getElementById("time").value = time;
@@ -15,8 +17,9 @@ let open = document.getElementById("open");
 let hide = document.getElementById("hide-content");
 let o_flag = document.getElementById("o_flag");
 
-if(o_flag.value=0){
-  open.classList.add('out')
+if(o_flag.value==0){
+  open.classList.add('out');
+  hide.classList.add('hide');
 }else{
   close.classList.add('out');
 }
