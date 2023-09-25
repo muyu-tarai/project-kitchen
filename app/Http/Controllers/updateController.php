@@ -7,6 +7,7 @@ use App\store;
 use App\menu;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Http\Requests\Storeupdate; 
 
 class updateController extends Controller
 {
@@ -25,7 +26,7 @@ class updateController extends Controller
         ]);
     }
 
-    public function update(Request $request) {
+    public function update(Storeupdate $request) {
         $user_id =1;//auth
         $data = $request->year. '-' .$request->month. '-' .$request->day. ' ' .$request->time;
 

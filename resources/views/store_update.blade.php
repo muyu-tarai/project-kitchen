@@ -5,6 +5,16 @@
 
 @section('content')
 <div class="wrapper">
+<div class="panel-body">
+@if($errors->any())
+<div class="alert alert-danger">
+    <ul>
+    @foreach($errors->all() as $message)
+        <li>{{ $message }}</li>
+    @endforeach
+    </ul>
+</div>
+@endif
 <form action="/store_update" method="post">
     @csrf
     <div class="contents1">
@@ -17,8 +27,9 @@
     </div>
     <div id="hide-content"></h2>
         <div class="store-contents">
-            <p>{{$store_items->closing_datetime }} 閉店予定 </p>
+            <p class = "closed-time">現在 {{$store_items->closing_datetime }} 閉店予定 </p>
             <div class="close-time">
+                <p>閉店時間設定</p>
                 <input type="hidden" id="year" name="year">
                 <input type="text" class="month text" id="month" name="month">
                 <p class="under-take">月</p>
