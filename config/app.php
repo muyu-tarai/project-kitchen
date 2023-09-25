@@ -135,6 +135,7 @@ return [
     */
 
     'providers' => [
+            App\Providers\DropboxFilesystemServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...

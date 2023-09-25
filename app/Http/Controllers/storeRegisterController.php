@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\Store;
 use App\Menu;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class storeRegisterController extends Controller
 {
@@ -60,8 +60,11 @@ class storeRegisterController extends Controller
                 'menu_comment' => $send_menu['comment'],
             ]);
         }
+
+        
         return view('store_register_after');
     }
+    
     public function updateStore($request)
     {
         $userId = Auth::user()->id;
@@ -71,7 +74,7 @@ class storeRegisterController extends Controller
         $store->store_image = $request->store_image;
         $store->store_comment = $request->store_comment;
         $store->save();
-
+        
         $postText = $request->send_menu_name;
         if (isset($postText)) {
             Menu::where('store_id', $store->id)->whereNotIn('menu_name', ...[$postText ? $postText : ''])->delete();
@@ -99,20 +102,21 @@ class storeRegisterController extends Controller
                     ]);
                 }
             }
+            Storage::disk('dropbox')->put('file.txt', 'Contents');
         }
     }
-
+    
     public function registerOrUpdateJudge(Request $request)
     {
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);
-
+        
         if (isset($store)) {
             $this->updateStore($request);
         } else {
             $this->registerStore($request);
         }
-
+        
         return view('store_register_after');
     }
 }
