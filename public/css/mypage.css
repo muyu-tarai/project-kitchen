@@ -1,0 +1,88 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+  .imag-car {
+    background-image: url(../images/trucks/truck9.jpg);
+    background-size: cover;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    padding: 20px 0 50px;
+    background-position: 0 -150px;
+  }
+  
+.about {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 999rem;
+  background-color: rgb(219, 222, 222);
+  border: none;
+  width: 316px;
+  height: 40px;
+  font-size: 20px;
+  padding: 20px;
+}
+
+.panel-heading {
+  font-size: 3.6rem;
+  padding-bottom: 36px;
+  padding-top: 30px;
+padding-left: 60px;
+  color: #4D3CB0;
+
+}
+
+
+
+.row {
+  
+  background-color: white;
+  max-width: 60%;
+  margin: 0 auto;
+  opacity: 0.95;
+  border-radius: 6rem;
+}
+.panel-body {
+  padding-left: 100px;
+}
+
+.email {
+  font-size: 2rem;
+  padding-top: 30px;
+  
+}
+
+.email2 {
+  font-size: 2rem;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.button {
+  text-align: center;
+  margin-right: 15rem;
+  padding-bottom: 9rem;
+  }
+
+  .updeta {
+padding: 4px 40px;
+margin: 0 3rem ;
+border-radius: 2.5rem;
+font-size: 3rem;
+background-color: #2F3F93;
+color: white;
+border: none;
+  }
+
+  .Withdrawal {
+padding: 0.4rem 4rem;
+border-radius: 2.5rem;
+font-size: 3rem;
+background-color: #E43F3F;
+color: white;
+border: none;
+  }
