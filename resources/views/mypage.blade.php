@@ -22,9 +22,7 @@
               </div>
               <div class="input">
                 <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" />
-
               </div>
-
               <div class="email">
                 <p>メールアドレス</p>
               </div>

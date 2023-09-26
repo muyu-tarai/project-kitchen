@@ -2,7 +2,6 @@
 @section('css')
 <link rel="stylesheet" href="/css/leave_account.css">
 @endsection
-
 @section('content')
 
 <body>
@@ -15,8 +14,6 @@
         <div class="Withdrawal2">
           <p>本当に退会しますか？</p>
         </div>
-
-
         <form action="{{ route('leave_account_complete') }}" method="post">
           @csrf
           <div class="button">
@@ -25,7 +22,6 @@
           </div>
         </form>
         <form action="{{ route('mypage') }}"></form>
-
       </div>
     </div>
   </div>

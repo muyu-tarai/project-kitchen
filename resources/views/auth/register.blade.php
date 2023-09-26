@@ -1,4 +1,3 @@
-
 @extends('preLoginLayout')
 @section('css')
 <link rel="stylesheet" href="/css/register.css">
@@ -15,9 +14,7 @@
           <div class="panel-body">
             <form action="{{ route('register') }}" method="POST">
               @csrf
-
               <div class="form-group">
-
                 <label for="name" class="alert">username</label>
                 @error('name')
                 <span role="alert">{{ $message }}</span>
