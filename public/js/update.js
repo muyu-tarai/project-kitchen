@@ -68,5 +68,21 @@ if(m_flag==0){
     $(this).children('.menu_flag').val(0);
     this.classList.remove('dark');
   }
-
 })
+
+    if (!navigator.geolocation) {
+       console.log('位置情報がサポートされていません');
+    } else {
+      console.log('位置情報を取得中です');
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          const location = `${latitude} , ${longitude}`;
+          document.getElementById("locate").value=location;
+        },
+        (error) => {
+          console.log('位置情報の取得に失敗しました');
+        }
+      );
+    }

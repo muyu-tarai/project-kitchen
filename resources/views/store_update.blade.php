@@ -23,13 +23,15 @@
                 <p class="c-btn" id="close">CLOSE</p>
                 <input type="hidden" id="o_flag" name="o_flag" value="{{ $store_items->opening_flag }}">
         </div>
+        <div class="upper-submit">
         <input type="submit" class="update-btn" value="更新">
+        </div>
     </div>
     <div id="hide-content"></h2>
         <div class="store-contents">
             <p class = "closed-time">現在 {{$store_items->closing_datetime }} 閉店予定 </p>
+            <p class="close-item">閉店時間設定</p>
             <div class="close-time">
-                <p>閉店時間設定</p>
                 <input type="hidden" id="year" name="year">
                 <input type="text" class="month text" id="month" name="month">
                 <p class="under-take">月</p>
@@ -37,6 +39,7 @@
                 <p class="under-take">日</p>
                 <input type="time" class="hour-secound text" id="time" name="time">
             </div>
+            <input type="hidden" id="locate" name="locate">
             <img class="geo-api" src="/images/trucks/truck5.jpg" alt="api">
         </img>
         <h2>メニュー</h2>
@@ -51,8 +54,8 @@
             </div>
         @endforeach
         </div>
-        <div class="last">
-        <input type="submit" class="update-btn under-botton" value="更新">
+        <div class="under-submit">
+        <input type="submit"class="update-btn "  value="更新">
         </div>
         </form>
     </div>
