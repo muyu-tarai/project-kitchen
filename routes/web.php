@@ -33,3 +33,5 @@ Route::post('/store_register_after', 'storeRegisterController@registerOrUpdateJu
  もしログインから来たら
  ********/
 Route::post('/update_store', 'storeRegisterController@registerOrUpdateJudge')->name('update_store');
+/******* 動作確認用 *******/
+Route::post('/tmp', 'storeRegisterController@update')->name('tmp');

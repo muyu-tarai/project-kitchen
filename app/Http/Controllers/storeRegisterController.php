@@ -61,10 +61,10 @@ class storeRegisterController extends Controller
             ]);
         }
 
-        
+
         return view('store_register_after');
     }
-    
+
     public function updateStore($request)
     {
         $userId = Auth::user()->id;
@@ -74,7 +74,7 @@ class storeRegisterController extends Controller
         $store->store_image = $request->store_image;
         $store->store_comment = $request->store_comment;
         $store->save();
-        
+
         $postText = $request->send_menu_name;
         if (isset($postText)) {
             Menu::where('store_id', $store->id)->whereNotIn('menu_name', ...[$postText ? $postText : ''])->delete();
@@ -91,7 +91,7 @@ class storeRegisterController extends Controller
 
 
             foreach ($send_menus as $send_menu) {
-                $exists = Menu::where('menu_name', $send_menu['name'])->exists();
+                $exists = Menu::where('store_id', $store->id)->where('menu_name', $send_menu['name'])->exists();
                 if (!$exists) {
                     Menu::create([
                         'store_id' => $store->id,
@@ -102,21 +102,32 @@ class storeRegisterController extends Controller
                     ]);
                 }
             }
-            Storage::disk('dropbox')->put('file.txt', 'Contents');
+            // $request->file('store_image')->store('public');
+
+            // /* Simple Put File */
+            // Storage::disk('dropbox')->put('sample3.txt', "HogeHoge3");
+
+            /* Simple Get File Content */
+            // Storage::disk('local')->put('sample3.txt', $tmp);
         }
     }
-    
+
     public function registerOrUpdateJudge(Request $request)
     {
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);
-        
+
         if (isset($store)) {
             $this->updateStore($request);
         } else {
             $this->registerStore($request);
         }
-        
-        return view('store_register_after');
+
+        $tmp = Storage::disk('dropbox')->allFiles('/');
+        return view('store_register_after', ['tmp' => $tmp]);
+    }
+
+    public function upload()
+    {
     }
 }
