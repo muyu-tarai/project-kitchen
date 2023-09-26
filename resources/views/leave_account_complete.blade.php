@@ -3,7 +3,6 @@
 <link rel="stylesheet" href="/css/leave_account_complete.css
 ">
 @endsection
-
 @section('content')
 
 <body>

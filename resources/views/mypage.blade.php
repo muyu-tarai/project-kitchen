@@ -2,12 +2,10 @@
 @section('css')
 <link rel="stylesheet" href="/css/mypage.css">
 @endsection
-
 @section('content')
 
 
 <body>
-
   <div class="imag-car">
     <div class="container">
       <div class="row">
@@ -23,7 +21,7 @@
                 @enderror
               </div>
               <div class="input">
-                <input type="text" class="form-control" id="name" name="name" value="{{  Auth::user()->name }}" />
+                <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" />
 
               </div>
 
@@ -36,7 +34,7 @@
             </div>
             <div class="button">
               <input type="submit" class="updeta" formaction="{{ route('mypage') }}" value="更新">
-              <input type="submit" class="Withdrawal" formaction="{{ route('leave_account')}}" value="退会">
+              <input type="submit" class="Withdrawal" formaction="{{ route('leave_account') }}" value="退会">
             </div>
           </form>
           <form action="{{ route('leave_account') }}"></form>

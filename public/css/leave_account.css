@@ -11,6 +11,7 @@
   padding-bottom: 1%;
   opacity: 0.95;
   border-radius: 6rem;
+  display: flex;
 }
 
 .y {
@@ -33,23 +34,16 @@
   padding: 50px 50px;
 }
 
-.button {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20%;
-}
+
 
 .yes {
-  margin: 0 50px 0 0;
-  width: 161px;
-  height: 50px;
-  background-color: #2F3F93;
-  border-radius: 2rem;
-  font-size: 3.2rem;
-  color: white;
-  border: none;
+  padding: 4px 40px;
+margin: 0 3rem ;
+border-radius: 2.5rem;
+font-size: 3rem;
+background-color: #2F3F93;
+color: white;
+border: none;
 }
 
 .no {
@@ -62,3 +56,11 @@
   color: white;
   border: none;
 }
+.button {
+  display: flex;
+  justify-content: center;
+    margin-right: 15rem;
+  padding-bottom: 5rem;
+  padding-top: 5rem;
+  max-width: 100%;
+  }
