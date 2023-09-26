@@ -89,3 +89,8 @@ background-color: #E43F3F;
 color: white;
 border: none;
   }
+
+  .alert {
+    font-size: 0.1rem;
+    color: #E43F3F;
+  }

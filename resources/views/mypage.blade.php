@@ -13,13 +13,13 @@
       <div class="row">
         <div class="col col-md-offset-3 col-md-6">
           <p class="panel-heading">マイページ</p>
-          <form action="{{ route('settings.update') }}" method="post">
+          <form action="{{ route('mypage') }}" method="post">
             @csrf
             <div class="panel-body">
               <div class="about">
                 <label for="name">ユーザー名</label>
                 @error('name')
-                <span role="alert">{{ $message }}</span>
+                <span class="alert" role="alert">{{ $message }}</span>
                 @enderror
               </div>
               <div class="input">
@@ -35,9 +35,11 @@
               </div>
             </div>
             <div class="button">
-              <button type="submit" class="updeta">更新</button>
-              <button type="submit" class="Withdrawal">退会</button>
+              <input type="submit" class="updeta" formaction="{{ route('mypage') }}" value="更新">
+              <input type="submit" class="Withdrawal" formaction="{{ route('leave_account')}}" value="退会">
             </div>
+          </form>
+          <form action="{{ route('leave_account') }}"></form>
         </div>
       </div>
     </div>

@@ -1,12 +1,10 @@
 @extends('preLoginLayout')
 @section('css')
-<link rel="stylesheet" href="/css/leave_account.css
+<link rel="stylesheet" href="/css/leave_account_complete.css
 ">
 @endsection
 
 @section('content')
-
-
 <body>
   <div class="y">
      <div class="container">
@@ -17,15 +15,16 @@
         <div class="Withdrawal2">
           <p>本当に退会しますか？</p>
         </div>
-        <form action="{{ route('members.withdraw', $id) }}" method="POST">
-        @csrf
       </div>
       <div class="button">
       <div class="button2">
-        <button type="submit" class="yes">はい</button>
+        <form action="{{ route('leave_account')}}">
+        <input type="submit" class="yes" formaction="{{ route('leave_account')}}">はい</input>
       </div>
       <div class="button2">
-        <button type="submit" class="no">いいえ</button>
+        <input type="submit" class="no" formaction="{{ route('mypage')}}">いいえ</input>
+        </form>
+        <form action="{{ route('mypage')}}"></form>
         </div>
       </div>
     </div>
