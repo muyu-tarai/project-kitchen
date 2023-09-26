@@ -11,7 +11,6 @@
         <div class="contents1">
             <p id="closing-datetime">{{ $carbon_close }} 閉店予定</p>
             <div id="current-location">
-                <img src="/images/map.png" alt="location">
             </div>
         </div>
             <h2 class="content-bar">{{$store_items->store_name }}  詳細</h2>

@@ -13,7 +13,6 @@ class ViewController extends Controller
         $store_items = \DB::table('stores')->find($id);
         $menu_items = \DB::table('menus')
         ->where('store_id', $store_items->id)
-        ->Where('sold_out_flag', 0)
         ->get();
 
 

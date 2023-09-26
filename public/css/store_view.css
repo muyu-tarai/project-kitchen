@@ -79,3 +79,17 @@ h1 {
   margin:50px auto 0;
   padding-bottom:100px;
 }
+
+@media (max-width: 768px) {
+  
+  .detail-content{
+    margin:50px 10% 50px; 
+    display: flow;
+  }
+  .menu-content{
+    display:grid;
+    grid-template-columns: 1fr 1fr ;
+    gap:30px;
+    margin:10px 8% 50px;
+  }
+}
