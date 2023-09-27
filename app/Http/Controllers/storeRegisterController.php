@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRegister;
 use Illuminate\Support\Facades\Auth;
 use App\Store;
 use App\Menu;
@@ -18,6 +19,8 @@ class storeRegisterController extends Controller
         if (!isset($store)) {
             return view('store_register');
         } else {
+            $tmp = base64_encode(Storage::disk('dropbox')->get('tarai2.jpg'));
+
             $menu = Menu::where('store_id', $store->id)->get();
             return view(
                 'store_register',
@@ -25,7 +28,8 @@ class storeRegisterController extends Controller
                     'storeName' => $store->store_name,
                     'storeImage' => $store->store_image,
                     'storeComment' => $store->store_comment,
-                    'menus' => $menu
+                    'menus' => $menu,
+                    'tmp' => $tmp
                 ]
             );
         }
@@ -112,7 +116,7 @@ class storeRegisterController extends Controller
         }
     }
 
-    public function registerOrUpdateJudge(Request $request)
+    public function registerOrUpdateJudge(StoreRegister $request)
     {
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);
@@ -123,7 +127,7 @@ class storeRegisterController extends Controller
             $this->registerStore($request);
         }
 
-        $tmp = Storage::disk('dropbox')->allFiles('/');
+        $tmp = base64_encode(Storage::disk('dropbox')->get('tarai2.jpg'));
         return view('store_register_after', ['tmp' => $tmp]);
     }
 

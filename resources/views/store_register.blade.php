@@ -5,13 +5,22 @@
 @section('content')
 <h1 class="top-title">詳細登録画面</h1>
 <hr>
+@if($errors->any())
+<div class="alert alert-danger">
+  <ul>
+    @foreach($errors->all() as $message)
+    <li>{{ $message }}</li>
+    @endforeach
+  </ul>
+</div>
+@endif
 <form action="/store_register_after" method="POST" enctype="multipart/form-data">
   @csrf
   <div class="inner-top">
     <h2>店舗名</h2>
     <input type="text" name="store_name" value="{{ isset($storeName) ? $storeName : '' }}">
     <h2>店舗画像</h2>
-    <img src="/images/icons/noImage.jpg" class="store-figure" id="store-figure" alt="">
+    <img src="data:image/png;base64,{{ $tmp }}" class="store-figure" id="store-figure" alt="">
     <div class="for-button">
       <label>
         <button></button>画像を削除
