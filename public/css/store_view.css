@@ -81,7 +81,31 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  
+  .title-bar{
+  display:flow;
+  }
+  h1 {
+    white-space: nowrap
+  }
+  h2{
+    white-space: nowrap
+  }
+  #update-at{
+    margin-top:0px;
+    white-space: nowrap;
+    display: flex;
+    justify-content: right;
+
+  }
+  .store-img-div{
+    width:80%;
+    margin-left:10%;
+  }
+  .store-comment-div{
+    width: 70%;
+    margin-top:20px;
+    margin-left:15%;
+  }
   .detail-content{
     margin:50px 10% 50px; 
     display: flow;
