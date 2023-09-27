@@ -69,29 +69,52 @@ if(m_flag==0){
     this.classList.remove('dark');
   }
 })
-  let latitude;
-  let longitude;
-  let now_location;
-    if (!navigator.geolocation) {
-       console.log('位置情報がサポートされていません');
-    } else {
-      console.log('位置情報を取得中です');
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          latitude = position.coords.latitude;
-          longitude = position.coords.longitude;
-          now_location = `${latitude}, ${longitude}`;
+  // var latitude;
+  // var longitude;
+  // var now_location;
+  //   if (!navigator.geolocation) {
+  //      console.log('位置情報がサポートされていません');
+  //   } else {
+  //     console.log('位置情報を取得中です');
+  //     navigator.geolocation.getCurrentPosition(
+  //       (position) => {
+  //         latitude = position.coords.latitude;
+  //         longitude = position.coords.longitude;
+  //         now_location = `${latitude}, ${longitude}`;
 
-          document.getElementById("locate").value=now_location;
-        },
-        (error) => {
-          console.log('位置情報の取得に失敗しました');
-        }
-      );
-    }
+  //         document.getElementById("locate").value=now_location;
+  //       },
+  //       (error) => {
+  //         console.log('位置情報の取得に失敗しました');
+  //       }
+  //     );
+  //   }
     
     function initMap() {
+      var latitude;
+      var longitude;
+      var now_location;
+        if (!navigator.geolocation) {
+           console.log('位置情報がサポートされていません');
+        } else {
+          console.log('位置情報を取得中です');
+          navigator.geolocation.getCurrentPosition(
+            (position) => {
+              latitude = position.coords.latitude;
+              longitude = position.coords.longitude;
+              now_location = `${latitude}, ${longitude}`;
+    
+              document.getElementById("locate").value=now_location;
+            },
+            (error) => {
+              console.log('位置情報の取得に失敗しました');
+            }
+          );
+        }
+      console.log(latitude);
+      console.log(longitude);
       console.log(now_location);
+
       var mapPosition = new google.maps.LatLng(latitude, longitude);//緯度経度
       var map = new google.maps.Map(document.getElementById('gmap'), {
       zoom: 17,//ズーム
