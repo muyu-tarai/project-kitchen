@@ -7,18 +7,19 @@ use App\store;
 use App\menu;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-use App\Http\Requests\Storeupdate; 
+use App\Http\Requests\Storeupdate;
+use Error;
 
 class updateController extends Controller
 {
     public function store_update()
     {
         $id=1;
-        
         $store_items = \DB::table('stores')->find($id);
         $menu_items = \DB::table('menus')
         ->where('store_id', $store_items->id)->get();
 
+        //条件分岐　フラグの受け渡しを入れる
         return view('store_update', [
             'menu_items' => $menu_items,
             'store_items' => $store_items,

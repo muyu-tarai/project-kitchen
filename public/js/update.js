@@ -69,20 +69,36 @@ if(m_flag==0){
     this.classList.remove('dark');
   }
 })
-
+  let latitude;
+  let longitude;
+  let now_location;
     if (!navigator.geolocation) {
        console.log('位置情報がサポートされていません');
     } else {
       console.log('位置情報を取得中です');
       navigator.geolocation.getCurrentPosition(
         (position) => {
-          const latitude = position.coords.latitude;
-          const longitude = position.coords.longitude;
-          const location = `${latitude} , ${longitude}`;
-          document.getElementById("locate").value=location;
+          latitude = position.coords.latitude;
+          longitude = position.coords.longitude;
+          now_location = `${latitude}, ${longitude}`;
+
+          document.getElementById("locate").value=now_location;
         },
         (error) => {
           console.log('位置情報の取得に失敗しました');
         }
       );
+    }
+    
+    function initMap() {
+      console.log(now_location);
+      var mapPosition = new google.maps.LatLng(latitude, longitude);//緯度経度
+      var map = new google.maps.Map(document.getElementById('gmap'), {
+      zoom: 17,//ズーム
+      center: mapPosition
+    });
+      var marker = new google.maps.Marker({
+      position: mapPosition,
+      map: map
+      });
     }

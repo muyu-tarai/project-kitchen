@@ -40,7 +40,8 @@
                 <input type="time" class="hour-secound text" id="time" name="time">
             </div>
             <input type="hidden" id="locate" name="locate">
-            <img class="geo-api" src="/images/trucks/truck5.jpg" alt="api">
+            <div id="gmap"></div>
+
         </img>
         <h2>メニュー</h2>
         <div class="menu-contents">
@@ -64,4 +65,5 @@
 
 @section('js')
 <script src="/js/update.js "></script>
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCipJ9Mk5Gn8xK2NlQksyz9D4fQgszTOM&callback=initMap"></script>
 @endsection

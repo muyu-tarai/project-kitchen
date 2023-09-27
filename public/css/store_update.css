@@ -80,11 +80,9 @@ img {
   margin-right:40px;
   font-size:3rem;
 }
-.geo-api{
-  width: 718px;
-  height: 464px;
-  margin: auto;
-  display: block;
+.gmap{
+  width: 700px;
+  height: 400px;
 }
 h2{
   font-size:2.5rem;
