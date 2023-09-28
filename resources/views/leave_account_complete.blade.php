@@ -14,6 +14,9 @@
         </div>
       </div>
     </div>
+    <div class="top">
+      <a href="index">トップページに戻る</a>
+    </div>
   </div>
 </body>
 @endsection

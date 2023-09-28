@@ -1,4 +1,4 @@
-@extends('preLoginLayout')
+@extends('Layout')
 @section('css')
 <link rel="stylesheet" href="/css/leave_account.css">
 @endsection

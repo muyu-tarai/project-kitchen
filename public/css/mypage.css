@@ -94,3 +94,8 @@ border: none;
     font-size: 0.1rem;
     color: #E43F3F;
   }
+
+  .header a {
+    color: black;
+    text-decoration: none;
+  }

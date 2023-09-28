@@ -33,6 +33,7 @@
       </p>
     </footer>
   </div>
+  @yield('scripts')
 </body>
 
 </html>
