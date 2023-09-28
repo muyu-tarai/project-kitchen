@@ -8,9 +8,13 @@ use App\Store;
 use App\Menu;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class storeRegisterController extends Controller
 {
+    public $storeImageToDropbox;
+    public $menuImageToDropbox;
+
     public function storeRegisterDisplay()
     {
         $userId = Auth::user()->id;    //Authで取ってくる
@@ -19,17 +23,19 @@ class storeRegisterController extends Controller
         if (!isset($store)) {
             return view('store_register');
         } else {
-            $tmp = base64_encode(Storage::disk('dropbox')->get('tarai2.jpg'));
+            $storeImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
+            $ext = File::extension($store->store_image);
 
             $menu = Menu::where('store_id', $store->id)->get();
+
             return view(
                 'store_register',
                 [
                     'storeName' => $store->store_name,
-                    'storeImage' => $store->store_image,
+                    'storeImage' => $storeImageFromDropbox,
                     'storeComment' => $store->store_comment,
                     'menus' => $menu,
-                    'tmp' => $tmp
+                    'ext' => $ext,
                 ]
             );
         }
@@ -43,7 +49,7 @@ class storeRegisterController extends Controller
         $storeForId = Store::create([
             'user_id' => $userId,
             'store_name' => $request->store_name,
-            'store_image' => $request->store_image,
+            'store_image' => $this->storeImageToDropbox,
             'store_comment' => $request->store_comment,
         ]);
         $send_menus = [];
@@ -75,7 +81,7 @@ class storeRegisterController extends Controller
 
         $store = Store::firstWhere('user_id', $userId);
         $store->store_name = $request->store_name;
-        $store->store_image = $request->store_image;
+        $store->store_image = $this->storeImageToDropbox;
         $store->store_comment = $request->store_comment;
         $store->save();
 
@@ -106,7 +112,6 @@ class storeRegisterController extends Controller
                     ]);
                 }
             }
-            // $request->file('store_image')->store('public');
 
             // /* Simple Put File */
             // Storage::disk('dropbox')->put('sample3.txt', "HogeHoge3");
@@ -118,17 +123,23 @@ class storeRegisterController extends Controller
 
     public function registerOrUpdateJudge(StoreRegister $request)
     {
+        dd($request);
+        foreach($request->file('send_menu_image') as $menuImage){
+            dd($menuImage);
+            $tmp[] = (isset($menuImage) ? $menuImage : '');
+        }
+        $this->storeImageToDropbox = Storage::disk('dropbox')->put('/', $request->store_image);
+        $this->menuImageToDropbox = Storage::disk('dropbox')->put('/', $request->send_menu_image);
+        
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);
-
         if (isset($store)) {
             $this->updateStore($request);
         } else {
             $this->registerStore($request);
         }
-
-        $tmp = base64_encode(Storage::disk('dropbox')->get('tarai2.jpg'));
-        return view('store_register_after', ['tmp' => $tmp]);
+        
+        return view('store_register_after');
     }
 
     public function upload()

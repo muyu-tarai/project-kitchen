@@ -20,7 +20,7 @@
     <h2>店舗名</h2>
     <input type="text" name="store_name" value="{{ isset($storeName) ? $storeName : '' }}">
     <h2>店舗画像</h2>
-    <img src="data:image/png;base64,{{ $tmp }}" class="store-figure" id="store-figure" alt="">
+    <img src="data:image/{{ $ext }};base64,{{ $storeImage }}" class="store-figure" id="store-figure" alt="">
     <div class="for-button">
       <label>
         <button></button>画像を削除
@@ -43,7 +43,7 @@
         <p class="menu-title">{{ $menu->menu_name }}</p>
         <p class="menu-price">{{ $menu->price }}</p>
         <p class="menu-text">{{ $menu->menu_comment }}</p>
-        <input type="hidden" value="{{ $menu->menu_image }}" name="send_menu_image[]">
+        <input type="hidden" value="{{ $menu->menu_image }}" name="send_menu_image[]" multiple>
         <input type="hidden" value="{{ $menu->menu_name }}" name="send_menu_name[]">
         <input type="hidden" value="{{ $menu->price }}" name="send_menu_price[]">
         <input type="hidden" value="{{ $menu->menu_comment }}" name="send_menu_comment[]">
@@ -59,13 +59,13 @@
     <div class="inner-add-menu">
       <div class="add-menu-image">
         <h3>メニュー画像</h3>
-        <img src="/images/icons/noImage.jpg" class="store-figure" id="menu-figure" alt="">
+        <img src="/images/icons/noImage.jpg" class="store-figure" id="add-menu-figure" alt="">
         <div class="for-button">
           <label>
             <button></button>画像を削除
           </label>
-          <label>
-            <input type="file" name="menu_image" id="add-menu-image">写真を選択
+          <label id="add-menu-image-label">
+            <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
           </label>
         </div>
       </div>

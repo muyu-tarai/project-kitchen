@@ -2,6 +2,7 @@ let selectedMenuFigure = document.querySelector('#menu-figure')
 let menuName = document.querySelector('#add-menu-name')
 let menuPrice = document.querySelector('#add-menu-price')
 let menuComment = document.querySelector('#add-menu-comment')
+let menuImage = document.querySelector('#add-menu-image')
 
 function addImage (getImage, getFigure) {
   const input = document.querySelector(getImage)
@@ -19,7 +20,6 @@ function addImage (getImage, getFigure) {
 function addMenu()
 {
   let storesItems = document.querySelector('#stores-items')
-  let menuImage = document.querySelector('#add-menu-image')
   let tmp = `
   <div class="stores-item">
   <img src="/images/icons/noImage.jpg" class="store-figure" id="menu-figure" alt="">
@@ -48,8 +48,15 @@ function removeItem(button) {
 addImage('#add-store-image', '#store-figure')
 addImage('#add-menu-image', '#menu-figure')
 
+let addMenuButton = `
+          <label id="add-menu-image-label">
+            <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
+          </label>
+`
+let addMenuImageLabel = document.querySelector('#add-menu-image-label')
 $('#add-menu').on('click', function() {
   addMenu()
+  addMenuImageLabel.insertAdjacentHTML('beforeend', addMenuButton)
 selectedMenuFigure.setAttribute('src', "/images/icons/noImage.jpg")
 menuName.value = ''
 menuPrice.value = ''
