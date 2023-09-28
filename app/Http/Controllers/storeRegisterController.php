@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\File;
 class storeRegisterController extends Controller
 {
     public $storeImageToDropbox;
-    public $menuImageToDropbox;
-
+    public $menuImageToDropbox = [];
+    
     public function storeRegisterDisplay()
     {
         $userId = Auth::user()->id;    //Authで取ってくる
@@ -25,27 +25,34 @@ class storeRegisterController extends Controller
             if (isset($store->store_image)) {
                 $storeImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
                 $ext = File::extension($store->store_image);
-            }else{
+            } else {
                 $storeImageFromDropbox = base64_encode(Storage::disk('dropbox')->get('store/noImage.jpg'));
                 $ext = 'jpg';
             }
 
-            $menu = Menu::where('store_id', $store->id)->get();
-
-            return view(
-                'store_register',
-                [
+            $menus = Menu::where('store_id', $store->id)->get();
+            $i = 0;
+            foreach($menus as $menu){
+                $menus[$i]->ext = File::extension($menus[$i]->menu_image);
+                if(isset($menu->menu_image)){
+                $menus[$i]->menu_image = base64_encode(Storage::disk('dropbox')->get($menu->menu_image));
+                }
+            $i++;
+        }
+        return view(
+            'store_register',
+            [
                     'storeName' => $store->store_name,
                     'storeImage' => $storeImageFromDropbox,
                     'storeComment' => $store->store_comment,
-                    'menus' => $menu,
+                    'menus' => $menus,
                     'ext' => $ext,
                 ]
             );
         }
     }
-
-
+    
+    
     public function registerStore($request)
     {
         $userId = Auth::user()->id;
@@ -85,8 +92,8 @@ class storeRegisterController extends Controller
 
         $store = Store::firstWhere('user_id', $userId);
         $store->store_name = $request->store_name;
-        if(isset($this->storeImageToDropbox)){
-        $store->store_image = $this->storeImageToDropbox;
+        if (isset($this->storeImageToDropbox)) {
+            $store->store_image = $this->storeImageToDropbox;
         }
         $store->store_comment = $request->store_comment;
         $store->save();
@@ -102,29 +109,36 @@ class storeRegisterController extends Controller
                     "comment" => $request->send_menu_comment[$i]
                 ];
             }
-            
+
             Menu::where('store_id', $store->id)->get();
-            
-            $i = 0;
+
+            $i = count($send_menus) - count($this->menuImageToDropbox);
+
+            foreach ($this->menuImageToDropbox as $image) {
+                $send_menus[$i]['image'] = $image;
+                $i++;
+            }
             foreach ($send_menus as $send_menu) {
                 $exists = Menu::where('store_id', $store->id)->where('menu_name', $send_menu['name'])->exists();
                 if (!$exists) {
+                    if(isset($send_menu['image'])){
                     Menu::create([
                         'store_id' => $store->id,
                         'menu_name' => $send_menu['name'],
-                        'menu_image' => $request->menu_image[$i],
+                        'menu_image' => $send_menu['image'],
+                        'price' => $send_menu['price'],
+                        'menu_comment' => $send_menu['comment'],
+                    ]);
+                }else{
+                    Menu::create([
+                        'store_id' => $store->id,
+                        'menu_name' => $send_menu['name'],
                         'price' => $send_menu['price'],
                         'menu_comment' => $send_menu['comment'],
                     ]);
                 }
-                $i++;
+                }
             }
-            
-            // /* Simple Put File */
-            // Storage::disk('dropbox')->put('sample3.txt', "HogeHoge3");
-
-            /* Simple Get File Content */
-            // Storage::disk('local')->put('sample3.txt', $tmp);
         }
     }
 
@@ -132,8 +146,7 @@ class storeRegisterController extends Controller
     {
         if (isset($request->menu_image)) {
             foreach ($request->file('menu_image') as $menuImage) {
-                $tmp[] = (isset($menuImage) ? $menuImage : '');
-                $this->menuImageToDropbox = Storage::disk('dropbox')->put('menu', $menuImage);
+                $this->menuImageToDropbox[] = Storage::disk('dropbox')->put('menu', $menuImage);
             }
         }
         if (isset($request->store_image)) {

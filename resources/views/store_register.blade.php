@@ -36,7 +36,7 @@
       @if(isset($menus))
       @foreach($menus as $menu)
       <div class="stores-item">
-        <img src="/images/icons/noImage.jpg" class="store-figure" id="added-menu-figure" alt="">
+        <img src="data:image/{{ $menu->ext }};base64,{{ $menu->menu_image }}" class="store-figure" id="added-menu-figure" alt="">
         <p class="menu-title">{{ $menu->menu_name }}</p>
         <p class="menu-price">{{ $menu->price }}</p>
         <p class="menu-text">{{ $menu->menu_comment }}</p>
