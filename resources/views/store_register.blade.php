@@ -23,9 +23,6 @@
     <img src="data:image/{{ $ext }};base64,{{ $storeImage }}" class="store-figure" id="store-figure" alt="">
     <div class="for-button">
       <label>
-        <button></button>画像を削除
-      </label>
-      <label>
         <input type="file" name="store_image" id="add-store-image" accept="image/">写真を選択
       </label>
     </div>
@@ -59,12 +56,12 @@
     <div class="inner-add-menu">
       <div class="add-menu-image">
         <h3>メニュー画像</h3>
-        <img src="/images/icons/noImage.jpg" class="store-figure" id="add-menu-figure" alt="">
-        <div class="for-button">
+        <img src="" class="store-figure" id="menu-figure" alt="">
+        <div class="for-button" id="add-menu-images">
           <label>
             <button></button>画像を削除
           </label>
-          <label id="add-menu-image-label">
+          <label id="add-menu-image-label" class="add-menu-image-label">
             <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
           </label>
         </div>

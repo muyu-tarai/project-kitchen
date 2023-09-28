@@ -172,3 +172,7 @@ textarea {
 .register-button label{
   font-size: 5rem;
 }
+
+.add-menu-image-label-none{
+  display: none;
+}

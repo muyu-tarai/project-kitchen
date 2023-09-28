@@ -19,12 +19,16 @@ class storeRegisterController extends Controller
     {
         $userId = Auth::user()->id;    //Authで取ってくる
         $store = Store::where('user_id', $userId)->first();
-        $a = 1;    //ログイン画面から遷移0,ユーザー登録から遷移1
         if (!isset($store)) {
             return view('store_register');
         } else {
-            $storeImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
-            $ext = File::extension($store->store_image);
+            if (isset($store->store_image)) {
+                $storeImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
+                $ext = File::extension($store->store_image);
+            }else{
+                $storeImageFromDropbox = base64_encode(Storage::disk('dropbox')->get('store/noImage.jpg'));
+                $ext = 'jpg';
+            }
 
             $menu = Menu::where('store_id', $store->id)->get();
 
@@ -81,13 +85,15 @@ class storeRegisterController extends Controller
 
         $store = Store::firstWhere('user_id', $userId);
         $store->store_name = $request->store_name;
+        if(isset($this->storeImageToDropbox)){
         $store->store_image = $this->storeImageToDropbox;
+        }
         $store->store_comment = $request->store_comment;
         $store->save();
 
         $postText = $request->send_menu_name;
         if (isset($postText)) {
-            Menu::where('store_id', $store->id)->whereNotIn('menu_name', ...[$postText ? $postText : ''])->delete();
+            Menu::where('store_id', $store->id)->whereNotIn('menu_name', [$postText ? $postText : ''])->delete();
             $send_menus = [];
             for ($i = 0; $i < count($request->send_menu_name); $i++) {
                 $send_menus[] = [
@@ -96,23 +102,24 @@ class storeRegisterController extends Controller
                     "comment" => $request->send_menu_comment[$i]
                 ];
             }
-
+            
             Menu::where('store_id', $store->id)->get();
-
-
+            
+            $i = 0;
             foreach ($send_menus as $send_menu) {
                 $exists = Menu::where('store_id', $store->id)->where('menu_name', $send_menu['name'])->exists();
                 if (!$exists) {
                     Menu::create([
                         'store_id' => $store->id,
                         'menu_name' => $send_menu['name'],
-                        'menu_image' => $request->menu_image,
+                        'menu_image' => $request->menu_image[$i],
                         'price' => $send_menu['price'],
                         'menu_comment' => $send_menu['comment'],
                     ]);
                 }
+                $i++;
             }
-
+            
             // /* Simple Put File */
             // Storage::disk('dropbox')->put('sample3.txt', "HogeHoge3");
 
@@ -123,14 +130,15 @@ class storeRegisterController extends Controller
 
     public function registerOrUpdateJudge(StoreRegister $request)
     {
-        dd($request);
-        foreach($request->file('send_menu_image') as $menuImage){
-            dd($menuImage);
-            $tmp[] = (isset($menuImage) ? $menuImage : '');
+        if (isset($request->menu_image)) {
+            foreach ($request->file('menu_image') as $menuImage) {
+                $tmp[] = (isset($menuImage) ? $menuImage : '');
+                $this->menuImageToDropbox = Storage::disk('dropbox')->put('menu', $menuImage);
+            }
         }
-        $this->storeImageToDropbox = Storage::disk('dropbox')->put('/', $request->store_image);
-        $this->menuImageToDropbox = Storage::disk('dropbox')->put('/', $request->send_menu_image);
-        
+        if (isset($request->store_image)) {
+            $this->storeImageToDropbox = Storage::disk('dropbox')->put('store', $request->store_image);
+        }
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);
         if (isset($store)) {
@@ -138,7 +146,7 @@ class storeRegisterController extends Controller
         } else {
             $this->registerStore($request);
         }
-        
+
         return view('store_register_after');
     }
 

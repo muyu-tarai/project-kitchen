@@ -5,11 +5,11 @@ let menuComment = document.querySelector('#add-menu-comment')
 let menuImage = document.querySelector('#add-menu-image')
 
 function addImage (getImage, getFigure) {
-  const input = document.querySelector(getImage)
-  const figure = document.querySelector(getFigure)
+  let input = document.querySelector(getImage)
+  let figure = document.querySelector(getFigure)
 
   input.addEventListener('change', (event) => { // <1>
-    const [file] = event.target.files
+    let [file] = event.target.files
 
     if (file) {
       figure.setAttribute('src', URL.createObjectURL(file))
@@ -45,20 +45,28 @@ function removeItem(button) {
     parent.remove()
   }
 
-addImage('#add-store-image', '#store-figure')
-addImage('#add-menu-image', '#menu-figure')
-
-let addMenuButton = `
-          <label id="add-menu-image-label">
-            <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
-          </label>
-`
-let addMenuImageLabel = document.querySelector('#add-menu-image-label')
-$('#add-menu').on('click', function() {
-  addMenu()
-  addMenuImageLabel.insertAdjacentHTML('beforeend', addMenuButton)
-selectedMenuFigure.setAttribute('src', "/images/icons/noImage.jpg")
-menuName.value = ''
-menuPrice.value = ''
-menuComment.value = ''
+  
+  
+  addImage('#add-store-image', '#store-figure')
+  addImage('#add-menu-image', '#menu-figure')
+  
+  let addMenuButton = `
+  <label id="add-menu-image-label" class="add-menu-image-label">
+  <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
+  </label>
+  `
+  let addMenuImageLabel = document.querySelector('#add-menu-image-label')
+  $('#add-menu').on('click', function() {
+    addMenu()
+    let lastMenuBottom = document.querySelector('#stores-items').lastElementChild
+  lastMenuBottom.appendChild(document.querySelector('#add-menu-image'))
+  document.querySelector('.add-menu-image-label').setAttribute('class', 'add-menu-image-label-none')
+  document.querySelector('#add-menu-image-label').removeAttribute('id')
+  document.querySelector('#add-menu-image').setAttribute('id', 'add-menu-image-none')
+  document.querySelector('#add-menu-images').insertAdjacentHTML('beforeend', addMenuButton)
+  selectedMenuFigure.setAttribute('src', "/images/icons/noImage.jpg")
+  menuName.value = ''
+  menuPrice.value = ''
+  menuComment.value = ''
+  addImage('#add-menu-image', '#menu-figure')
 })
