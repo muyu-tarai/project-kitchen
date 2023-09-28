@@ -80,9 +80,11 @@ img {
   margin-right:40px;
   font-size:3rem;
 }
-.gmap{
-  width: 700px;
-  height: 400px;
+#gmap{
+  width: 80%;
+  height: 600px;
+  margin-left:10%;
+  
 }
 h2{
   font-size:2.5rem;

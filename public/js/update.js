@@ -69,59 +69,47 @@ if(m_flag==0){
     this.classList.remove('dark');
   }
 })
-  // var latitude;
-  // var longitude;
-  // var now_location;
-  //   if (!navigator.geolocation) {
-  //      console.log('位置情報がサポートされていません');
-  //   } else {
-  //     console.log('位置情報を取得中です');
-  //     navigator.geolocation.getCurrentPosition(
-  //       (position) => {
-  //         latitude = position.coords.latitude;
-  //         longitude = position.coords.longitude;
-  //         now_location = `${latitude}, ${longitude}`;
 
-  //         document.getElementById("locate").value=now_location;
-  //       },
-  //       (error) => {
-  //         console.log('位置情報の取得に失敗しました');
-  //       }
-  //     );
-  //   }
-    
-    function initMap() {
-      var latitude;
-      var longitude;
-      var now_location;
-        if (!navigator.geolocation) {
-           console.log('位置情報がサポートされていません');
-        } else {
-          console.log('位置情報を取得中です');
-          navigator.geolocation.getCurrentPosition(
+
+  function initMap() {
+    // Google Mapsを初期化し、指定した要素に表示します
+    map = new google.maps.Map(document.getElementById('gmap'), {
+        center: { lat: 0, lng: 0 }, // 地図の初期中心位置（緯度0、経度0）
+        zoom: 17 // 初期ズームレベル
+    });
+  
+    // ブラウザが位置情報取得をサポートしているかチェック
+    if (navigator.geolocation) {
+        // 位置情報を非同期で取得
+        navigator.geolocation.getCurrentPosition(
             (position) => {
-              latitude = position.coords.latitude;
-              longitude = position.coords.longitude;
-              now_location = `${latitude}, ${longitude}`;
-    
-              document.getElementById("locate").value=now_location;
+                // 位置情報を取得成功時の処理
+  
+                // ユーザーの緯度と経度を取得
+                const userLatLng = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                console.log(userLatLng);
+                document.getElementById("locate").value=userLatLng;
+  
+                // ユーザーの位置情報を地図の中心に設定
+                map.setCenter(userLatLng);
+  
+                // ユーザーの位置にマーカーを追加して表示
+                const marker = new google.maps.Marker({
+                    position: userLatLng,
+                    map: map,
+                    title: 'Your Location' // マーカーに表示されるタイトル
+                });
             },
             (error) => {
-              console.log('位置情報の取得に失敗しました');
+                // 位置情報取得失敗時の処理
+                console.log('位置情報の取得に失敗しました', error);
             }
-          );
-        }
-      console.log(latitude);
-      console.log(longitude);
-      console.log(now_location);
-
-      var mapPosition = new google.maps.LatLng(latitude, longitude);//緯度経度
-      var map = new google.maps.Map(document.getElementById('gmap'), {
-      zoom: 17,//ズーム
-      center: mapPosition
-    });
-      var marker = new google.maps.Marker({
-      position: mapPosition,
-      map: map
-      });
+        );
+    } else {
+        // ブラウザが位置情報取得をサポートしていない場合の処理
+        console.log('位置情報がサポートされていません');
     }
+  }
