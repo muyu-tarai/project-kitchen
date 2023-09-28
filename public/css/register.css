@@ -16,15 +16,15 @@ body {
 }
 
 .form-group {
-  max-width: 45.6rem;
-  margin: 4rem auto;
+  max-width: 100%;
+  margin: 5% 15% 0 15%;
 
 }
 
 .form-control {
   font-size: 2.5rem;
   border-radius: 999rem;
-  width: 456px;
+  width: 100%;
   height: 48px;
   background-color: rgb(219, 222, 222);
   border: none;
@@ -54,7 +54,7 @@ body {
 .container {
   color: rgb(238, 41, 41);
   background-color: white;
-  max-width: 64.3rem;
+  max-width: 60%;
   margin: 0 auto;
 max-height: 100%;
 
@@ -78,3 +78,84 @@ max-height: 100%;
   font-size: 2rem;
 }
 
+@media (max-width: 414px){
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  
+  body {
+    max-height: 100%;
+  }
+  
+  .panel-heading {
+    font-size: 3rem;
+    font-family: Courier;
+    text-align: center;
+    padding-top: 5rem;
+  
+  }
+  
+  .form-group {
+    max-width: 100%;
+    margin: 5% 5% 0 5%;
+  
+  }
+  
+  .form-control {
+    font-size: 1.5rem;
+    border-radius: 999rem;
+    width: 100%;
+    height: 48px;
+    background-color: rgb(219, 222, 222);
+    border: none;
+   padding-left: 10px;
+  }
+  
+  .about {
+    font-size: 1.7rem;
+  
+  }
+  
+  
+  
+  .imag-car {
+    background-image: url(../images/trucks/truck5.jpg);
+    background-size: cover;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+  
+  .text-right {
+    text-align: center;
+    padding-bottom: 10rem;
+  }
+  
+  .container {
+    color: rgb(238, 41, 41);
+    background-color: white;
+    max-width: 70%;
+    margin: 0 auto;
+  max-height: 100%;
+  
+  }
+  
+  .text-right {
+    margin-top: 5rem;
+  }
+  
+  .btn-primary {
+    padding: 1rem 3rem;
+    border-radius: 999.9rem;
+    border: none;
+    background-color: rgb(238, 41, 41);
+    color: white;
+    font-size: 2rem;
+   
+  }
+  
+  .alert {
+    font-size: 1rem;
+  }
+}

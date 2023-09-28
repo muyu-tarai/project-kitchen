@@ -15,7 +15,7 @@
             <form action="{{ route('register') }}" method="POST">
               @csrf
               <div class="form-group">
-                <label for="name" class="alert">username</label>
+                <label for="name" class="alert">username</label><br>
                 @error('name')
                 <span role="alert">{{ $message }}</span>
                 @enderror
@@ -27,7 +27,7 @@
 
               <div class="form-group">
 
-                <label for="email" class="alert">mail</label>
+                <label for="email" class="alert">mail</label><br>
                 @error('email')
                 <span role="alert">{{ $message }}</span>
                 @enderror
@@ -38,7 +38,7 @@
               </div>
               <div class="form-group">
 
-                <label for="password" class="alert">password</label>
+                <label for="password" class="alert">password</label><br>
                 @error('password')
                 <span role="alert">{{ $message }}</span>
                 @enderror
@@ -50,7 +50,7 @@
               </div>
               <div class="form-group">
 
-                <label for="password-confirm" class="alert">password check</label>
+                <label for="password-confirm" class="alert">password check</label><br>
 
                 <div class="input">
                   <input type="password" class="form-control" id="password-confirm" name="password_confirmation">

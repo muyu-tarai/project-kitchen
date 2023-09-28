@@ -17,17 +17,17 @@ body {
 
 .form-group {
   max-width: 45.6rem;
-  margin: 50px auto 0;
+  margin: 5% 15% 0 15%; 
 
 }
 
 .form-control {
   border-radius: 999rem;
-  width: 45.6rem;
+  width: 100%;
   height: 5rem;
   background-color: rgb(219, 222, 222);
   border: none;
-  font-size: 2.5rem;
+  font-size: 2rem;
   padding: 20px;
 }
 
@@ -41,9 +41,8 @@ body {
 .imag-car {
   background-image: url(../images/trucks/truck8.jpg);
   background-size: cover;
-  max-height: 100%;
   background-repeat: no-repeat;
-  background-position: 0 -200px;
+  background-position: 0 -150px;
 }
 
 .text-right {
@@ -58,7 +57,7 @@ body {
 .container {
   color: rgb(238, 41, 41);
   background-color: white;
-  max-width: 64.3rem;
+  max-width: 70%;
   margin: 0 auto;
   max-height: 100%;
 }
@@ -94,9 +93,11 @@ body {
   padding: none;
 }
 
-@media (max-width: 428px) {
 
-  /* 428px以下の画面幅に適用されるスタイル */
+/* タブレット用 */
+@media screen and (min-width: 415px) and (max-width: 834x) {
+
+  /* 834px以下の画面幅に適用されるスタイル */
   * {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -107,7 +108,7 @@ body {
   }
 
   .panel-heading {
-    font-size: 4rem;
+    font-size: 1rem;
     font-family: Courier;
     text-align: center;
     padding-top: 5px;
@@ -116,24 +117,25 @@ body {
 
   .form-group {
     max-width: 100%;
-    margin: 50px auto 0;
+    margin: 5% 15% 0 15%; 
   }
  
   .form-control {
     border-radius: 999rem;
     max-width: 100%;
-    height: 5rem;
+    height: 2rem;
     background-color: rgb(219, 222, 222);
     border: none;
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .input {
     text-align: center;
+   width: 100%; 
   }
 
   .about {
-    font-size: 2rem;
+    font-size: 1rem;
 
   }
 
@@ -144,7 +146,7 @@ body {
     background-size: cover;
     max-height: 100%;
     background-repeat: no-repeat;
-    background-position: 0 -200px;
+    background-position: top;
   }
 
   .text-right {
@@ -152,14 +154,12 @@ body {
     padding-bottom: 10rem;
   }
 
-  .text-right {
-    margin-top: 3rem;
-  }
+  
 
   .container {
     color: rgb(238, 41, 41);
     background-color: white;
-    max-width: 100%;
+    max-width: 70%;
     margin: 0 auto;
     max-height: 100%;
   }
@@ -172,12 +172,12 @@ body {
     border: none;
     background-color: #5f63b7;
     color: white;
-    font-size: 2.5rem;
+    font-size: 1rem;
 
   }
 
   .label {
-    font-size: 2rem;
+    font-size: 1rem;
     color: #2333c3;
 
   }
@@ -190,9 +190,120 @@ body {
   .guest {
     background: none;
     border: none;
-    font-size: 1.8rem;
+    font-size: 1rem;
     color: #020abd;
     padding: none;
   }
 
+.main {
+  max-width: 100%;
 }
+
+}
+/* スマホ用 */
+@media (max-width: 414px) {
+
+  /* 414px以下の画面幅に適用されるスタイル */
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+
+  body {
+    max-height: 100%;
+  }
+
+  .panel-heading {
+    font-size: 2rem;
+    font-family: Courier;
+    text-align: center;
+    padding-top: 5px;
+    color: #2333c3;
+  }
+
+  .form-group {
+    max-width: 100%;
+    margin: 5% 15% 0 15%; ;
+  }
+ 
+  .form-control {
+    border-radius: 999rem;
+    max-width: 100%;
+    height: 0.1rem;
+    background-color: rgb(219, 222, 222);
+    border: none;
+    font-size: 1rem;
+  }
+
+  .input {
+    text-align: center;
+   width: 100%; 
+  }
+
+  .about {
+    font-size: 1rem;
+
+  }
+
+  .imag-car {
+    background-image: url(../images/trucks/truck8.jpg);
+    background-size: cover;
+    max-height: 100%;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
+
+  .text-right {
+    text-align: center;
+    padding-bottom: 10rem;
+  }
+
+  
+
+  .container {
+    color: rgb(238, 41, 41);
+    background-color: white;
+    max-width: 70%;
+    margin: 0 auto;
+    max-height: 100%;
+  }
+
+
+
+  .btn-primary {
+    padding: 1rem 3rem;
+    border-radius: 999.9rem;
+    border: none;
+    background-color: #5f63b7;
+    color: white;
+    font-size: 1rem;
+
+  }
+
+  .label {
+    font-size: 1rem;
+    color: #2333c3;
+
+  }
+
+  .text-center {
+    text-align: right;
+    padding-top: 10px;
+  }
+
+  .guest {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #020abd;
+    padding: none;
+  }
+
+.main {
+  max-width: 100%;
+}
+
+}
+
+
+
