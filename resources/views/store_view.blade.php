@@ -10,7 +10,8 @@
         </div>
         <div class="contents1">
             <p id="closing-datetime">{{ $carbon_close }} 閉店予定</p>
-            <div id="current-location">
+            <input type="hidden" id="location" value="{{$store_items->current_location}}">
+            <div id="gmap">
             </div>
         </div>
             <h2 class="content-bar">{{$store_items->store_name }}  詳細</h2>
@@ -41,8 +42,6 @@
         </div>
         <div class="return-img">
         <a href="#"><img src="/images/icons/return_top.svg"></a>
-            </div>
-
-
+        </div>
     </div>
     @endsection
