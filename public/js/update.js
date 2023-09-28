@@ -91,7 +91,7 @@ if(m_flag==0){
                     lng: position.coords.longitude
                 };
                 console.log(userLatLng);
-                document.getElementById("locate").value=userLatLng;
+                document.getElementById("locate").value=[  position.coords.latitude, position.coords.longitude];
   
                 // ユーザーの位置情報を地図の中心に設定
                 map.setCenter(userLatLng);

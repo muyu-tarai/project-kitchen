@@ -21,7 +21,7 @@
         <div class=o-c-btn>
                 <p class="o-btn" id="open">OPEN</p>
                 <p class="c-btn" id="close">CLOSE</p>
-                <input type="hidden" id="o_flag" name="o_flag" value="{{ $store_items->opening_flag }}">
+                <input type="hidden" id="o_flag" name="o_flag" value="{{ isset($store_items->opening_flag ) ? $store_items->opening_flag  : ''}}">
         </div>
         <div class="upper-submit">
         <input type="submit" class="update-btn" value="更新">
@@ -29,7 +29,7 @@
     </div>
     <div id="hide-content"></h2>
         <div class="store-contents">
-            <p class = "closed-time">現在 {{$store_items->closing_datetime }} 閉店予定 </p>
+            <p class = "closed-time">現在 {{isset($store_items->closing_datetime) ? $store_items->closing_datetime : '' }} 閉店予定 </p>
             <p class="close-item">閉店時間設定</p>
             <div class="close-time">
                 <input type="hidden" id="year" name="year">
@@ -49,9 +49,9 @@
             <div class="menu-item" id="munu{{ $menu_items->id }}">
                 <div class="food-wrp"><img alt="item" src="{{ $menu_items->menu_image }}">
                 </div>
-                <p>{{ $menu_items ->menu_name }}</p>
-                <input type="hidden" class="menu_id" name="menu_id[]" value="{{ $menu_items->id }}">
-                <input type="hidden" class="menu_flag" name="menu_flag[]" value="{{ $menu_items->sold_out_flag }}">
+                <p>{{isset($menu_items ->menu_name ) ? $menu_items ->menu_name  : '' }}</p>
+                <input type="hidden" class="menu_id" name="menu_id[]" value="{{ isset($menu_items->id) ? $menu_items->id : '' }}">
+                <input type="hidden" class="menu_flag" name="menu_flag[]" value="{{ isset($menu_items->sold_out_flag) ? $menu_items->sold_out_flag : '' }}">
             </div>
         @endforeach
         </div>

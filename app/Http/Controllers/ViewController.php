@@ -8,8 +8,7 @@ use Carbon\Carbon;
 
 class ViewController extends Controller
 {
-    public function view(){
-        $id=1;
+    public function view($id){
         $store_items = \DB::table('stores')->find($id);
         $menu_items = \DB::table('menus')
         ->where('store_id', $store_items->id)
