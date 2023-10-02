@@ -7,6 +7,16 @@ html {
   font-size: 62.5%;
 }
 
+a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+a a:hover {
+  opacity: .4;
+}
+
 .x-large {
   font-size: 3rem;
 }
@@ -42,4 +52,23 @@ html {
 .footer {
   text-align: center;
   padding: 2rem;
+}
+
+/* ヘッダーレスポンシブ対応 */
+@media (max-width: 768px) {
+  .logo{
+    display:flex;
+    justify-content: center;
+  }
+  .navbar {
+    display:block ;
+    background-color:rgb(255, 255, 255);
+  }
+  .header-right{
+    justify-content: center;
+  }
+  .header-right a {
+    white-space: nowrap;
+  }
+
 }

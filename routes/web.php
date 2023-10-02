@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,13 @@ Route::get('/storeRegister', 'storeRegisterController@storeRegisterDisplay')->na
 
 /******* 動作確認用 *******/
 Route::post('/tmp', 'storeRegisterController@update')->name('tmp');
+=======
+use Illuminate\Support\Facades\Route;
+
+Route::get('/','IndexController@index');
+
+Route::get('/store/{id}','ViewController@view');
+
+Route::get('/store_update', 'updateController@store_update')->name('user_update');
+Route::post('/store_update', 'updateController@update');
+>>>>>>> b77de2daada5d3eb480bc9f7679624261ee79f4a
