@@ -4,19 +4,20 @@
   max-width: 100%;
 }
 
-  .imag-car {
-    background-image: url(../images/trucks/truck9.jpg);
-    background-size: cover;
-    max-height: 100%;
-    background-repeat: no-repeat;
-    padding: 20px 0 50px;
-    background-position: 0 -150px;
-  }
-  
+.imag-car {
+  background-image: url(../images/trucks/truck9.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 20px 0 50px;
+  background-position: 0 -150px;
+}
+
 .about {
   font-size: 20px;
   padding-bottom: 20px;
 }
+
+
 
 .form-control {
   border-radius: 999rem;
@@ -28,33 +29,42 @@
   padding: 20px;
 }
 
+
+
 .panel-heading {
   font-size: 3.6rem;
   padding-bottom: 36px;
   padding-top: 30px;
-padding-left: 60px;
+  padding-left: 60px;
   color: #4D3CB0;
 
 }
 
+.container {
+  max-width: 100%;
+}
 
+.input {
+  margin-bottom: 20px;
+}
 
 .row {
-  
+
   background-color: white;
   max-width: 60%;
   margin: 0 auto;
   opacity: 0.95;
   border-radius: 6rem;
 }
+
 .panel-body {
-  padding-left: 100px;
+  padding-left: 90px;
 }
 
 .email {
   font-size: 2rem;
   padding-top: 30px;
-  
+
 }
 
 .email2 {
@@ -65,29 +75,146 @@ padding-left: 60px;
 
 .button {
   display: flex;
-  justify-content: center;
-    margin-right: 15rem;
-  padding-bottom: 9rem;
-  max-width: 100%;
+  padding-bottom: 8rem;
+  margin-left: 20px;
+
+}
+
+.updeta {
+  margin: 0 50px;
+  padding: 4px 40px;
+  border-radius: 2.5rem;
+  font-size: 3rem;
+  background-color: #2F3F93;
+  color: white;
+  border: none;
+}
+
+.Withdrawal {
+  padding: 0.4rem 4rem;
+  border-radius: 2.5rem;
+  font-size: 3rem;
+  background-color: #E43F3F;
+  color: white;
+  border: none;
+}
+
+.alert {
+  font-size: 0.1rem;
+  color: #E43F3F;
+}
+
+.header a {
+  color: black;
+  text-decoration: none;
+}
+
+/* タブレット用 */
+@media screen and (min-width: 415px) and (max-width: 834px) {
+
+  /* 834px以下の画面幅に適用されるスタイル */
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
+  }
+
+  .imag-car {
+    background-image: url(../images/trucks/truck9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 0 50px;
+    background-position: top;
+  }
+
+
+
+  .about {
+    font-size: 1.5rem;
+    padding-bottom: 20px;
+  }
+
+  .form-control {
+    border-radius: 999rem;
+    background-color: rgb(219, 222, 222);
+    border: none;
+    width: 316px;
+    height: 40px;
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .panel-body {
+    padding-left: 10px;
+  }
+
+  .panel-heading {
+    font-size: 3rem;
+    padding-bottom: 36px;
+    padding-top: 30px;
+    padding-left: 60px;
+    color: #4D3CB0;
+
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .row {
+
+    background-color: white;
+    max-width: 60%;
+    margin: 0 auto;
+    opacity: 0.95;
+    border-radius: 6rem;
+  }
+
+  .input {
+    margin-bottom: 20px;
+    margin-right: 30px;
+  }
+
+  .panel-body {
+    padding-left: 50px;
+  }
+
+  .email {
+    font-size: 1.5rem;
+    padding-top: 30px;
+    margin-left: 10px;
+  }
+
+  .email2 {
+    font-size: 1.5rem;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    max-width: 50%;
+    margin-left: 10px;
+  }
+
+  .button {
+    display: flex;
+
   }
 
   .updeta {
-padding: 4px 40px;
-margin: 0 3rem ;
-border-radius: 2.5rem;
-font-size: 3rem;
-background-color: #2F3F93;
-color: white;
-border: none;
+    margin: 0 20px;
+    padding: 3px 25px;
+    border-radius: 2.5rem;
+    font-size: 2rem;
+    background-color: #2F3F93;
+    color: white;
+    border: none;
   }
 
   .Withdrawal {
-padding: 0.4rem 4rem;
-border-radius: 2.5rem;
-font-size: 3rem;
-background-color: #E43F3F;
-color: white;
-border: none;
+    padding: 3px 25px;
+    border-radius: 2.5rem;
+    font-size: 2rem;
+    background-color: #E43F3F;
+    color: white;
+    border: none;
   }
 
   .alert {
@@ -99,3 +226,125 @@ border: none;
     color: black;
     text-decoration: none;
   }
+}
+
+
+/* スマホ用 */
+@media (max-width: 414.9px) {
+
+  /* 414px以下の画面幅に適用されるスタイル */
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
+  }
+
+  .imag-car {
+    background-image: url(../images/trucks/truck9.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 20px 0 50px;
+    background-position: top;
+  }
+
+  .about {
+    font-size: 1.5rem;
+    padding-bottom: 15px;
+    margin-left: 10px;
+
+  }
+
+  .form-control {
+    border-radius: 999rem;
+    background-color: rgb(219, 222, 222);
+    border: none;
+    width: 200px;
+    height: 10px;
+    font-size: 15px;
+    padding: 15px;
+    margin-left: 5px;
+  }
+
+  .input {
+    margin-bottom: 20px;
+  }
+
+  .panel-body {
+    padding-left: 10px;
+  }
+
+  .panel-heading {
+    font-size: 2.5rem;
+    padding: 40px 30px 10px 40px;
+    color: #4D3CB0;
+    
+  }
+
+  .container {
+    max-width: 100%;
+  }
+
+  .row {
+
+    background-color: white;
+    max-width: 60%;
+    margin: 0 auto;
+    opacity: 0.95;
+    border-radius: 6rem;
+  }
+
+
+
+  .email {
+    font-size: 1.5rem;
+    padding-top: 30px;
+    margin-left: 10px;
+  }
+
+  .email2 {
+    font-size: 1.5rem;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    max-width: 50%;
+    margin-left: 10px;
+  }
+
+  .button {
+    display: flex;
+    margin: 0 auto;
+  }
+
+  .updeta {
+    padding: 3px 20px;
+    border-radius: 2.5rem;
+    font-size: 2rem;
+    background-color: #2F3F93;
+    color: white;
+    border: none;
+    margin: 0 20px;
+  }
+
+  .Withdrawal {
+    padding: 3px 20px;
+    border-radius: 2.5rem;
+    font-size: 2rem;
+    background-color: #E43F3F;
+    color: white;
+    border: none;
+  }
+
+  .alert {
+    font-size: 0.1rem;
+    color: #E43F3F;
+  }
+
+  .header a {
+    color: black;
+    text-decoration: none;
+  }
+
+  .col {
+    max-width: 100%;
+  }
+
+}
