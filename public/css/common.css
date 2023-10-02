@@ -61,7 +61,7 @@ a a:hover {
     justify-content: center;
   }
   .navbar {
-    display:inline;
+    display:block ;
     background-color:rgb(255, 255, 255);
   }
   .header-right{
