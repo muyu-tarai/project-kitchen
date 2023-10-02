@@ -56,7 +56,7 @@
     <div class="inner-add-menu">
       <div class="add-menu-image">
         <h3>メニュー画像</h3>
-        <img src="" class="store-figure" id="menu-figure" alt="">
+        <img src="data:image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('store/noImage.jpg')) }}" class="store-figure" id="menu-figure" alt="">
         <div class="for-button" id="add-menu-images">
           <label>
             <button></button>画像を削除
