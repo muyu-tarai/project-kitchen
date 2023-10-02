@@ -35,7 +35,7 @@
       <div class="storess-items">
       @foreach($close_stores  as $close_stores )
         <div class="stores-item">
-          <a href="store/{{ $close_stores->id}}"><img src="{{ $open_stores->store_image }}"></a>
+          <a href="store/{{ $close_stores->id}}"><img src="{{ $close_stores->store_image }}"></a>
           <p class="medium">{{ isset($close_stores->store_name) ? $close_stores->store_name : '' }}</p>
         </div>
         @endforeach

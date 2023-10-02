@@ -20,7 +20,6 @@ Auth::routes();
 //     return view('welcome');
 // });
 
-Route::get('/', 'indexController@index')->name('index');
 Route::get('/store_register', 'storeRegisterController@storeRegisterDisplay')->name('store_register');
 Route::get('/logout', 'LogoutController@logout')->name('logout');
 
