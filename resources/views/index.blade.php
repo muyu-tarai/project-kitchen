@@ -20,39 +20,29 @@
       <h1 class="large">オープン中の店舗</h1>
     </div>
     <div class="stores-items">
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck1.jpg"></a>
-        <p class="medium">フレッツアメリカ</p>
-      </div>
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck2.jpg"></a>
-        <p class="medium">コスタリカドラゴンズ</p>
-      </div>
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck3.jpg"></a>
-        <p class="medium">ロシアンベアー</p>
-      </div>
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck4.jpg"></a>
-        <p class="medium">アゼルバイジャンラテ</p>
-      </div>
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck5.jpg"></a>
-        <p class="medium">トニオカフェ</p>
-      </div>
+      @foreach($open_stores  as $open_stores )
+        <div class="stores-item">
+          <a href="store/{{ $open_stores->id}}"><img src="{{ $open_stores->store_image }}"></a>
+          <p class="medium">>{{ isset($open_stores->store_name) ? $open_stores->store_name : '' }}</p>
+        </div>
+      @endforeach
     </div>
 
     <div class="stores-close">
       <div class="stores-title">
         <h1 class="large">クローズ中の店舗</h1>
       </div>
-      <div class="stores-items">
+      <div class="storess-items">
+      @foreach($close_stores  as $close_stores )
         <div class="stores-item">
-          <a href="#"><img src="/images/trucks/truck6.jpg"></a>
-          <p class="medium">チョコレートキッカー</p>
+          <a href="store/{{ $close_stores->id}}"><img src="{{ $open_stores->store_image }}"></a>
+          <p class="medium">{{ isset($close_stores->store_name) ? $close_stores->store_name : '' }}</p>
         </div>
+        @endforeach
       </div>
     </div>
-    <div class="pager medium">1 2 3</div>
   </div>
+    @endsection
+    @section('js')
+    <script src="/js/index.js "></script>
     @endsection

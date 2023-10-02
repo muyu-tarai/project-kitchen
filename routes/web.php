@@ -35,3 +35,11 @@ Route::post('/store_register_after', 'storeRegisterController@registerOrUpdateJu
 Route::post('/update_store', 'storeRegisterController@registerOrUpdateJudge')->name('update_store');
 /******* 動作確認用 *******/
 Route::post('/tmp', 'storeRegisterController@update')->name('tmp');
+
+/*** ここから大川さん ***/
+Route::get('/','IndexController@index');
+
+Route::get('/store/{id}','ViewController@view');
+
+Route::get('/store_update', 'updateController@store_update')->name('user_update');
+Route::post('/store_update', 'updateController@update');

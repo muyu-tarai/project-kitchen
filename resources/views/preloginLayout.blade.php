@@ -18,7 +18,9 @@
   <div class="header">
     <header>
       <nav class="navbar">
-        <a class="x-large" href="/"><img src="/images/icons/ヘッダー (1).png"></a>
+        <div class="logo">
+          <a class="x-large logo"href="#"><img src="/images/icons/ヘッダー (1).png"></a>
+        </div>
         @yield('header_right')
       </nav>
     </header>
