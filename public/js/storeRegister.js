@@ -23,8 +23,8 @@ function addMenu()
   let tmp = `
   <div class="stores-item">
   <img src="/images/icons/noImage.jpg" class="store-figure" id="menu-figure" alt="">
-  <p class="menu-title">${menuName.value}</p>
-  <p class="menu-price">${menuPrice.value}</p>
+  <p class="menu-name" name="menu_name">${menuName.value}</p>
+  <p class="menu-price" name="menu_price">${menuPrice.value}</p>
   <p class="menu-text">${menuComment.value}</p>
   <input type="hidden" value="${menuImage.value}" name="send_menu_image[]">
   <input type="hidden" value="${menuName.value}" name="send_menu_name[]">

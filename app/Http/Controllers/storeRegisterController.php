@@ -102,7 +102,6 @@ class storeRegisterController extends Controller
         $store = Store::firstWhere('user_id', $userId);
         $postText = $request->send_menu_name;
         if (isset($postText)) {
-            // dd($postText);
             Menu::where('store_id', $store->id)->whereNotIn('menu_name', ...[$postText ? $postText : ''])->delete();
             $send_menus = [];
             for ($i = 0; $i < count($request->send_menu_name); $i++) {

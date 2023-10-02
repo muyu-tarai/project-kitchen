@@ -26,6 +26,8 @@ class StoreRegister extends FormRequest
         return [
             'store_name' => 'required',
             'file' => 'file|image',
+            'send_menu_image' => 'present',
+            'send_menu_name' => 'required',
         ];
     }
 
@@ -34,6 +36,7 @@ class StoreRegister extends FormRequest
         return [
             'store_name' => '店舗名',
             'file' => 'ファイル',
+            'send_menu_name' => 'メニュー名',
         ];
     }
 }
