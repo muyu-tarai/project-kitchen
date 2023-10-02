@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use App\store_update;
 use App\store;
 use App\menu;
@@ -14,7 +14,12 @@ class updateController extends Controller
 {
     public function store_update()
     {
-        $id=1;
+        // // 現在認証しているユーザーを取得
+        // $user = Auth::user();
+
+        // // 現在認証しているユーザーのIDを取得
+        // $id = Auth::id();
+        $id= 1;
         $store_items = \DB::table('stores')->find($id);
         $menu_items = \DB::table('menus')
         ->where('store_id', $store_items->id)->get();
@@ -28,18 +33,22 @@ class updateController extends Controller
     }
 
     public function update(Storeupdate $request) {
-        $user_id =1;//auth
+        // // 現在認証しているユーザーを取得
+        // $user = Auth::user();
+        // // 現在認証しているユーザーのIDを取得
+        // $id = Auth::id();
+        $id= 1;
         $data = $request->year. '-' .$request->month. '-' .$request->day. ' ' .$request->time;
 
         // $carbon = Carbon::create('Y-m-d H:i' ,$data);
 
         if($request->o_flag == 0){
-            $store = store::firstwhere('user_id',$user_id);
+            $store = store::firstwhere('user_id',$id);
             $store->opening_flag = $request->o_flag;
             $store->save();
         }
         else if($request->o_flag == 1){
-            $store = store::firstwhere('user_id',$user_id);
+            $store = store::firstwhere('user_id',$id);
             $store->opening_flag = $request->o_flag;
             $store->current_location = $request->locate;
             $store->closing_datetime = $data;
@@ -52,8 +61,6 @@ class updateController extends Controller
             }
         }
 
-
-        $id=1;
         $store_items = \DB::table('stores')->find($id);
         $menu_items = \DB::table('menus')
         ->where('store_id', $store_items->id)->get();

@@ -1,10 +1,13 @@
 
  let menu_flags = document.getElementsByClassName("menu_flag");
- let menu_items = document.getElementsByClassName("menu")
+ let menu_items = document.getElementsByClassName("menu");
+ let soldouts =  document.getElementsByClassName("soldout");
 
 for (let i = 0; i < menu_items.length; i++) {
   if(menu_flags[i].value=='1'){
     menu_items[i].classList.add('dark');
+    soldouts[i].classList.remove('hide')
+    
   }
 }
 function initMap() {

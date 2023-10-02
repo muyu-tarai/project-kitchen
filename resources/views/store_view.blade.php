@@ -32,6 +32,7 @@
                     <div class="menu-img">
                         <img src="{{ $menu_items->menu_image }}" alt="menu-img">
                     </div>
+                    <div class="soldout hide"><img src="/images/icons/soldout.png"></div>
                     <div class="menu-text">
                         <p class="menu-name">{{ isset($menu_items ->menu_name ) ? $menu_items ->menu_name  : ''  }}</p>
                         <p class="price">{{ isset($menu_items ->price) ? $menu_items ->price : ''   }}</p>

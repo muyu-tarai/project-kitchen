@@ -60,7 +60,6 @@ h1 {
   margin:10px 10% 50px;
 }
 .menu{
-  border:solid thin;
   background-color:white;
 }
 .menu-text{
@@ -86,13 +85,24 @@ h1 {
   margin-left:10%;
   margin-bottom:20px;
 }
-.dark{
-  background-color:black;
+.soldout{
+  text-align:center;
+  position:relative;
+  bottom:130px;
+  margin-bottom: -130px;
 }
+.hide{
+  display:none;
+}
+/* .dark{
+  
+} */
 
 @media (max-width: 768px) {
   .title-bar{
-  display:flow;
+  display:block;
+  padding-top: 20px;
+  margin: 40px 5% 50px;
   }
   h1 {
     white-space: nowrap
@@ -118,7 +128,7 @@ h1 {
   }
   .detail-content{
     margin:50px 10% 50px; 
-    display: flow;
+    display:block;
   }
   .menu-content{
     display:grid;
@@ -126,4 +136,9 @@ h1 {
     gap:30px;
     margin:10px 8% 50px;
   }
+  
+#gmap{
+  height: 300px;
+  margin-bottom:40px;
+}
 }
