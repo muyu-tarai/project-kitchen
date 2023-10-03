@@ -47,7 +47,7 @@
         <div class="menu-contents">
         @foreach($menu_items  as $menu_item )
             <div class="menu-item" id="munu{{ $menu_item->id }}">
-                <div class="food-wrp"><img alt="item" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}">
+                <div class="food-wrp"><img class="menu-img" alt="item" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}">
                 </div>
                 <p>{{isset($menu_item ->menu_name ) ? $menu_item ->menu_name  : '' }}</p>
                 <input type="hidden" class="menu_id" name="menu_id[]" value="{{ isset($menu_item->id) ? $menu_item->id : '' }}">

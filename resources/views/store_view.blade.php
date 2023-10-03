@@ -30,8 +30,8 @@
 
             @foreach($menu_items  as $menu_item )
                 <div class="menu" id="munu{{ $menu_item->id}}">
-                    <div class="menu-img">
-                        <img src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}" alt="menu-img">
+                    <div class="menu-img-div">
+                        <img class="menu-img" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}" alt="menu-img">
                     </div>
                     <div class="soldout hide"><img src="/images/icons/soldout.png"></div>
                     <div class="menu-text">
