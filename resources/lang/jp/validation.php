@@ -94,7 +94,7 @@ return [
     'not_regex' => 'The :attribute format is invalid.',
     'numeric' => 'The :attribute must be a number.',
     'password' => 'The password is incorrect.',
-    'present' => 'The :attribute field must be present.',
+    'present' => 'メニューを1つ以上作成してください',
     'regex' => 'The :attribute format is invalid.',
     'required' => ':attribute は必須入力です',
     'required_if' => 'The :attribute field is required when :other is :value.',
