@@ -22,7 +22,7 @@
     <div class="stores-items">
       @foreach($open_stores as $open_stores )
       <div class="stores-item">
-        <a href="store/{{ $open_stores->id}}"><img src="{{ $open_stores->store_image }}"></a>
+        <a href="store/{{ $open_stores->id}}"><img src="data:image/{{ $close_stores->ext }};base64,{{ $open_stores->store_image }}"></a>
         <p class="medium">>{{ isset($open_stores->store_name) ? $open_stores->store_name : '' }}</p>
       </div>
       @endforeach
@@ -35,7 +35,7 @@
       <div class="stores-items">
         @foreach($close_stores as $close_stores )
         <div class="stores-item">
-          <a href="store/{{ $close_stores->id}}"><img src="{{ $close_stores->store_image }}"></a>
+          <a href="store/{{ $close_stores->id}}"><img src="data:image/{{ $close_stores->ext }};base64,{{ $close_stores->store_image }}"></a>
           <p class="medium">{{ isset($close_stores->store_name) ? $close_stores->store_name : '' }}</p>
         </div>
         @endforeach
