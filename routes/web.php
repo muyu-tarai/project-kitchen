@@ -37,7 +37,6 @@ Route::post('/update_store', 'storeRegisterController@registerOrUpdateJudge')->n
 Route::post('/tmp', 'storeRegisterController@update')->name('tmp');
 
 /*** ここから大川さん ***/
-Route::get('/','IndexController@index');
 
 Route::get('/store/{id}','ViewController@view');
 
