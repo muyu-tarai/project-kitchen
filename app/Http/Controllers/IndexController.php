@@ -20,6 +20,7 @@ class IndexController extends Controller
             $storeImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
             $closeStores[$key]->store_image = $storeImageFromDropbox;
         }
+        dd($closeStores);
         return view('index', [
             'close_stores' => $closeStores,
             'open_stores' => $openStores,
