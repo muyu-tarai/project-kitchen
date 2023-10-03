@@ -40,9 +40,9 @@ function closeClick(){
   o_flag.value = 0;
 }
 
- let menu_flags = document.getElementsByClassName("menu_flag");
- let menu_items = document.getElementsByClassName("menu-item")
+let menu_items = document.getElementsByClassName("menu-item")
 
+let menu_flags = document.getElementsByClassName("menu_flag");
 for (let i = 0; i < menu_items.length; i++) {
   if(menu_flags[i].value=='1'){
     menu_items[i].classList.add('dark');
