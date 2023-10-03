@@ -32,7 +32,7 @@
       <div class="stores-title">
         <h1 class="large">クローズ中の店舗</h1>
       </div>
-      <div class="storess-items">
+      <div class="stores-items">
       @foreach($close_stores  as $close_stores )
         <div class="stores-item">
           <a href="store/{{ $close_stores->id}}"><img src="{{ $close_stores->store_image }}"></a>
