@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Storage;
 use League\Flysystem\Filesystem;
 use Spatie\Dropbox\Client as DropboxClient;
 use Spatie\FlysystemDropbox\DropboxAdapter;
+use Illuminate\Support\Facades\Validator;
+use App\Requests\CustomValidator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -40,5 +42,11 @@ class AppServiceProvider extends ServiceProvider
                 $config
             );
         });
+
+        Validator::resolver(
+            function ($translator, $data, $rules, $messages, $attributes) {
+                return new CustomValidator($translator, $data, $rules, $messages, $attributes);
+            }
+        );
     }
 }

@@ -86,9 +86,13 @@ class storeRegisterController extends Controller
             foreach ($request->file('menu_image') as $menuImage) {
                 $this->menuImageToDropbox[] = Storage::disk('dropbox')->put('menu', $menuImage);
             }
+        }else{
+            $this->menuImageToDropbox[] = "store/noImage.jpg";
         }
         if (isset($request->store_image)) {
             $this->storeImageToDropbox = Storage::disk('dropbox')->put('store', $request->store_image);
+        } else {
+            $this->storeImageToDropbox = "store/noImage.jpg";
         }
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);

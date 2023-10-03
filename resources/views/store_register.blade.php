@@ -20,7 +20,7 @@
     <h2>店舗名</h2>
     <input type="text" name="store_name" value="{{ isset($storeName) ? $storeName : '' }}">
     <h2>店舗画像</h2>
-    <img src="data:image/{{ $ext }};base64,{{ $storeImage }}" class="store-figure" id="store-figure" alt="">
+    <img src="data:image/{{ $ext }};base64,{{ $storeImage }}" class="store-figure" id="store-figure" name="image_file" alt="">
     <div class="for-button">
       <label>
         <input type="file" name="store_image" id="add-store-image" accept="image/">写真を選択

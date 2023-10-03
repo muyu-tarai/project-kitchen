@@ -25,7 +25,9 @@ class StoreRegister extends FormRequest
     {
         return [
             'store_name' => 'required',
-            'file' => 'file|image',
+            'store_image' => 'file|mimes:jpg,jpeg,png',
+            'menu_image' => 'file|mimes:jpg,jpeg,png',
+            'menu_price' => 'required|alpha_num',
             'send_menu_image' => 'present',
             'send_menu_name' => 'required',
         ];

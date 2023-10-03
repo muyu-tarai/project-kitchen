@@ -20,12 +20,14 @@
       <h1 class="large">オープン中の店舗</h1>
     </div>
     <div class="stores-items">
+      @if(isset($open_stores))
       @foreach($open_stores as $open_stores )
       <div class="stores-item">
-        <a href="store/{{ $open_stores->id}}"><img src="data:image/{{ $close_stores->ext }};base64,{{ $open_stores->store_image }}"></a>
-        <p class="medium">>{{ isset($open_stores->store_name) ? $open_stores->store_name : '' }}</p>
+        <a href="store/{{ $open_stores->id}}"><img src="data:image/{{ $open_stores->ext }};base64,{{ $open_stores->store_image }}"></a>
+        <p class="medium">{{ isset($open_stores->store_name) ? $open_stores->store_name : '' }}</p>
       </div>
       @endforeach
+      @endif
     </div>
 
     <div class="stores-close">
@@ -33,12 +35,14 @@
         <h1 class="large">クローズ中の店舗</h1>
       </div>
       <div class="stores-items">
+        @if(isset($close_stores))
         @foreach($close_stores as $close_stores )
         <div class="stores-item">
           <a href="store/{{ $close_stores->id}}"><img src="data:image/{{ $close_stores->ext }};base64,{{ $close_stores->store_image }}"></a>
           <p class="medium">{{ isset($close_stores->store_name) ? $close_stores->store_name : '' }}</p>
         </div>
         @endforeach
+        @endif
       </div>
     </div>
   </div>
