@@ -140,7 +140,7 @@ class storeRegisterController extends Controller
             }
         }
 
-        return view('user_update');
+        return view('store_register_after');
     }
 
     public function upload()

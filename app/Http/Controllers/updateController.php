@@ -33,6 +33,7 @@ class updateController extends Controller
             }
             $i++;
             }
+        dd($menu_items);
 
         //条件分岐　フラグの受け渡しを入れる
         return view('store_update', [
