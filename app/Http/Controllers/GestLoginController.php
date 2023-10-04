@@ -12,7 +12,7 @@ class GestLoginController extends Controller
      // ゲストログイン処理
       public function guestLogin()
      {
-         // id=42 のゲストユーザー情報がDBに存在すれば、ゲストログインする
+         
          $gest = User::find(42);
          $password = 'aaaaaaaa';
  

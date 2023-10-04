@@ -35,11 +35,7 @@
       </p>
     </footer>
   </div>
-<<<<<<< HEAD
-  @yield('scripts')
-=======
   @yield('js')
->>>>>>> master
 </body>
 
 </html>
