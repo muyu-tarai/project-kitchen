@@ -9,7 +9,7 @@
                 <p id="update-at">{{ isset($carbonUpate) ? $carbonUpate : ''}} 更新</p>
         </div>
         <div class="contents1">
-            <p id="closing-datetime">{{ isset($carbon_close ) ? $carbon_close  : '' }} 閉店予定</p>
+            <p id="closing-datetime"> 閉店予定　{{ isset($carbon_close ) ? $carbon_close  : '' }}</p>
             <input type="hidden" id="location" value="{{ isset($store_items->current_location) ? $store_items->current_location : ''}}">
             <div id="gmap">
             </div>

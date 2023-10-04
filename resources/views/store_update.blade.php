@@ -32,7 +32,8 @@
             <p class = "closed-time">現在 {{isset($store_items[0]->closing_datetime) ? $store_items[0]->closing_datetime : '' }} 閉店予定 </p>
             <p class="close-item">閉店時間設定</p>
             <div class="close-time">
-                <input type="hidden" id="year" name="year">
+                <input type="text" class="year text" id="year" name="year">
+                <p class="under-take">年</p>
                 <input type="text" class="month text" id="month" name="month">
                 <p class="under-take">月</p>
                 <input type="text" class="day text" id="day" name="day">

@@ -63,10 +63,14 @@ class updateController extends Controller
             $store->closing_datetime = $data;
             $store->save();
 
-            for($i=0; $i < count($request->menu_id); $i++){
-                $menu = menu::firstwhere('id',$request->menu_id[$i]);
-                $menu->sold_out_flag = $request->menu_flag[$i];
-                $menu->save();
+            if($request->menu_id==null){
+            }
+            else{
+                for($i=0; $i < count($request->menu_id); $i++){
+                    $menu = menu::firstwhere('id',$request->menu_id[$i]);
+                    $menu->sold_out_flag = $request->menu_flag[$i];
+                    $menu->save();
+                }
             }
         }
 

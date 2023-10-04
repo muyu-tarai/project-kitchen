@@ -22,11 +22,16 @@ class ViewController extends Controller
 // 日付のフォーマット
         $format_update = $store_items->updated_at;
         $carbonUpdate = Carbon::createFromFormat('Y-m-d H:i:s', $format_update)->format('Y/m/d H:i');
+        if($store_items->closing_datetime==null){
+            $carbon_close='不明';
+        }
+        else{
         $format_close = $store_items->closing_datetime;
         $carbon_close = Carbon::createFromFormat('Y-m-d H:i:s', $format_close)->format('n月j日 H:i');
+        } 
 
 // ドロップボックス用の記述
-         $store_items->ext = File::extension($store_items->store_image);
+        $store_items->ext = File::extension($store_items->store_image);
             if (isset($store_items->store_image)) {
                 $store_items->store_image = base64_encode(Storage::disk('dropbox')->get($store_items->store_image));
             }
