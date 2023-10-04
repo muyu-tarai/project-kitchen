@@ -47,16 +47,17 @@
         </img>
         <h2>メニュー</h2>
         <div class="menu-contents">
-   
-        @foreach($menu_items  as $menu_item )
-            <div class="menu-item" id="munu{{ $menu_item->id }}">
-                <div class="food-wrp"><img class="menu-img" alt="item" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}">
+        @if(isset($menu_items))
+            @foreach($menu_items  as $menu_item )
+                <div class="menu-item" id="munu{{ $menu_item->id }}">
+                    <div class="food-wrp"><img class="menu-img" alt="item" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}">
+                    </div>
+                    <p>{{isset($menu_item ->menu_name ) ? $menu_item ->menu_name  : '' }}</p>
+                    <input type="hidden" class="menu_id" name="menu_id[]" value="{{ isset($menu_item->id) ? $menu_item->id : '' }}">
+                    <input type="hidden" class="menu_flag" name="menu_flag[]" value="{{ isset($menu_item->sold_out_flag) ? $menu_item->sold_out_flag : '' }}">
                 </div>
-                <p>{{isset($menu_item ->menu_name ) ? $menu_item ->menu_name  : '' }}</p>
-                <input type="hidden" class="menu_id" name="menu_id[]" value="{{ isset($menu_item->id) ? $menu_item->id : '' }}">
-                <input type="hidden" class="menu_flag" name="menu_flag[]" value="{{ isset($menu_item->sold_out_flag) ? $menu_item->sold_out_flag : '' }}">
-            </div>
-        @endforeach
+            @endforeach
+        @endif
         </div>
         <div class="under-submit">
         <input type="submit"class="update-btn "  value="更新">

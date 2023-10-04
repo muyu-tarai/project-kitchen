@@ -27,21 +27,22 @@
         </div>
         <h2 class="content-bar">メニュー</h2>
         <div class="menu-content">
-
-            @foreach($menu_items  as $menu_item )
-                <div class="menu" id="munu{{ $menu_item->id}}">
-                    <div class="menu-img-div">
-                        <img class="menu-img" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}" alt="menu-img">
+            @if(isset($menu_items))
+                @foreach($menu_items  as $menu_item )
+                    <div class="menu" id="munu{{ $menu_item->id}}">
+                        <div class="menu-img-div">
+                            <img class="menu-img" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}" alt="menu-img">
+                        </div>
+                        <div class="soldout hide"><img src="/images/icons/soldout.png"></div>
+                        <div class="menu-text">
+                            <p class="menu-name">{{ isset($menu_item ->menu_name ) ? $menu_item ->menu_name  : ''  }}</p>
+                            <p class="price">{{ isset($menu_item ->price) ? $menu_item ->price : ''   }}</p>
+                            <p class="menu-comment">{{ isset($menu_item ->menu_comment) ? $menu_item ->menu_comment : '' }}</p>
+                            <input type="hidden" class="menu_flag"  value="{{  isset($menu_item->sold_out_flag) ? $menu_item->sold_out_flag : '' }}">
+                        </div>
                     </div>
-                    <div class="soldout hide"><img src="/images/icons/soldout.png"></div>
-                    <div class="menu-text">
-                        <p class="menu-name">{{ isset($menu_item ->menu_name ) ? $menu_item ->menu_name  : ''  }}</p>
-                        <p class="price">{{ isset($menu_item ->price) ? $menu_item ->price : ''   }}</p>
-                        <p class="menu-comment">{{ isset($menu_item ->menu_comment) ? $menu_item ->menu_comment : '' }}</p>
-                        <input type="hidden" class="menu_flag"  value="{{  isset($menu_item->sold_out_flag) ? $menu_item->sold_out_flag : '' }}">
-                    </div>
-                </div>
-            @endforeach
+                @endforeach
+            @endif
         </div>
         <div class="return-img">
         <a href="#"><img src="/images/icons/return_top.svg"></a>

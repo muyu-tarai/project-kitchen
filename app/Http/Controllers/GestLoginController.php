@@ -10,12 +10,11 @@ class GestLoginController extends Controller
 {
 
      // ゲストログイン処理
-      public function guestLogin()
-     {
-         
-         $gest = User::find(42);
-         $password = 'aaaaaaaa';
- 
-         return view('auth.login',['gest' => $gest, 'password' => $password]);
-     }
+    public function guestLogin()
+    {
+        $gest = User::find(42);
+        $password = 'aaaaaaaa';
+
+        return view('auth.login',['gest' => $gest, 'password' => $password]);
+    }
 }
