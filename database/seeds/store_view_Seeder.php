@@ -38,7 +38,7 @@ class store_view_Seeder extends Seeder
             'menu_name' => "テストメニュー",
             'menu_image' => "/images/foods/Crepe1.jpg",
             'price' => "500",
-            'sold_out_flag' =>,
+            'sold_out_flag' =>1,
             'menu_comment' =>"",
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
