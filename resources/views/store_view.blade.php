@@ -5,93 +5,51 @@
 @section('content')
     <div class = "wrapper">
         <div class="title-bar">
-                <h1>フレッツアメリカ  渋川店</h1>
-                <p id="update-at">2020年4月15日更新</p>
+                <h1>{{ isset($store_items->store_name)?$store_items->store_name :''}}</h1>
+                <p id="update-at">{{ isset($carbonUpate) ? $carbonUpate : ''}} 更新</p>
         </div>
         <div class="contents1">
-            <p id="closing-datetime">22日14:30閉店予定</p>
-            <div id="current-location">
-                <img src="/images/map.png" alt="location">
+            <p id="closing-datetime"> 閉店予定　{{ isset($carbon_close ) ? $carbon_close  : '' }}</p>
+            <input type="hidden" id="location" value="{{ isset($store_items->current_location) ? $store_items->current_location : ''}}">
+            <div id="gmap">
             </div>
         </div>
-            <h2 class="content-bar">フレッツアメリカ  渋川店  詳細</h2>
+            <h2 class="content-bar">{{ isset($store_items->store_name) ? $store_items->store_name : '' }}  詳細</h2>
         <div class="detail-content">
             <div class="store-img-div">
-                <img class="store-img"  alt="store-img" src="/images/trucks/truck1.jpg">
+                <img class="store-img"  alt="store-img" src="data:image/{{ $store_items->ext }};base64,{{ $store_items->store_image }}">
             </div>
             <div class="store-comment-div">
                 <p id="store-comment">
-                当店は新鮮な材料と職人の技術を駆使して、薄くてふわふわのクレープを提供しています。甘いデザートクレープからヘルシーなサヴォリークレープまで、多彩なバリエーションが揃っており、どんな好みにも合わせられます。また、カフェメニューもご用意しており、美味しいコーヒーや紅茶を楽しむこともできます。リラックスした雰囲気の店内で、友人や家族と特別なひとときを過ごしませんか？日常の喧騒から離れて、一口で幸せを味わうために、ぜひ当店にお越しください。
-                 </p>
+                {{ isset($store_items->store_comment) ? $store_items->store_comment : ''  }}
+                </p>
             </div>
         </div>
         <h2 class="content-bar">メニュー</h2>
         <div class="menu-content">
-            <div class="menu">
-                <div class="menu-img">
-                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
+
+            @foreach($menu_items  as $menu_item )
+                <div class="menu" id="munu{{ $menu_item->id}}">
+                    <div class="menu-img-div">
+                        <img class="menu-img" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}" alt="menu-img">
+                    </div>
+                    <div class="soldout hide"><img src="/images/icons/soldout.png"></div>
+                    <div class="menu-text">
+                        <p class="menu-name">{{ isset($menu_item ->menu_name ) ? $menu_item ->menu_name  : ''  }}</p>
+                        <p class="price">{{ isset($menu_item ->price) ? $menu_item ->price : ''   }}</p>
+                        <p class="menu-comment">{{ isset($menu_item ->menu_comment) ? $menu_item ->menu_comment : '' }}</p>
+                        <input type="hidden" class="menu_flag"  value="{{  isset($menu_item->sold_out_flag) ? $menu_item->sold_out_flag : '' }}">
+                    </div>
                 </div>
-                <div class="menu-text">
-                    <p class="menu-name">チョコバナナクレープ</p>
-                    <p class="price">600円</p>
-                    <p class="menu-comment">濃厚なチョコと甘いバナナの絶妙な組み合わせ。</p>
-                </div>
-            </div>
-            <div class="menu">
-                <div class="menu-img">
-                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
-                </div>
-                <div class="menu-text">
-                    <p class="menu-name">チョコバナナクレープ</p>
-                    <p class="price">600円</p>
-                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
-                </div>
-            </div>
-            <div class="menu">
-                <div class="menu-img">
-                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
-                </div>
-                <div class="menu-text">
-                    <p class="menu-name">チョコバナナクレープ</p>
-                    <p class="price">600円</p>
-                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
-                </div>
-            </div>
-            <div class="menu">
-                <div class="menu-img">
-                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
-                </div>
-                <div class="menu-text">
-                    <p class="menu-name">チョコバナナクレープ</p>
-                    <p class="price">600円</p>
-                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
-                </div>
-            </div>
-            <div class="menu">
-                <div class="menu-img">
-                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
-                </div>
-                <div class="menu-text">
-                    <p class="menu-name">チョコバナナクレープ</p>
-                    <p class="price">600円</p>
-                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
-                </div>
-            </div>
-            <div class="menu">
-                <div class="menu-img">
-                    <img src="/images/foods/Crepe1.jpg" alt="menu-img">
-                </div>
-                <div class="menu-text">
-                    <p class="menu-name">チョコバナナクレープ</p>
-                    <p class="price">600円</p>
-                    <p class="menu-comment">クレープの王道チョコバナナ！チョコの甘さと特製生クリームのさっぱりとした甘さの相性が抜群です。</p>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="return-img">
-            <img src="/images/icons/return_top.svg">
-            </div>
-
-
+        <a href="#"><img src="/images/icons/return_top.svg"></a>
+        </div>
     </div>
+    @endsection
+
+    @section('js')
+    <script src="/js/store_view.js "></script>
+    <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCipJ9Mk5Gn8xK2NlQksyz9D4fQgszTOM&callback=initMap"></script>
     @endsection

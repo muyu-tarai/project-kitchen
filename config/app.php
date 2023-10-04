@@ -67,7 +67,8 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    // 'timezone' => 'UTC',
+    'timezone' =>  'Asia/Tokyo',
 
     /*
     |--------------------------------------------------------------------------
@@ -135,6 +136,7 @@ return [
     */
 
     'providers' => [
+            App\Providers\DropboxFilesystemServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...

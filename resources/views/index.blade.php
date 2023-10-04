@@ -8,8 +8,8 @@
     <h1 class="large">出店様へ</h1>
     <p class="medium">このサイトはフードカーを盛り上げるために制作さ<br>れたサイトです。もし興味がありましたら、下のア<br>イコンから登録をお願いします。</p>
     <div class="top-section-buttons">
-      <a class="x-large" href="#"><img src="/images/icons/サインインボタン.png"></a>
-      <a class="x-large" href="#"><img src="/images/icons/ログインボタン.png"></a>
+      <a class="x-large" href="/register"><img src="/images/icons/サインインボタン.png"></a>
+      <a class="x-large" href="/login"><img src="/images/icons/ログインボタン.png"></a>
     </div>
   </div>
 </div>
@@ -20,26 +20,14 @@
       <h1 class="large">オープン中の店舗</h1>
     </div>
     <div class="stores-items">
+      @if(isset($open_stores))
+      @foreach($open_stores as $open_stores )
       <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck1.jpg"></a>
-        <p class="medium">フレッツアメリカ</p>
+        <a href="store/{{ $open_stores->id}}"><img src="data:image/{{ $open_stores->ext }};base64,{{ $open_stores->store_image }}"></a>
+        <p class="medium">{{ isset($open_stores->store_name) ? $open_stores->store_name : '' }}</p>
       </div>
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck2.jpg"></a>
-        <p class="medium">コスタリカドラゴンズ</p>
-      </div>
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck3.jpg"></a>
-        <p class="medium">ロシアンベアー</p>
-      </div>
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck4.jpg"></a>
-        <p class="medium">アゼルバイジャンラテ</p>
-      </div>
-      <div class="stores-item">
-        <a href="#"><img src="/images/trucks/truck5.jpg"></a>
-        <p class="medium">トニオカフェ</p>
-      </div>
+      @endforeach
+      @endif
     </div>
 
     <div class="stores-close">
@@ -47,12 +35,18 @@
         <h1 class="large">クローズ中の店舗</h1>
       </div>
       <div class="stores-items">
+        @if(isset($close_stores))
+        @foreach($close_stores as $close_stores )
         <div class="stores-item">
-          <a href="#"><img src="/images/trucks/truck6.jpg"></a>
-          <p class="medium">チョコレートキッカー</p>
+          <a href="store/{{ $close_stores->id}}"><img src="data:image/{{ $close_stores->ext }};base64,{{ $close_stores->store_image }}"></a>
+          <p class="medium">{{ isset($close_stores->store_name) ? $close_stores->store_name : '' }}</p>
         </div>
+        @endforeach
+        @endif
       </div>
     </div>
-    <div class="pager medium">1 2 3</div>
   </div>
-    @endsection
+  @endsection
+  @section('js')
+  <script src="/js/index.js "></script>
+  @endsection
