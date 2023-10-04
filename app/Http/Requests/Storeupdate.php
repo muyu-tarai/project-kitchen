@@ -24,6 +24,7 @@ class Storeupdate extends FormRequest
     public function rules()
     {
         return [
+            'year' => 'required|integer|between:2000,3000',
             'month' => 'required|integer|between:1,12',
             'day' => 'required|integer|between:1,31',
             'time' => 'required|date_format:H:i',
@@ -33,6 +34,7 @@ class Storeupdate extends FormRequest
     public function attributes()
 {
     return [
+        'year' => '年',
         'month' => '月',
         'day' => '日',
         'time' => '時間',
