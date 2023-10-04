@@ -9,8 +9,9 @@
   <div class="imag-car">
     <div class="container">
       <div class="row">
-        <div class="col col-md-offset-3 col-md-6">
-          <p class="panel-heading">マイページ</p>
+
+        <p class="panel-heading">マイページ</p>
+        <div>
           <form action="{{ route('mypage') }}" method="post">
             @csrf
             <div class="panel-body">
@@ -21,7 +22,7 @@
                 @enderror
               </div>
               <div class="input">
-                <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}" />
+                <input type="text" class="form-control" id="name" name="name" value="{{ Auth::user()->name }}">
               </div>
               <div class="email">
                 <p>メールアドレス</p>
@@ -29,10 +30,13 @@
               <div class="email2">
                 <p>{{ Auth::user()->email }}</p>
               </div>
-            </div>
-            <div class="button">
-              <input type="submit" class="updeta" formaction="{{ route('mypage') }}" value="更新">
-              <input type="submit" class="Withdrawal" formaction="{{ route('leave_account') }}" value="退会">
+
+              <div class="button">
+                @if(Auth::user()->id !== 42)
+                <input type="submit" class="updeta" formaction="{{ route('mypage') }}" value="更新">
+                <input type="submit" class="Withdrawal" formaction="{{ route('leave_account') }}" value="退会">
+                @endif
+              </div>
             </div>
           </form>
           <form action="{{ route('leave_account') }}"></form>

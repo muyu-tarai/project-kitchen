@@ -1,71 +1,247 @@
-* {
-  box-sizing: border-box;
-  font-size: 62.5%;
-}
-
-.container {
-
-  background-color: white;
-  max-width: 60%;
-  margin: 0 auto;
-  padding-bottom: 1%;
-  opacity: 0.95;
-  border-radius: 6rem;
-  display: flex;
-}
-
-.y {
-  background-color: #FFF8F9;
-  padding: 5px;
-}
-
-.Withdrawal {
-  font-size: 1.3rem;
-  margin-top: 50px;
-
-}
-
-.Withdrawal2 {
-  font-size: 3rem;
-  margin-top: 20px;
-}
-
-.row {
-  padding: 50px 50px;
-}
-
-
-
-.yes {
-  padding: 4px 40px;
-margin: 0 3rem ;
-border-radius: 2.5rem;
-font-size: 3rem;
-background-color: #2F3F93;
-color: white;
-border: none;
-}
-
-.no {
-  margin: 0 0 0 50px;
-  width: 161px;
-  height: 50px;
-  background-color: #E43F3F;
-  border-radius: 2rem;
-  font-size: 3.2rem;
-  color: white;
-  border: none;
-}
-.button {
-  display: flex;
-  justify-content: center;
-    margin-right: 15rem;
-  padding-bottom: 5rem;
-  padding-top: 5rem;
-  max-width: 100%;
+@media screen and (min-width: 835px) and (max-width: 1900px) {
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
   }
-  
+
+  .container {
+
+    background-color: white;
+    max-width: 60%;
+    margin: 0 auto;
+    padding-bottom: 1%;
+    opacity: 0.95;
+    border-radius: 6rem;
+    display: flex;
+  }
+
+  .y {
+    background-color: #FFF8F9;
+    padding: 5px 0 200px;
+  }
+
+  .Withdrawal {
+    font-size: 1.3rem;
+    margin-top: 50px;
+
+  }
+
+  .Withdrawal2 {
+    font-size: 3rem;
+    margin-top: 20px;
+  }
+
+  .row {
+    padding: 50px 100px 200px;
+  }
+
+
+
+  .yes {
+    padding: 4px 40px;
+    margin: 0 3rem;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    background-color: #2F3F93;
+    color: white;
+    border: none;
+  }
+
+  .no {
+    padding: 4px 30px;
+    cursor: default;
+    background-color: #E43F3F;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    color: white;
+    border: none;
+   text-decoration: none;
+   text-align: center;
+   line-height: 50px;
+   white-space: nowrap;
+  }
+
+  .button {
+    display: flex;
+
+    margin-right: 15rem;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    max-width: 100%;
+  }
+
   .header a {
     color: black;
     text-decoration: none;
   }
+}
+
+/* タブレット用 */
+@media screen and (min-width: 415px) and (max-width: 834px) {
+
+  /* 834px以下の画面幅に適用されるスタイル */
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
+  }
+
+  .container {
+
+    background-color: white;
+    max-width: 85%;
+    margin: 0 auto;
+    padding-bottom: 1%;
+    opacity: 0.95;
+    border-radius: 6rem;
+
+  }
+
+  .y {
+    background-color: #FFF8F9;
+    padding: 50px 0 200px;
+  }
+
+  .Withdrawal {
+    font-size: 1.5rem;
+    margin-top: 50px;
+
+  }
+
+  .Withdrawal2 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+  }
+
+  .row {
+    padding: 50px 100px;
+  }
+
+
+
+  .yes {
+    padding: 10px 30px;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    background-color: #2F3F93;
+    color: white;
+    border: none;
+    white-space: nowrap;
+  }
+
+  
+    
+    .no {
+      padding: 4px 20px;
+      cursor: default;
+      background-color: #E43F3F;
+      border-radius: 1.5rem;
+      font-size: 2rem;
+      color: white;
+      border: none;
+     text-decoration: none;
+     text-align: center;
+     line-height: 50px;
+     white-space: nowrap;
+  }
+
+  .button {
+
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .header a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+
+/* スマホ用 */
+@media (max-width: 414.9px) {
+
+  /* 414px以下の画面幅に適用されるスタイル */
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
+  }
+
+  .container {
+
+    background-color: white;
+    max-width: 80%;
+    margin: 0 auto;
+    padding-bottom: 1rem;
+    opacity: 0.95;
+    border-radius: 6rem;
+
+  }
+
+  .y {
+    background-color: #FFF8F9;
+    padding: 5px;
+  }
+
+  .Withdrawal {
+    font-size: 1rem;
+    margin-top: 50px;
+    
+
+  }
+
+  .Withdrawal2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+
+  .row {
+    padding: 50px 50px;
+  }
+
+
+  .yes {
+    padding: 4px 25px;
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    background-color: #2F3F93;
+    color: white;
+    border: none;
+    white-space: nowrap;
+  }
+
+  
+    .no {
+      padding: 4px 20px;
+      cursor: default;
+      background-color: #E43F3F;
+      border-radius: 1.5rem;
+      font-size: 1.5rem;
+      color: white;
+      border: none;
+     text-decoration: none;
+     text-align: center;
+     line-height: 50px;
+     white-space: nowrap;
+  }
+
+  .button {
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+       
+  }
+
+  .header a {
+    color: black;
+    text-decoration: none;
+  }
+}

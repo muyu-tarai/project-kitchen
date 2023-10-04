@@ -14,12 +14,11 @@ class MypageController extends Controller
         return view('mypage');
     }
 
+    
+    // ユーザー名を変更する
     public function edit(edituser $request)
     {
-        
         $user = User::find(Auth::user()->id);
-
-        
         $user->name = $request->name;
         $user->save();
 

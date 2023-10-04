@@ -1,6 +1,9 @@
+@media screen and (min-width: 835px) and (max-width: 1900px) {
+
 * {
   box-sizing: border-box;
   font-size: 62.5%;
+  max-width: 100%;
 }
 
 .y {
@@ -33,3 +36,89 @@ display: flex;
 .top {
   padding-bottom: 10px;
 }
+}
+
+/* タブレット用 */
+@media screen and (min-width: 415px) and (max-width: 834px) {
+
+  /* 834px以下の画面幅に適用されるスタイル */
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
+  }
+  
+  .y {
+  background-color: #FFF8F9;
+  width: 100%;
+  
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 30%;
+  }
+  .row {
+  background-color: white;
+  border-radius: 6rem;
+  width: 80%;
+  height: 87px;
+  padding: 10px;
+  display: flex;
+  
+  }
+  
+  .Withdrawal {
+    font-size: 3.5rem;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+  
+  .top {
+    padding-bottom: 10px;
+  }
+  }
+
+  /* スマホ用 */
+@media (max-width: 414.9px) {
+
+  /* 414px以下の画面幅に適用されるスタイル */
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
+  }
+  
+  .y {
+  background-color: #FFF8F9;
+  width: 100%;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 30%;
+  }
+  .row {
+  background-color: white;
+  border-radius: 6rem;
+  width: 80%;
+  height: 87px;
+  padding: 10px;
+  display: flex;
+  
+  }
+  
+  .Withdrawal {
+    font-size: 3.5rem;
+    padding-top: 20px;
+    padding-left: 20px;
+  }
+  
+  .top {
+    padding-bottom: 10px;
+  }
+  }

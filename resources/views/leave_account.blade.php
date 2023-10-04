@@ -18,10 +18,12 @@
           @csrf
           <div class="button">
             <input type="submit" class="yes" formaction="{{ route('leave_account_complete') }}" value="はい"></input>
-            <input type="submit" class="no" formaction="{{ route('mypage') }}" value="いいえ"></input>
+            <a href="mypage" class="no">いいえ</a>
           </div>
         </form>
-        <form action="{{ route('mypage') }}"></form>
+        <form action="{{ route('mypage') }}" method="get">
+          @csrf
+        </form>
       </div>
     </div>
   </div>

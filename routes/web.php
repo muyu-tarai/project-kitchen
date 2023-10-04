@@ -6,7 +6,7 @@ Auth::routes();
 
 Route::get('/mypage', 'MypageController@mypage')->name('mypage');
 Route::post('/mypage', 'MypageController@edit')->name('mypage');
-Route::post('/mypage', 'MypageController@mypage')->name('mypage');
+
 
 
 Route::post('/leave_account_complete', 'Leave_account_completeController@delete')->name('leave_account_complete');
@@ -19,3 +19,4 @@ Route::post('/storeregister', 'StoreRegisterController@storeregister')->name('st
 Route::get('/index', 'IndexController@index')->name('index');
 Route::post('/index', 'IndexController@index')->name('index');
 
+Route::get('/login/gest', 'GestLoginController@guestLogin')->name('login.guest');

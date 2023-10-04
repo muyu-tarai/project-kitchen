@@ -12,7 +12,7 @@
     <div class="container">
       <form action="{{ route('login') }}">
         <div class="text-center">
-          <button type="submit" class="guest" href="">ゲスト</button>
+          <a class="guest" href="{{ route('login.guest') }}">ゲスト</a>
         </div>
       </form>
       <div class="row">
@@ -27,7 +27,7 @@
             <span role="alert">{{ $message }}</span>
             @enderror
             <div class="input">
-              <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" />
+              <input type="text" class="form-control" id="email" name="email" value="{{ isset($gest) ? $gest->email : old('email') }}" />
             </div>
           </div>
           <div class="form-group">
@@ -39,7 +39,7 @@
             <span role="alert">{{ $message }}</span>
             @enderror
             <div class="input">
-            <input type="password" class="form-control" id="password" name="password" />
+            <input type="password" class="form-control" id="password" name="password" value="{{ isset($password) ? $password : '' }}" />
             </div>
           </div>
           <div class="text-right">

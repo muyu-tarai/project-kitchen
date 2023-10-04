@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Validator;
-
+use App\Models\User; //※ ModelsディレクトリにUser.phpがある場合
+use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
     /*
