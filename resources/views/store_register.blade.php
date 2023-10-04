@@ -18,7 +18,7 @@
   @csrf
   <div class="inner-top">
     <h2>店舗名</h2>
-    <input type="text" name="store_name" value="{{ isset($storeName) ? $storeName : '' }}">
+    <input type="text" name="store_name" value="{{ isset($storeName) ? $storeName : old('store_name') }}">
     <h2>店舗画像</h2>
     <img src="data:image/{{ $ext }};base64,{{ $storeImage }}" class="store-figure" id="store-figure" name="image_file" alt="">
     <div class="for-button">
@@ -30,7 +30,7 @@
   <div class="inner-middle">
     <div>
       <h2>店舗紹介コメント</h2>
-      <textarea name="store_comment" id="" cols="30" rows="10">{{ isset($storeComment) ? $storeComment : '' }}</textarea>
+      <textarea name="store_comment" id="" cols="30" rows="10">{{ isset($storeComment) ? $storeComment : old('store_comment') }}</textarea>
     </div>
     <div class="stores-items" id="stores-items">
       @if(isset($menus))
@@ -38,7 +38,7 @@
       <div class="stores-item">
         <img src="data:image/{{ $menu->ext }};base64,{{ $menu->menu_image }}" class="store-figure" id="added-menu-figure" alt="">
         <p class="menu-title">{{ $menu->menu_name }}</p>
-        <p class="menu-price">{{ $menu->price }}</p>
+        <p class="menu-price" name="menu_price_display">{{ $menu->price }}</p>
         <p class="menu-text">{{ $menu->menu_comment }}</p>
         <input type="hidden" value="{{ $menu->menu_image }}" name="send_menu_image[]" multiple>
         <input type="hidden" value="{{ $menu->menu_name }}" name="send_menu_name[]">

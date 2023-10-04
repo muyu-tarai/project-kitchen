@@ -24,12 +24,14 @@ class StoreRegister extends FormRequest
     public function rules()
     {
         return [
-            'store_name' => 'required',
+            'store_name' => 'required|max:30',
             'store_image' => 'file|mimes:jpg,jpeg,png',
-            'menu_image' => 'file|mimes:jpg,jpeg,png',
-            'menu_price' => 'required|alpha_num',
+            'store_comment' => 'max:100',
+            'menu_image' => 'mimes:jpg,jpeg,png',
             'send_menu_image' => 'present',
-            'send_menu_name' => 'required',
+            'send_menu_name.*' => 'required|max:20',
+            'send_menu_price.*' => 'required|integer|max:10',
+            'send_menu_comment.*' => 'max:30',
         ];
     }
 
@@ -37,8 +39,12 @@ class StoreRegister extends FormRequest
     {
         return [
             'store_name' => '店舗名',
-            'file' => 'ファイル',
-            'send_menu_name' => 'メニュー名',
+            'store_image' => '店舗画像',
+            'store_comment' => '店舗紹介コメント',
+            'menu_image' => 'メニュー画像',
+            'send_menu_name.*' => 'メニュー名',
+            'send_menu_price.*' => 'メニュー金額',
+            'send_menu_comment.*' => 'メニュー紹介コメント',
         ];
     }
 }
