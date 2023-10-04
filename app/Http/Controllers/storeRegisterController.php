@@ -29,7 +29,6 @@ class storeRegisterController extends Controller
         } else {
             $storeImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
             $ext = File::extension($store->store_image);
-
             $menus = Menu::where('store_id', $store->id)->get();
             $i = 0;
             foreach ($menus as $menu) {
@@ -140,7 +139,7 @@ class storeRegisterController extends Controller
             }
         }
 
-        return view('store_register_after');
+        return view('store_update');
     }
 
     public function upload()

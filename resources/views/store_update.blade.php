@@ -4,6 +4,7 @@
 @endsection
 
 @section('content')
+
 <div class="wrapper">
 <div class="panel-body">
 @if($errors->any())
@@ -46,6 +47,7 @@
         </img>
         <h2>メニュー</h2>
         <div class="menu-contents">
+   
         @foreach($menu_items  as $menu_item )
             <div class="menu-item" id="munu{{ $menu_item->id }}">
                 <div class="food-wrp"><img class="menu-img" alt="item" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}">

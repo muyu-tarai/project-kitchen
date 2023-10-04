@@ -11,7 +11,8 @@ use App\Http\Requests\Storeupdate;
 use Error;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
-
+use App\Http\Controllers\storeRegisterController;
+use App\Http\Requests\StoreRegister;
 
 class updateController extends Controller
 {
@@ -22,8 +23,15 @@ class updateController extends Controller
         // 現在認証しているユーザーのIDを取得
         $id = Auth::id();
         $store_items = \DB::table('stores')->where('user_id',$id)->get();
+
+
+        if(!isset($store_items[0])){
+            return redirect()->route('store_register');
+        }
+   
         $menu_items = \DB::table('menus')
         ->where('store_id', $store_items[0]->id)->get();
+     
 
         $i = 0;
         foreach ($menu_items as $menu_item) {

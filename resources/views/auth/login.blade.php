@@ -11,6 +11,7 @@
   <div class="imag-car">
     <div class="container">
       <form action="{{ route('login') }}">
+        @csrf
         <div class="text-center">
           <a class="guest" href="{{ route('login.guest') }}">ゲスト</a>
         </div>
