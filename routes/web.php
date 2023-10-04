@@ -13,10 +13,4 @@ Route::post('/leave_account_complete', 'Leave_account_completeController@delete'
 
 Route::post('/leave_account', 'Leave_accountController@leave_account')->name('leave_account');
 
-Route::get('/storeregister', 'StoreRegisterController@storeregister')->name('storeregister');
-Route::post('/storeregister', 'StoreRegisterController@storeregister')->name('storeregister');
-
-Route::get('/index', 'IndexController@index')->name('index');
-Route::post('/index', 'IndexController@index')->name('index');
-
 Route::get('/login/gest', 'GestLoginController@guestLogin')->name('login.guest');
