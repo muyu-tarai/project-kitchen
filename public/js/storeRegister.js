@@ -22,7 +22,9 @@ function addMenu()
   let storesItems = document.querySelector('#stores-items')
   let tmp = `
   <div class="stores-item">
+  <div class="store-figure-display">
   <img src="/images/icons/noImage.jpg" class="store-figure" id="menu-figure" alt="">
+  </div>
   <p class="menu-name" name="menu_name">${menuName.value}</p>
   <p class="menu-price" name="menu_price">${menuPrice.value}</p>
   <p class="menu-text">${menuComment.value}</p>

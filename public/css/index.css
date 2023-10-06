@@ -33,6 +33,7 @@
   background-blend-mode: overlay;
   border-radius: 2rem;
   padding: 4rem 3rem;
+  margin-left: 2rem;
 }
 
 .top-section-items h1 {
@@ -58,7 +59,7 @@
   margin-top: 4rem;
 }
 
-.stores-close{
+.stores-close {
   margin-top: 20rem;
 }
 
@@ -93,14 +94,27 @@
   gap: 5rem 5rem;
 }
 
-.stores-item img {
+.stores-item-image {
   width: 100%;
-  height: 25rem;
+  position: relative;
+  padding-top: 75%;
 }
 
-.pager{
-  margin-top:10rem;
-  padding-bottom: 5rem;
+.stores-item img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+}
+
+.stores-item p {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.pager {
+  padding-bottom: auto 5rem;
   text-align: center;
 }
 
@@ -108,10 +122,25 @@
 
   .stores-items {
     margin-top: 3rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 2rem;
+  }
+
+  .top-section-buttons img {
+    width: 100%;
+  }
+
+
+}
+
+@media (max-width: 425px) {
+  .stores-items {
+    margin-top: 3rem;
     padding: 0 5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: 1fr;
     gap: 5rem 5rem;
   }
-  
 }
