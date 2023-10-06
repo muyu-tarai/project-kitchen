@@ -87,6 +87,10 @@ a a:hover {
     justify-content: center;
   }
 
+  .logo img{
+    width: 100%;
+  }
+
   .header-right{
     justify-content: center;
   }

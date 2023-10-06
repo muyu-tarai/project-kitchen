@@ -27,7 +27,8 @@ input[type="text"] {
   padding: 0 2rem;
 }
 
-input[type="file"],input[type="submit"] {
+input[type="file"],
+input[type="submit"] {
   display: none;
 }
 
@@ -73,8 +74,11 @@ textarea {
 }
 
 .store-figure {
+  position: absolute;
   width: 100%;
-  height: 50rem;
+  height: 100%;
+  top: 0;
+  object-fit: cover;
   border-radius: 2rem;
 }
 
@@ -92,13 +96,12 @@ textarea {
 
 .stores-item {
   position: relative;
-  height:55rem;
 }
 
-.stores-item img {
+.store-figure-display {
   width: 100%;
-  height: 25rem;
-  margin-top: 4rem;
+  position: relative;
+  padding-top: 75%;
 }
 
 .menu-title,
@@ -117,6 +120,7 @@ textarea {
 
 .menu-text {
   margin-top: 3rem;
+  margin-bottom: 8rem;
 }
 
 .menu-delete {
@@ -127,28 +131,95 @@ textarea {
   bottom: 0;
 }
 
-.inner-add-menu{
+.inner-add-menu {
   border: solid 0.3rem;
   border-radius: 2rem;
   padding: 0 15rem 5rem 15rem;
 }
 
-.add-menu-price{
+.add-menu-price {
   width: 50%;
   display: flex;
   font-size: 3rem;
   align-items: center;
-  gap:1rem;
+  gap: 1rem;
 }
 
-.register-button{
+.register-button {
   margin-top: 10rem;
 }
 
-.register-button label{
+.register-button label {
   font-size: 5rem;
 }
 
-.add-menu-image-label-none{
+.add-menu-image-label-none {
   display: none;
 }
+
+@media (max-width: 768px) {
+  .stores-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem 2rem;
+  }
+  
+  .top-section-buttons img {
+    width: 100%;
+  }
+  
+  .inner-top {
+    margin: 8rem 2rem;
+  }
+
+  .inner-middle {
+    margin: 8rem 2rem;
+  }
+  
+  .inner-bottom {
+    margin: 8rem 2rem;
+  }
+  
+  .inner-menu {
+    margin: 1rem 50rem;
+  }
+  
+  .inner-add-menu {
+    padding: 0 5rem 5rem 5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  
+  h2,
+  h3 {
+    font-size: 3rem;
+    margin: 5rem 0 2rem 3rem;
+    
+  }
+  
+  .top-title {
+    font-size: 5rem;
+    margin: 5rem 0 0 0;
+    text-align: center;
+  }
+  
+  .stores-items {
+    grid-template-columns: 1fr;
+  }
+  .add-menu-price {
+    width: 100%;
+    font-size: 2rem;
+  }
+  input[type="text"] {
+    font-size: 2rem;
+  }
+    .register-button {
+      margin-top: 5rem;
+    }
+    .register-button label{
+      font-size: 3rem;
+    }
+    .inner-add-menu {
+      padding: 0 2rem 5rem 2rem;
+    }
+  }
