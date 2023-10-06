@@ -35,7 +35,7 @@ function openClick(){
 }
 function closeClick(){
   open.classList.add('out');
-  close.classList.remove('out')
+  close.classList.remove('out');
   hide.classList.add('hide');
   o_flag.value = 0;
 }
