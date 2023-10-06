@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Store;
 use Illuminate\Support\Facades\Storage;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\index;
 use Illuminate\Support\Facades\File;
@@ -12,6 +13,18 @@ class IndexController extends Controller
 {
     public function index()
     {
+        $store_items = \DB::table('stores')->where('opening_flag',1)->get();
+
+        $i = 0;
+        foreach ($store_items as $store_item) {
+            if( $store_item->closing_datetime < Carbon::now() ){
+                $store = store::firstwhere('id',$store_item->id);
+                $store->opening_flag = 0;
+                $store->save();
+            }
+            $i++;
+        }
+
         $closeStores = Store::where('opening_flag', 0)->get();
         $openStores = Store::where('opening_flag', 1)->get();
 
