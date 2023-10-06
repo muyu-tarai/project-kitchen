@@ -13,6 +13,9 @@ class ViewController extends Controller
     public function view($id){
 // データベースから取得
         $store_items = \DB::table('stores')->find($id);
+        if(is_null($store_items)){
+            return redirect()->route('index');
+        }
         $menu_items = \DB::table('menus')
         ->where('store_id', $store_items->id)
         ->get();

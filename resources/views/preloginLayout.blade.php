@@ -22,7 +22,7 @@
           <a class="x-large logo"href="/"><img src="/images/icons/ヘッダー (1).png"></a>
         </div>
         @yield('header_right')
-      </nav>
+
     </header>
   </div>
   <main class="main">
@@ -35,11 +35,16 @@
       </p>
     </footer>
   </div>
-<<<<<<< HEAD
-  @yield('scripts')
-=======
   @yield('js')
->>>>>>> master
+  <script>
+    const hamburger =  document.getElementById('menu-btn-check')
+    const nav = document.getElementById('nav')
+    hamburger.addEventListener('click', function() {
+    console.log(1)
+    nav.classList.toggle('hidden');
+
+    });
+  </script>
 </body>
 
 </html>

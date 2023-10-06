@@ -24,14 +24,14 @@ class StoreRegister extends FormRequest
     public function rules()
     {
         return [
-            'store_name' => 'required|max:30',
-            'store_image' => 'file|mimes:jpg,jpeg,png',
-            'store_comment' => 'max:100',
-            'menu_image' => 'mimes:jpg,jpeg,png',
-            'send_menu_image' => 'present',
-            'send_menu_name.*' => 'required|max:20',
-            'send_menu_price.*' => 'required|integer|max:10',
-            'send_menu_comment.*' => 'max:30',
+            // 'store_name' => 'required|max:30',
+            // 'store_image' => 'file|mimes:jpg,jpeg,png',
+            // 'store_comment' => 'max:100',
+            // 'menu_image' => 'mimes:jpg,jpeg,png',
+            // 'send_menu_image' => 'present',
+            // 'send_menu_name.*' => 'required|max:20',
+            // 'send_menu_price.*' => 'required|integer|max:10',
+            // 'send_menu_comment.*' => 'max:30',
         ];
     }
 

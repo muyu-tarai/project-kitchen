@@ -8,8 +8,8 @@
     <h1 class="large">出店様へ</h1>
     <p class="medium">このサイトはフードカーを盛り上げるために制作さ<br>れたサイトです。もし興味がありましたら、下のア<br>イコンから登録をお願いします。</p>
     <div class="top-section-buttons">
-      <a class="x-large" href="/register"><img src="/images/icons/サインインボタン.png"></a>
-      <a class="x-large" href="/login"><img src="/images/icons/ログインボタン.png"></a>
+      <a class="" href="/register"><img src="/images/icons/サインインボタン.png"></a>
+      <a class="" href="/login"><img src="/images/icons/ログインボタン.png"></a>
     </div>
   </div>
 </div>
@@ -23,7 +23,9 @@
       @if(isset($open_stores))
       @foreach($open_stores as $open_stores )
       <div class="stores-item">
-        <a href="store/{{ $open_stores->id}}"><img src="data:image/{{ $open_stores->ext }};base64,{{ $open_stores->store_image }}"></a>
+        <div class="stores-item-image">
+          <a href="store/{{ $open_stores->id}}"><img src="data:image/{{ $open_stores->ext }};base64,{{ $open_stores->store_image }}"></a>
+        </div>
         <p class="medium">{{ isset($open_stores->store_name) ? $open_stores->store_name : '' }}</p>
       </div>
       @endforeach
@@ -38,7 +40,9 @@
         @if(isset($close_stores))
         @foreach($close_stores as $close_stores )
         <div class="stores-item">
-          <a href="store/{{ $close_stores->id}}"><img src="data:image/{{ $close_stores->ext }};base64,{{ $close_stores->store_image }}"></a>
+          <div class="stores-item-image">
+            <a href="store/{{ $close_stores->id}}"><img src="data:image/{{ $close_stores->ext }};base64,{{ $close_stores->store_image }}"></a>
+          </div>
           <p class="medium">{{ isset($close_stores->store_name) ? $close_stores->store_name : '' }}</p>
         </div>
         @endforeach

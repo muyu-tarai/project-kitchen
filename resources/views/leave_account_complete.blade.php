@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="top">
-      <a href="index">トップページに戻る</a>
+      <a href="/">トップページに戻る</a>
     </div>
   </div>
 </body>

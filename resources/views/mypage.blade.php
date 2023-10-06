@@ -5,7 +5,7 @@
 @section('content')
 
 
-<body>
+
   <div class="imag-car">
     <div class="container">
       <div class="row">
@@ -44,5 +44,5 @@
       </div>
     </div>
   </div>
-</body>
+
 @endsection
