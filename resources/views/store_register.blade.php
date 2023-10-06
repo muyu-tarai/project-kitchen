@@ -42,7 +42,7 @@
           <img src="data:image/{{ $menu->ext }};base64,{{ $menu->menu_image }}" class="store-figure" id="added-menu-figure" alt="">
         </div>
         <p class="menu-title">{{ $menu->menu_name }}</p>
-        <p class="menu-price" name="menu_price_display">{{ $menu->price }}</p>
+        <p class="menu-price" name="menu_price_display">{{ $menu->price }} 円</p>
         <p class="menu-text">{{ $menu->menu_comment }}</p>
         <input type="hidden" value="{{ $menu->menu_image }}" name="send_menu_image[]" multiple>
         <input type="hidden" value="{{ $menu->menu_name }}" name="send_menu_name[]">
