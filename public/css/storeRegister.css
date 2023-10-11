@@ -49,9 +49,11 @@ textarea {
 }
 
 .validation{
-  font-size: 2rem;
-  color: red;
-  text-align: center;
+    background-color: #d14646;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px 0;
 }
 
 .small {
@@ -164,6 +166,10 @@ textarea {
 }
 
 @media (max-width: 768px) {
+  .validation {
+      font-size: 1.5rem;
+    }
+
   .stores-items {
     grid-template-columns: 1fr 1fr;
     gap: 5rem 2rem;
