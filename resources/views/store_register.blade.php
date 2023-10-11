@@ -9,7 +9,7 @@
 <div class="alert alert-danger">
   <ul>
     @foreach($errors->all() as $message)
-    <li>{{ $message }}</li>
+    <li class="validation">{{ $message }}</li>
     @endforeach
   </ul>
 </div>

@@ -77,7 +77,7 @@ return [
         'array' => 'The :attribute must not have more than :value items.',
     ],
     'max' => [
-        'numeric' => ':attribute は:max桁以内で入力してください。',
+        'numeric' => ':attribute は:max円以内で入力してください。',
         'file' => 'The :attribute may not be greater than :max kilobytes.',
         'string' => ':attribute は:max文字以下で入力してください。',
         'array' => 'The :attribute may not have more than :max items.',

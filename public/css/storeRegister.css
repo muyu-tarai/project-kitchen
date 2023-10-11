@@ -48,6 +48,12 @@ textarea {
   margin: 5rem 0 0 5rem;
 }
 
+.validation{
+  font-size: 2rem;
+  color: red;
+  text-align: center;
+}
+
 .small {
   font-size: 1.5rem;
 }
