@@ -40,15 +40,24 @@ h1 {
 }
 .detail-content{
   margin:50px 10% 50px; 
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:5%;
 }
 .store-img-div{
-  width:50%;
-  margin-right:8%;
+  width: 100%;
+  position: relative;
+  padding-top:75%;
 }
-
+.store-img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  object-fit: cover;
+}
 .store-comment-div{
-  width: 40%;
+  width: 100%;
 }
 #store-comment{
   font-size:2rem;
@@ -63,12 +72,15 @@ h1 {
   background-color:white;
 }
 .menu-img-div{
-  width:100%;
-  height:300px;
-  display:flex;
-  justify-content:center;
+  width: 100%;
+  position: relative;
+  padding-top:75%;
 }
 .menu-img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
   object-fit: cover;
 }
 .menu-text{

@@ -33,31 +33,31 @@
             <p class = "closed-time">現在 {{isset($store_items[0]->closing_datetime) ? $store_items[0]->closing_datetime : '' }} 閉店予定 </p>
             <p class="close-item">閉店時間設定</p>
             <div class="close-time">
-                <input type="text" class="year text" id="year" name="year">
-                <p class="under-take">年</p>
+                <input type="hidden" class="year text" id="year" name="year">
+                <div class="time1">
                 <input type="text" class="month text" id="month" name="month">
                 <p class="under-take">月</p>
                 <input type="text" class="day text" id="day" name="day">
                 <p class="under-take">日</p>
+                </div>
                 <input type="time" class="hour-secound text" id="time" name="time">
             </div>
             <input type="hidden" id="locate" name="locate">
             <div id="gmap"></div>
-
-        </img>
+        </div>
         <h2>メニュー</h2>
         <div class="menu-contents">
-        @if(isset($menu_items))
-            @foreach($menu_items  as $menu_item )
-                <div class="menu-item" id="munu{{ $menu_item->id }}">
-                    <div class="food-wrp"><img class="menu-img" alt="item" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}">
+            @if(isset($menu_items))
+                @foreach($menu_items  as $menu_item )
+                    <div class="menu-item" id="munu{{ $menu_item->id }}">
+                        <div class="food-wrp"><img class="menu-img" alt="item" src="data:image/{{ $menu_item->ext }};base64,{{ $menu_item->menu_image }}">
+                        </div>
+                        <p class=menu-name>{{isset($menu_item ->menu_name ) ? $menu_item ->menu_name  : '' }}</p>
+                        <input type="hidden" class="menu_id" name="menu_id[]" value="{{ isset($menu_item->id) ? $menu_item->id : '' }}">
+                        <input type="hidden" class="menu_flag" name="menu_flag[]" value="{{ isset($menu_item->sold_out_flag) ? $menu_item->sold_out_flag : '' }}">
                     </div>
-                    <p>{{isset($menu_item ->menu_name ) ? $menu_item ->menu_name  : '' }}</p>
-                    <input type="hidden" class="menu_id" name="menu_id[]" value="{{ isset($menu_item->id) ? $menu_item->id : '' }}">
-                    <input type="hidden" class="menu_flag" name="menu_flag[]" value="{{ isset($menu_item->sold_out_flag) ? $menu_item->sold_out_flag : '' }}">
-                </div>
-            @endforeach
-        @endif
+                @endforeach
+            @endif
         </div>
         <div class="under-submit">
         <input type="submit"class="update-btn "  value="更新">
