@@ -19,7 +19,7 @@
     <header>
       <nav class="navbar">
         <div class="logo">
-          <a class="x-large logo"href="/"><img src="/images/icons/ヘッダー (1).png"></a>
+          <a class="x-large logo" href="/"><img src="/images/icons/ヘッダー (1).png"></a>
         </div>
         @yield('header_right')
 
@@ -37,12 +37,9 @@
   </div>
   @yield('js')
   <script>
-    const hamburger =  document.getElementById('menu-btn-check')
-    const nav = document.getElementById('nav')
-    hamburger.addEventListener('click', function() {
-    console.log(1)
-    nav.classList.toggle('hidden');
-
+    document.querySelector('#menu-btn-check').addEventListener('click', function() {
+      const menu = document.querySelector('.main');
+      menu.classList.toggle('open');
     });
   </script>
 </body>
