@@ -24,7 +24,7 @@
       <img src="data:image/{{ $ext }};base64,{{ $storeImage }}" class="store-figure" id="store-figure" name="image_file" alt="">
     </div>
     <div class="for-button">
-      <label class="label">
+      <label>
         <input type="file" name="store_image" id="add-store-image" accept="image/">写真を選択
       </label>
     </div>
@@ -48,7 +48,7 @@
         <input type="hidden" value="{{ $menu->menu_name }}" name="send_menu_name[]">
         <input type="hidden" value="{{ $menu->price }}" name="send_menu_price[]">
         <input type="hidden" value="{{ $menu->menu_comment }}" name="send_menu_comment[]">
-        <div class="menu-delete"><label class="label"><button type="button" onclick="removeItem(this)"></button>削除</label></div>
+        <div class="menu-delete"><label><button type="button" onclick="removeItem(this)"></button>削除</label></div>
       </div>
       @endforeach
       @endif
@@ -63,39 +63,39 @@
         <div class="store-figure-display">
           <img src="data:image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('store/noImage.jpg')) }}" class="store-figure" id="menu-figure" alt="">
         </div>
-        <div class="for-button" id="add-menu-images">
-          <label id="add-menu-image-label" class="add-menu-image-label label">
-            <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
+          <div class="for-button" id="add-menu-images">
+            <label id="add-menu-image-label" class="add-menu-image-label">
+              <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
+            </label>
+          </div>
+        </div>
+        <div>
+          <h3>メニュー名</h3>
+          <input type="text" name="menu_name" id="add-menu-name">
+        </div>
+        <div>
+          <h3>メニュー金額</h3>
+          <div class="add-menu-price">
+            <input type="text" name="menu_price" id="add-menu-price">
+            <p>円</p>
+          </div>
+        </div>
+        <div>
+          <h3>メニュー紹介コメント</h3>
+          <textarea name="menu_comment" id="add-menu-comment" cols="30" rows="10"></textarea>
+        </div>
+        <div class="for-button">
+          <label>
+            <button type="button" id="add-menu"></button>メニューを追加する
           </label>
         </div>
       </div>
-      <div>
-        <h3>メニュー名</h3>
-        <input type="text" name="menu_name" id="add-menu-name">
-      </div>
-      <div>
-        <h3>メニュー金額</h3>
-        <div class="add-menu-price">
-          <input type="text" name="menu_price" id="add-menu-price">
-          <p>円</p>
-        </div>
-      </div>
-      <div>
-        <h3>メニュー紹介コメント</h3>
-        <textarea name="menu_comment" id="add-menu-comment" cols="30" rows="10"></textarea>
-      </div>
-      <div class="for-button">
-        <label class="label">
-          <button type="button" id="add-menu"></button>メニューを追加する
+      <div class="for-button register-button">
+        <label>
+          <input type="submit"></input>店舗情報を登録する
         </label>
       </div>
     </div>
-    <div class="for-button register-button">
-      <label class="label">
-        <input type="submit"></input>店舗情報を登録する
-      </label>
-    </div>
-  </div>
 </form>
 @section('js')
 <script src="/js/storeRegister.js"></script>
