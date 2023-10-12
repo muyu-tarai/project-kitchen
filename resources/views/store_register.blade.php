@@ -7,7 +7,7 @@
 <hr>
 @if($errors->any())
 <div class="alert alert-danger">
-  <ul>
+  <ul id="err-msg-zone">
     @foreach($errors->all() as $message)
     <li class="validation">{{ $message }}</li>
     @endforeach
@@ -70,18 +70,18 @@
           </div>
         </div>
         <div>
-          <h3>メニュー名</h3>
+          <h3 id="menu-name-text">メニュー名</h3>
           <input type="text" name="menu_name" id="add-menu-name">
         </div>
         <div>
-          <h3>メニュー金額</h3>
+          <h3 id="menu-price-text">メニュー金額</h3>
           <div class="add-menu-price">
             <input type="text" name="menu_price" id="add-menu-price">
             <p>円</p>
           </div>
         </div>
         <div>
-          <h3>メニュー紹介コメント</h3>
+          <h3 id="menu-comment-text">メニュー紹介コメント</h3>
           <textarea name="menu_comment" id="add-menu-comment" cols="30" rows="10"></textarea>
         </div>
         <div class="for-button">

@@ -56,6 +56,11 @@ textarea {
     padding: 10px 0;
 }
 
+.err-msg{
+  font-size:2rem;
+  color: red;
+}
+
 .small {
   font-size: 1.5rem;
 }

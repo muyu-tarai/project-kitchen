@@ -59,6 +59,37 @@ function removeItem(button) {
   `
   let addMenuImageLabel = document.querySelector('#add-menu-image-label')
   $('#add-menu').on('click', function() {
+
+    //メニューのバリデーション
+    let err = 0
+    if(document.querySelector('#menu-name-err') != null){
+      document.querySelector('#menu-name-err').remove()
+    }
+    if(document.querySelector('#menu-price-err') != null){
+      document.querySelector('#menu-price-err').remove()
+    }
+    if(document.querySelector('#menu-comment-err') != null){
+      document.querySelector('#menu-comment-err').remove()
+    }
+if(menuName.value == ""){
+  document.querySelector('#menu-name-text').insertAdjacentHTML('beforeend', `<p id="menu-name-err" class="err-msg">メニュー名は必須入力です</p>`)
+  err = 1
+}else if(menuName.value.length > 20){
+  document.querySelector('#menu-name-text').insertAdjacentHTML('beforeend', `<p id="menu-name-err" class="err-msg">メニュー名は20文字以内で入力してください</p>`)
+  err = 1
+}
+if(menuPrice.value == ""){
+  document.querySelector('#menu-price-text').insertAdjacentHTML('beforeend', `<p id="menu-price-err" class="err-msg">メニュー金額は必須入力です</p>`)
+  err = 1
+}else if(menuPrice.value >= 100001){
+  document.querySelector('#menu-price-text').insertAdjacentHTML('beforeend', `<p id="menu-price-err" class="err-msg">メニュー金額は100000円以下で入力してください</p>`)
+  err = 1
+}
+if(menuComment.value.length > 30){
+  document.querySelector('#menu-comment-text').insertAdjacentHTML('beforeend', `<p id="menu-comment-err" class="err-msg">メニューコメントは30文字以内で入力してください</p>`)
+  err = 1
+}
+if(err == 0){
     addMenu()
     let lastMenuBottom = document.querySelector('#stores-items').lastElementChild
   lastMenuBottom.appendChild(document.querySelector('#add-menu-image'))
@@ -71,4 +102,5 @@ function removeItem(button) {
   menuPrice.value = ''
   menuComment.value = ''
   addImage('#add-menu-image', '#menu-figure')
+}
 })
