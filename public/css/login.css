@@ -204,6 +204,13 @@
     color: #020abd;
     padding: none;
   }
+
+  .err {
+    text-align: center;
+    font-size: 2rem;
+    background-color: #d14646;
+    color: white;
+  }
 }
 
 /* タブレット用 */
