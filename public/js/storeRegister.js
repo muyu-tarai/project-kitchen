@@ -47,6 +47,13 @@ function removeItem(button) {
     parent.remove()
   }
 
+  function cancelSubmit() {
+        if(document.querySelector("#store-name").value === "") {
+          document.querySelector('#err-msg-zone').insertAdjacentHTML('beforeend', `<li id="store-name-err" class="validation">店舗名は必須入力です</li>`);
+          return false;
+        }
+      }
+
   
   
   addImage('#add-store-image', '#store-figure')
