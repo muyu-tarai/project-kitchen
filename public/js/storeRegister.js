@@ -29,7 +29,7 @@ function addMenu()
   <p class="menu-price" name="menu_price">${menuPrice.value} 円</p>
   <p class="menu-text">${menuComment.value}</p>
   <input type="hidden" value="${menuImage.value}" name="send_menu_image[]">
-  <input type="hidden" value="${menuName.value}" name="send_menu_name[]">
+  <input type="hidden" value="${menuName.value}" name="send_menu_name[]" class="get-menu-title">
   <input type="hidden" value="${menuPrice.value}" name="send_menu_price[]">
   <input type="hidden" value="${menuComment.value}" name="send_menu_comment[]">
   <div class="menu-delete"><label><button type="button" onclick="removeItem(this)"></button>削除</label></div>
@@ -108,6 +108,14 @@ window.scroll({ top: 0, behavior: "smooth" });
     if(document.querySelector('#menu-comment-err') != null){
       document.querySelector('#menu-comment-err').remove()
     }
+
+    let getMenuTitleList = document.getElementsByClassName("get-menu-title")
+for(let i = 0; i < getMenuTitleList.length; i++) {
+  if(getMenuTitleList.item(i).value == menuName.value){
+    document.querySelector('#menu-name-text').insertAdjacentHTML('beforeend', `<p id="menu-name-err" class="err-msg">メニュー名が重複しています</p>`)
+    err = 1
+  }
+}
 if(menuName.value == ""){
   document.querySelector('#menu-name-text').insertAdjacentHTML('beforeend', `<p id="menu-name-err" class="err-msg">メニュー名は必須入力です</p>`)
   err = 1
@@ -134,7 +142,7 @@ if(err == 0){
   document.querySelector('#add-menu-image-label').removeAttribute('id')
   document.querySelector('#add-menu-image').setAttribute('id', 'add-menu-image-none')
   document.querySelector('#add-menu-images').insertAdjacentHTML('beforeend', addMenuButton)
-  selectedMenuFigure.setAttribute('src', "/images/icons/noImage.jpg")
+  selectedMenuFigure.setAttribute('src', document.querySelector('#menu-figure-hide').getAttribute('src'))
   menuName.value = ''
   menuPrice.value = ''
   menuComment.value = ''

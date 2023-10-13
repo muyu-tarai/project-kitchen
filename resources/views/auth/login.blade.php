@@ -23,15 +23,20 @@
       </form>
       <div class="row">
         <div class="panel-heading">LOG IN</div>
+        @if($errors->any())
+        <div class="err">
+          @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+          @endforeach
+        </div>
+        @endif
         <form action="{{ route('login') }}" method="POST" class="form">
           @csrf
           <div class="form-group">
             <div>
               <label for="email" class="label">mail</label>
             </div>
-            @error('email')
-            <span role="alert">{{ $message }}</span>
-            @enderror
+
             <div class="input">
               <input type="text" class="form-control" id="email" name="email" value="{{ isset($gest) ? $gest->email : old('email') }}" />
             </div>
@@ -41,9 +46,7 @@
               <label for="password" class="label
                 ">password</label>
             </div>
-            @error('password')
-            <span role="alert">{{ $message }}</span>
-            @enderror
+
             <div class="input">
               <input type="password" class="form-control" id="password" name="password" value="{{ isset($password) ? $password : '' }}" />
             </div>

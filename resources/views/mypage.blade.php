@@ -8,8 +8,8 @@
 
 <div class="imag-car">
   <style>
-    .imag-car{
-    background-image: url("data: image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/truck9.jpg')) }}");
+    .imag-car {
+      background-image: url("data: image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/truck9.jpg')) }}");
     }
   </style>
   <div class="container">
@@ -37,12 +37,13 @@
             </div>
 
             <div class="button">
-              @if(Auth::user()->id !== 42)
+              @if(Auth::user()->email !== 'gest@gmail.com')
               <input type="submit" class="updeta" formaction="{{ route('mypage') }}" value="更新">
               <input type="submit" class="Withdrawal" formaction="{{ route('leave_account') }}" value="退会">
               @endif
             </div>
           </div>
+
         </form>
         <form action="{{ route('leave_account') }}"></form>
       </div>

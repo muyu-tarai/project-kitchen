@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="top">
-      <a href="/">トップページに戻る</a>
+      <button onclick="location.href='/'" class="button">トップページに戻る</input>
     </div>
   </div>
 </body>

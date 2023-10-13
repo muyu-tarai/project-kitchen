@@ -141,8 +141,4 @@ class storeRegisterController extends Controller
 
         return redirect('store_update');
     }
-
-    public function upload()
-    {
-    }
 }

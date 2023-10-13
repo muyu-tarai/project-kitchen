@@ -22,7 +22,7 @@ class CreateStoresTable extends Migration
                 ->on('users')
                 ->onUpdate('CASCADE')
                 ->onDelete('CASCADE');
-            $table->string('store_name', 20);
+            $table->string('store_name', 30);
             $table->string('store_image', 255)
                 ->nullable(true);
             $table->text('store_comment')

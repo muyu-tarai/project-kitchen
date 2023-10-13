@@ -45,7 +45,7 @@
         <p class="menu-price" name="menu_price_display">{{ $menu->price }} 円</p>
         <p class="menu-text">{{ $menu->menu_comment }}</p>
         <input type="hidden" value="{{ $menu->menu_image }}" name="send_menu_image[]" multiple>
-        <input type="hidden" value="{{ $menu->menu_name }}" name="send_menu_name[]">
+        <input type="hidden" value="{{ $menu->menu_name }}" name="send_menu_name[]" class="get-menu-title">
         <input type="hidden" value="{{ $menu->price }}" name="send_menu_price[]">
         <input type="hidden" value="{{ $menu->menu_comment }}" name="send_menu_comment[]">
         <div class="menu-delete"><label><button type="button" onclick="removeItem(this)"></button>削除</label></div>
@@ -62,6 +62,7 @@
         <h3>メニュー画像</h3>
         <div class="store-figure-display">
           <img src="data:image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('store/noImage.jpg')) }}" class="store-figure" id="menu-figure" alt="">
+          <img src="data:image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('store/noImage.jpg')) }}" class="store-figure" id="menu-figure-hide" alt="" style="display:none">
         </div>
         <div class="for-button" id="add-menu-images">
           <label id="add-menu-image-label" class="add-menu-image-label">

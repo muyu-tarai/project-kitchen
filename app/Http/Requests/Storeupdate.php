@@ -29,7 +29,6 @@ class Storeupdate extends FormRequest
             'month' => 'required|integer|between:1,12',
             'day' => 'required|integer|between:1,31',
             'time' => 'required|date_format:H:i',
-            'date' => [new TrueRule],
         ];
     }
 

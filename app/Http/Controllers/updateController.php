@@ -50,6 +50,13 @@ class updateController extends Controller
     }
 
     public function update(Storeupdate $request) {
+
+        $result=checkdate( $request->month, $request->day, $request->year);
+   
+        if ($result == false) {
+            return redirect()->back()->withErrors(['result' => '無効な日付です'])->withInput();
+        }
+
         // 現在認証しているユーザーを取得
         $user = Auth::user();
         // 現在認証しているユーザーのIDを取得
