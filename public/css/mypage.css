@@ -1,11 +1,12 @@
+* {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  max-width: 100%;
+}
+
 @media (min-width: 1121px) {
 
-  * {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    max-width: 100%;
-  }
-
+  
   .imag-car {
     background-size: cover;
     background-repeat: no-repeat;
@@ -53,7 +54,7 @@
   .row {
 
     background-color: white;
-    max-width: 60%;
+    max-width: 50%;
     margin: 0 auto;
     opacity: 0.95;
     border-radius: 6rem;
@@ -113,14 +114,10 @@
 }
 
 /* タブレット用 */
-@media screen and (min-width: 834px) and (max-width: 1120px) {
+@media screen and (max-width: 1120px) {
 
   /* 834px以下の画面幅に適用されるスタイル */
-  * {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    max-width: 100%;
-  }
+  
 
   .imag-car {
     background-image: url(../images/trucks/truck9.jpg);
@@ -171,7 +168,7 @@
   .row {
 
     background-color: white;
-    max-width: 60%;
+    max-width: 50%;
     margin: 0 auto;
     opacity: 0.95;
     border-radius: 6rem;
@@ -238,14 +235,10 @@
 
 
 /* スマホ用 */
-@media screen and (min-width: 480px) and (max-width: 834px) {
+@media screen and (max-width: 834px) {
 
   /* 414px以下の画面幅に適用されるスタイル */
-  * {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    max-width: 100%;
-  }
+  
 
   .imag-car {
     background-image: url(../images/trucks/truck9.jpg);
@@ -296,7 +289,7 @@
   .row {
 
     background-color: white;
-    max-width: 60%;
+    max-width: 50%;
     margin: 0 auto;
     opacity: 0.95;
     border-radius: 6rem;
@@ -361,12 +354,8 @@
   }
 }
   
-@media (max-width: 479px) {
-  * {
-    box-sizing: border-box;
-    font-size: 62.5%;
-    max-width: 100%;
-  }
+@media screen and (max-width: 682px) {
+  
 
   .imag-car {
     background-image: url(../images/trucks/truck9.jpg);
@@ -418,7 +407,8 @@
   .row {
 
     background-color: white;
-    max-width: 60%;
+    max-width: 50%;
+    max-height: 10%;
     margin: 0 auto;
     opacity: 0.95;
     border-radius: 6rem;
@@ -441,7 +431,7 @@
   }
 
   .button {
-    display: flex;
+    display: block;
     padding-bottom: 8rem;
       }
 
@@ -476,6 +466,131 @@
 
   .col {
     max-width: 100%;
+  }
+
+  @media screen and (max-width:417px) {
+    
+  
+    .imag-car {
+      background-image: url(../images/trucks/truck9.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      padding: 20px 0 100px;
+      background-position: top;
+      margin-top: 20px;
+    }
+  
+    .about {
+      font-size: 1.5rem;
+      padding-bottom: 10px;
+      margin-left: 10px;
+  
+    }
+  
+    .form-control {
+      border-radius: 999rem;
+      background-color: rgb(219, 222, 222);
+      border: none;
+      width: 150px;
+      height: 10px;
+      font-size: 15px;
+      padding: 15px;
+      margin-left: 5px;
+    }
+  
+    .input {
+      margin-bottom: 20px;
+    }
+  
+    .panel-body {
+      padding-left: 10px;
+  
+    }
+  
+    .panel-heading {
+      font-size: 1.5rem;
+      
+      color: #4D3CB0;
+  
+    }
+  
+    .container {
+      max-width: 100%;
+    }
+  
+    .row {
+  
+      background-color: white;
+      max-width: 50%;
+      max-height: 10%;
+      margin: 0 auto;
+      opacity: 0.95;
+      border-radius: 6rem;
+      
+    }
+  
+  
+  
+    .email {
+      font-size: 1rem;
+      padding-top: 30px;
+      
+    }
+  
+    .email2 {
+      font-size: 1rem;
+      padding-top: 20px;
+      padding-bottom: 30px;
+      max-width: 50%;
+      
+    }
+  
+    .button {
+      display: block;
+      padding-bottom: 8rem;
+        }
+  
+    .updeta {
+      padding: 3px 20px;
+      border-radius: 2.5rem;
+      font-size: 2rem;
+      background-color: #2F3F93;
+      color: white;
+      border: none;
+      margin: 0 10px;
+    }
+  
+    .Withdrawal {
+      padding: 3px 20px;
+      border-radius: 2.5rem;
+      font-size: 2rem;
+      background-color: #E43F3F;
+      margin-left: 10px;
+      color: white;
+      border: none;
+    }
+  
+    .alert {
+      font-size: 0.1rem;
+      color: #E43F3F;
+    }
+  
+    .header a {
+      color: black;
+      text-decoration: none;
+    }
+  
+    .col {
+      max-width: 100%;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    label {
+      font-size: 0.5rem;
+    }
   }
 
 }

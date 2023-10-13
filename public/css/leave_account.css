@@ -1,4 +1,4 @@
-@media (min-width: 750px) {
+@media (max-width: 2560px) {
   * {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -9,67 +9,69 @@
 
     background-color: white;
     max-width: 60%;
-    margin: 10px auto 0;
+    margin: 10px auto 50px;
     padding-bottom: 1%;
     opacity: 0.95;
     border-radius: 6rem;
-    display: flex;
+    
   }
 
   .y {
     background-color: #FFF8F9;
-    padding: 5px 0 200px;
+    padding: 50px 0 200px;
     margin-top: 20px;
   }
 
   .Withdrawal {
-    font-size: 1.3rem;
+    font-size: 3rem;
     margin-top: 50px;
 
   }
 
   .Withdrawal2 {
-    font-size: 3rem;
+    font-size: 5rem;
     margin-top: 20px;
   }
 
   .row {
-    padding: 50px 0px 100px 60px;
+    padding: 50px 50px 100px 50px;
+    text-align: center;
   }
 
 
 
   .yes {
-    padding: 4px 40px;
+    padding: 13px 50px;
     margin: 0 3rem;
     border-radius: 1.5rem;
-    font-size: 2rem;
+    font-size: 4rem;
     background-color: #2F3F93;
     color: white;
     border: none;
   }
 
   .no {
-    padding: 4px 30px;
+    padding: 5px 40px;
     cursor: default;
     background-color: #E43F3F;
     border-radius: 1.5rem;
-    font-size: 2rem;
+    font-size: 4rem;
     color: white;
     border: none;
    text-decoration: none;
    text-align: center;
-   line-height: 50px;
+   line-height: 75px;
    white-space: nowrap;
   }
 
   .button {
-    display: flex;
-
-    margin-right: 15rem;
+    margin: 0 auto;
     padding-bottom: 5rem;
     padding-top: 5rem;
     max-width: 100%;
+    display: flex;
+   align-items: center; 
+   justify-content: center;
   }
 
   .header a {
@@ -78,10 +80,8 @@
   }
 }
 
-/* タブレット用 */
-@media screen and (min-width: 415px) and (max-width: 749px) {
 
-  /* 834px以下の画面幅に適用されるスタイル */
+@media (max-width: 1440px) {
   * {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -91,7 +91,91 @@
   .container {
 
     background-color: white;
-    max-width: 85%;
+    max-width: 90%;
+    margin: 10px auto 50px;
+    padding-bottom: 1%;
+    opacity: 0.95;
+    border-radius: 6rem;
+    
+  }
+
+  .y {
+    background-color: #FFF8F9;
+    padding: 50px 0 200px;
+    margin-top: 20px;
+  }
+
+  .Withdrawal {
+    font-size: 3rem;
+    margin-top: 50px;
+
+  }
+
+  .Withdrawal2 {
+    font-size: 5rem;
+    margin-top: 20px;
+  }
+
+  .row {
+    padding: 50px 50px 100px 50px;
+    text-align: center;
+  }
+
+
+
+  .yes {
+    padding: 13px 60px;
+    margin: 0 3rem;
+    border-radius: 1.5rem;
+    font-size: 4rem;
+    background-color: #2F3F93;
+    color: white;
+    border: none;
+  }
+
+  .no {
+    padding: 5px 50px;
+    cursor: default;
+    background-color: #E43F3F;
+    border-radius: 1.5rem;
+    font-size: 4rem;
+    color: white;
+    border: none;
+   text-decoration: none;
+   text-align: center;
+   line-height: 75px;
+   white-space: nowrap;
+  }
+
+  .button {
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    max-width: 100%;
+    display: flex;
+   align-items: center; 
+   justify-content: center;
+  }
+
+  .header a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 840px) {
+
+ 
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
+  }
+
+  .container {
+
+    background-color: white;
+    max-width: 80%;
     margin: 10px auto 50px;
     padding-bottom: 1%;
     opacity: 0.95;
@@ -123,7 +207,7 @@
 
 
   .yes {
-    padding: 10px 30px;
+    padding: 15px 30px;
     border-radius: 1.5rem;
     font-size: 2rem;
     background-color: #2F3F93;
@@ -178,7 +262,7 @@
   .container {
 
     background-color: white;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto 100px;
     padding-bottom: 1rem;
     opacity: 0.95;
@@ -210,7 +294,7 @@
 
 
   .yes {
-    padding: 4px 25px;
+    padding: 13px 19px;
     border-radius: 1.5rem;
     font-size: 1.5rem;
     background-color: #2F3F93;
@@ -221,7 +305,7 @@
 
   
     .no {
-      padding: 4px 20px;
+      padding: 1px 12px;
       cursor: default;
       background-color: #E43F3F;
       border-radius: 1.5rem;
@@ -240,6 +324,7 @@
     max-width: 100%;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
        
   }
 
