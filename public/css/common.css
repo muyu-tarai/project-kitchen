@@ -52,7 +52,9 @@ a a:hover {
 .hamburger-menu{
   margin-left: auto;
   margin-right:5px;
+
 }
+
 .menu-btn {
     display: flex;
     height: 60px;
@@ -74,6 +76,9 @@ a a:hover {
 }
 .menu-btn span:before {
     bottom: 8px;
+}
+#nav{
+  transition: transform 5s;
 }
 .menu-btn span:after {
     top: 8px;

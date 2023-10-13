@@ -9,6 +9,11 @@
 
 <body>
   <div class="imag-car">
+    <style>
+      .imag-car {
+        background-image: url("data: image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/truck8.jpg'))}}");
+      }
+    </style>
     <div class="container">
       <form action="{{ route('login') }}">
         @csrf
