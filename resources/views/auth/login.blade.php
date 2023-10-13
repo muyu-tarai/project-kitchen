@@ -18,16 +18,13 @@
       </form>
       <div class="row">
         <div class="panel-heading">LOG IN</div>
-
+        @if($errors->any())
         <div class="err">
-          @error('email')
-          <span role="alert">{{ $message }}</span>
-          @enderror
-          <br>
-          @error('password')
-          <span role="alert">{{ $message }}</span>
-          @enderror
+          @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+          @endforeach
         </div>
+        @endif
         <form action="{{ route('login') }}" method="POST" class="form">
           @csrf
           <div class="form-group">

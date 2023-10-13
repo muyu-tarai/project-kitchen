@@ -1,4 +1,4 @@
-@media (min-width: 750px) {
+@media (max-width: 2560px) {
   * {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -8,17 +8,17 @@
   .container {
 
     background-color: white;
-    max-width: 60%;
+    max-width: 50%;
     margin: 10px auto 0;
     padding-bottom: 1%;
     opacity: 0.95;
     border-radius: 6rem;
-    display: flex;
+    
   }
 
   .y {
     background-color: #FFF8F9;
-    padding: 5px 0 200px;
+    padding: 50px 0 200px;
     margin-top: 20px;
   }
 
@@ -34,7 +34,8 @@
   }
 
   .row {
-    padding: 50px 0px 100px 60px;
+    padding: 0px 150px 100px 150px;
+    text-align: center;
   }
 
 
@@ -65,11 +66,11 @@
 
   .button {
     display: flex;
-
-    margin-right: 15rem;
+    margin: 0 auto;
     padding-bottom: 5rem;
     padding-top: 5rem;
     max-width: 100%;
+    
   }
 
   .header a {
@@ -78,10 +79,8 @@
   }
 }
 
-/* タブレット用 */
-@media screen and (min-width: 415px) and (max-width: 749px) {
 
-  /* 834px以下の画面幅に適用されるスタイル */
+@media (max-width: 1440px) {
   * {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -91,7 +90,90 @@
   .container {
 
     background-color: white;
-    max-width: 85%;
+    max-width: 80%;
+    margin: 10px auto 50px;
+    padding-bottom: 1%;
+    opacity: 0.95;
+    border-radius: 6rem;
+    
+  }
+
+  .y {
+    background-color: #FFF8F9;
+    padding: 50px 0 200px;
+    margin-top: 20px;
+  }
+
+  .Withdrawal {
+    font-size: 1.3rem;
+    margin-top: 50px;
+
+  }
+
+  .Withdrawal2 {
+    font-size: 3rem;
+    margin-top: 20px;
+  }
+
+  .row {
+    padding: 50px 50px 100px 50px;
+    text-align: center;
+  }
+
+
+
+  .yes {
+    padding: 4px 50px;
+    margin: 0 3rem;
+    border-radius: 1.5rem;
+    font-size: 5rem;
+    background-color: #2F3F93;
+    color: white;
+    border: none;
+  }
+
+  .no {
+    padding: 4px 30px;
+    cursor: default;
+    background-color: #E43F3F;
+    border-radius: 1.5rem;
+    font-size: 5rem;
+    color: white;
+    border: none;
+   text-decoration: none;
+   text-align: center;
+   line-height: 50px;
+   white-space: nowrap;
+  }
+
+  .button {
+    margin: 0 auto;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .header a {
+    color: black;
+    text-decoration: none;
+  }
+}
+
+@media screen and (max-width: 840px) {
+
+ 
+  * {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    max-width: 100%;
+  }
+
+  .container {
+
+    background-color: white;
+    max-width: 60%;
     margin: 10px auto 50px;
     padding-bottom: 1%;
     opacity: 0.95;

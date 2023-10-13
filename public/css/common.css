@@ -13,6 +13,10 @@ a {
   display: block;
 }
 
+li {
+  list-style: none;
+}
+
 a a:hover {
   opacity: .4;
 }

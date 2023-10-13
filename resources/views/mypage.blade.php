@@ -32,7 +32,7 @@
               </div>
 
               <div class="button">
-                @if(Auth::user()->id !== 42)
+                @if(Auth::user()->email !== 'gest@gmail.com')
                 <input type="submit" class="updeta" formaction="{{ route('mypage') }}" value="更新">
                 <input type="submit" class="Withdrawal" formaction="{{ route('leave_account') }}" value="退会">
                 @endif
