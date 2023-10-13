@@ -21,7 +21,7 @@ function addMenu()
 {
   let storesItems = document.querySelector('#stores-items')
   let tmp = `
-  <div class="stores-item">
+  <div class="stores-item" id="stores-item">
   <div class="store-figure-display">
   <img src="/images/icons/noImage.jpg" class="store-figure" id="menu-figure" alt="">
   </div>
@@ -74,8 +74,8 @@ function cancelSubmit() {
           document.querySelector('#err-msg-zone').insertAdjacentHTML('beforeend', `<li id="store-name-err" class="validation">メニューを1つ以上登録してください</li>`);
           submitErr = 1;
         }
-
-        if(submitErr = 1){
+        
+        if(submitErr == 1){
           scrollTop()
           return false
         }

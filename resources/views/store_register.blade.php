@@ -37,7 +37,7 @@
     <div class="stores-items" id="stores-items">
       @if(isset($menus))
       @foreach($menus as $menu)
-      <div class="stores-item">
+      <div class="stores-item" id="stores-item">
         <div class="store-figure-display">
           <img src="data:image/{{ $menu->ext }};base64,{{ $menu->menu_image }}" class="store-figure" id="added-menu-figure" alt="">
         </div>

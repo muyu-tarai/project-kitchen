@@ -4,12 +4,17 @@
 @endsection
 @section('content')
 <div class="top-section">
+  <style>
+    .top-section{
+    background-image: url("data:image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/hero.jpg')) }}");
+    }
+  </style>
   <div class="top-section-items">
     <h1 class="large">出店様へ</h1>
     <p class="medium">このサイトはフードカーを盛り上げるために制作さ<br>れたサイトです。もし興味がありましたら、下のア<br>イコンから登録をお願いします。</p>
     <div class="top-section-buttons">
-      <a class="" href="/register"><img src="/images/icons/サインインボタン.png"></a>
-      <a class="" href="/login"><img src="/images/icons/ログインボタン.png"></a>
+      <a class="" href="/register"><img src="data:image/png;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/signInButton.png')) }}"></a>
+      <a class="" href="/login"><img src="data:image/png;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/loginButton.png')) }}"></a>
     </div>
   </div>
 </div>
