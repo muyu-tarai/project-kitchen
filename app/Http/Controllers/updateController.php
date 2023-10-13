@@ -18,6 +18,7 @@ class updateController extends Controller
 {
     public function store_update()
     {
+        dd(1);
         // 現在認証しているユーザーを取得
         $user = Auth::user();
         // 現在認証しているユーザーのIDを取得
