@@ -6,6 +6,11 @@
 
 <body>
   <div class="imag-car">
+    <style>
+      .imag-car {
+        background-image: url("data: image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/truck5.jpg'))}}");
+      }
+    </style>
     <div class="container">
       <div class="row">
         <div class="col col-md-offset-3 col-md-6">
