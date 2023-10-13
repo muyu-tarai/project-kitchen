@@ -139,7 +139,7 @@ class storeRegisterController extends Controller
             }
         }
 
-        return view('store_update');
+        return redirect('store_update');
     }
 
     public function upload()

@@ -54,11 +54,13 @@ class updateController extends Controller
         $user = Auth::user();
         // 現在認証しているユーザーのIDを取得
         $id = Auth::id();
-
+        //日付の数値をデータベース用に変換
         $data = $request->year. '-' .$request->month. '-' .$request->day. ' ' .$request->time;
-
-        // $carbon = Carbon::create('Y-m-d H:i' ,$data);
-
+        if( $data < Carbon::now() ){
+            $yearChange=$request->year+1;
+            $data = $yearChange. '-' .$request->month. '-' .$request->day. ' ' .$request->time;
+    
+        }
         if($request->o_flag == 0){
             $store = store::firstwhere('user_id',$id);
             $store->opening_flag = $request->o_flag;

@@ -58,6 +58,9 @@ img {
   display:flex;
   margin:25px 10% 50px;
 }
+.time1{
+  display:flex;
+}
 .text{
   font-size: 3rem;
   width: 50px;
@@ -69,9 +72,6 @@ img {
   margin-right:15px;
   text-align:center;
   color:rgb(36, 36, 36);
-}
-.year{
-  width:150px;
 }
 .hour-secound{
   width:150px;
@@ -100,24 +100,29 @@ h2{
 .menu-contents{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
+  gap: 5%;
   margin: 20px 10%;
-  text-align:center;
   font-size: 2rem;
 }
 .menu-item{
-  padding: 20px;
+  padding: 10px;
 }
 .food-wrp{
   width: 100%;
-  height: 80%;
-  margin-bottom:10px;
-  border-radius: 30px;
+  position: relative;
+  padding-top:75%;
 }
 .menu-img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
   object-fit: cover;
 }
-
+.menu-name{
+  background-color:white;
+  text-align: center;
+}
 .under-submit{
   padding-bottom:10px;
   text-align: center;
@@ -138,6 +143,11 @@ h2{
 }
 .dark{
   background-color:black;
+}
+.soldout{
+  text-align:center;
+  position:relative;
+  margin-top:-80%;
 }
 
 /* バリデーションのcss */
@@ -167,12 +177,20 @@ h2{
     margin-top:30px;
     margin-left:0;
   }
+  .store-contents{
+    text-align:center;
+  }
+  .time1{
+    justify-content:center;
+  }
   .close-time{
+    display:flow;
     margin:20px 0;
   }
-
+  .hour-secound {
+    margin-top:20px;
+  }
   .menu-contents{
-    display: grid;
     grid-template-columns: 1fr 1fr ;
     gap: 10px;
     margin: 20px 5%;
@@ -180,5 +198,6 @@ h2{
   #gmap{
     height: 300px;
     margin-bottom:40px;
+    margin-top:40px;
   }
 }

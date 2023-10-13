@@ -1,7 +1,7 @@
 /* 共通 */
 h2,
 h3 {
-  font-size: 4rem;
+  font-size: 3rem;
   margin: 5rem 0 2rem 3rem;
 
 }
@@ -48,6 +48,19 @@ textarea {
   margin: 5rem 0 0 5rem;
 }
 
+.validation{
+    background-color: #d14646;
+    color: white;
+    font-size: 2rem;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.err-msg{
+  font-size:2rem;
+  color: red;
+}
+
 .small {
   font-size: 1.5rem;
 }
@@ -73,13 +86,23 @@ textarea {
   margin: 1rem 15rem;
 }
 
+.store-figure-display {
+  width: 100%;
+  position: relative;
+  padding-top: 75%;
+}
+
 .store-figure {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  width: 90%;
+  height: 90%;
   top: 0;
   object-fit: cover;
   border-radius: 2rem;
+  left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
 }
 
 .for-button {
@@ -98,11 +121,6 @@ textarea {
   position: relative;
 }
 
-.store-figure-display {
-  width: 100%;
-  position: relative;
-  padding-top: 75%;
-}
 
 .menu-title,
 .menu-price,
@@ -158,6 +176,15 @@ textarea {
 }
 
 @media (max-width: 768px) {
+h2,h3 {
+    font-size: 2.5rem;
+    margin: 5rem 0 2rem 1rem;
+  }
+
+  .validation {
+      font-size: 1.5rem;
+    }
+
   .stores-items {
     grid-template-columns: 1fr 1fr;
     gap: 5rem 2rem;
@@ -199,12 +226,6 @@ textarea {
   
     .register-button label {
       font-size: 3rem;
-    }
-    h2,
-    h3 {
-      font-size: 3rem;
-      margin: 5rem 0 2rem 3rem;
-      
     }
 }
 

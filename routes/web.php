@@ -26,7 +26,6 @@ Route::get('/login/gest', 'GestLoginController@guestLogin')->name('login.guest')
 
 //ログインが必要なところ
 Route::group(['middleware' => 'auth'], function() {
-
 //ログアウト
 Route::get('/logout', 'LogoutController@logout')->name('logout');
 //マイページへのリンクと更新用
