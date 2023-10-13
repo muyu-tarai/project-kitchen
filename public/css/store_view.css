@@ -110,8 +110,7 @@ h1 {
 .soldout{
   text-align:center;
   position:relative;
-  bottom:250px;
-  margin-bottom: -180px;
+  margin-top:-80%;
 }
 .hide{
   display:none;
