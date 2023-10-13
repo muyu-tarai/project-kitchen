@@ -105,7 +105,7 @@ h2{
   font-size: 2rem;
 }
 .menu-item{
-  padding: 5px;
+  padding: 10px;
 }
 .food-wrp{
   width: 100%;
@@ -119,7 +119,10 @@ h2{
   top: 0;
   object-fit: cover;
 }
-
+.menu-name{
+  background-color:white;
+  text-align: center;
+}
 .under-submit{
   padding-bottom:10px;
   text-align: center;
@@ -140,6 +143,11 @@ h2{
 }
 .dark{
   background-color:black;
+}
+.soldout{
+  text-align:center;
+  position:relative;
+  margin-top:-80%;
 }
 
 /* バリデーションのcss */

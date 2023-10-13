@@ -22,7 +22,7 @@
         <div class=o-c-btn>
                 <p class="o-btn" id="open">OPEN</p>
                 <p class="c-btn" id="close">CLOSE</p>
-                <input type="hidden" id="o_flag" name="o_flag" value="{{ isset($store_items[0]->opening_flag ) ? $store_items[0]->opening_flag  : ''}}">
+                <input type="hidden" id="o_flag" name="o_flag" value="{{ old('o_flag', $store_items[0]->opening_flag) }}">
         </div>
         <div class="upper-submit">
         <input type="submit" class="update-btn" value="更新">

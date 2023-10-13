@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\TrueRule;
 
 class Storeupdate extends FormRequest
 {
@@ -28,6 +29,7 @@ class Storeupdate extends FormRequest
             'month' => 'required|integer|between:1,12',
             'day' => 'required|integer|between:1,31',
             'time' => 'required|date_format:H:i',
+            'date' => [new TrueRule],
         ];
     }
 
