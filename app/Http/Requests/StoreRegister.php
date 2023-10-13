@@ -26,7 +26,7 @@ class StoreRegister extends FormRequest
         return [
             'store_name' => 'required|max:30',
             'store_image' => 'file|mimes:jpg,jpeg,png',
-            'store_comment' => 'max:100',
+            'store_comment' => 'max:150',
             'menu_image.*' => 'file|mimes:jpg,jpeg,png',
             'send_menu_image' => 'present',
             'send_menu_name.*' => 'required|max:20',

@@ -5,15 +5,15 @@
 @section('content')
 <h1 class="top-title">詳細登録画面</h1>
 <hr>
-@if($errors->any())
 <div class="alert alert-danger">
   <ul id="err-msg-zone">
+    @if($errors->any())
     @foreach($errors->all() as $message)
     <li class="validation">{{ $message }}</li>
     @endforeach
+    @endif
   </ul>
 </div>
-@endif
 <form action="/store_register_after" method="POST" enctype="multipart/form-data" onsubmit="return cancelSubmit()">
   @csrf
   <div class="inner-top">
@@ -32,7 +32,7 @@
   <div class="inner-middle">
     <div>
       <h2>店舗紹介コメント</h2>
-      <textarea name="store_comment" id="" cols="30" rows="10">{{ isset($storeComment) ? $storeComment : old('store_comment') }}</textarea>
+      <textarea name="store_comment" id="store-comment" cols="30" rows="10">{{ isset($storeComment) ? $storeComment : old('store_comment') }}</textarea>
     </div>
     <div class="stores-items" id="stores-items">
       @if(isset($menus))
@@ -82,7 +82,7 @@
       </div>
       <div>
         <h3 id="menu-comment-text">メニュー紹介コメント</h3>
-        <textarea name="menu_comment" id="add-menu-comment" cols="30" rows="10"></textarea>
+        <textarea name="menu_comment" id="add-menu-comment" cols="30" rows="3"></textarea>
       </div>
       <div class="for-button">
         <label>

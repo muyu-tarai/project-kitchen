@@ -43,17 +43,47 @@ function addMenu()
 }
 
 function removeItem(button) {
-    let parent = button.parentNode.parentNode.parentNode
-    parent.remove()
-  }
+  let parent = button.parentNode.parentNode.parentNode
+  parent.remove()
+}
 
-  function cancelSubmit() {
+function cancelSubmit() {
+  if(document.querySelector('#store-name-err') != null){
+  do{
+    document.querySelector('#store-name-err').remove()
+  }while(document.querySelector('#store-name-err') != null)
+    }
+
+    submitErr = 0;
         if(document.querySelector("#store-name").value === "") {
           document.querySelector('#err-msg-zone').insertAdjacentHTML('beforeend', `<li id="store-name-err" class="validation">店舗名は必須入力です</li>`);
-          return false;
+          submitErr = 1;
+        }
+
+        if(document.querySelector("#store-name").value.length > 30) {
+          document.querySelector('#err-msg-zone').insertAdjacentHTML('beforeend', `<li id="store-name-err" class="validation">店舗名は30文字以内で入力してください</li>`);
+          submitErr = 1;
+        }
+
+        if(document.querySelector("#store-comment").value.length > 150) {
+          document.querySelector('#err-msg-zone').insertAdjacentHTML('beforeend', `<li id="store-name-err" class="validation">店舗紹介コメントは150文字以内で入力してください</li>`);
+          submitErr = 1;
+        }
+        
+        if(document.querySelector('#stores-item') == null){
+          document.querySelector('#err-msg-zone').insertAdjacentHTML('beforeend', `<li id="store-name-err" class="validation">メニューを1つ以上登録してください</li>`);
+          submitErr = 1;
+        }
+
+        if(submitErr = 1){
+          scrollTop()
+          return false
         }
       }
 
+function scrollTop() {
+window.scroll({ top: 0, behavior: "smooth" });
+}
   
   
   addImage('#add-store-image', '#store-figure')
