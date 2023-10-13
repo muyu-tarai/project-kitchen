@@ -41,7 +41,7 @@
 
 
   .yes {
-    padding: 13px 50px;
+    padding: 13px 60px;
     margin: 0 3rem;
     border-radius: 1.5rem;
     font-size: 4rem;
@@ -51,7 +51,7 @@
   }
 
   .no {
-    padding: 5px 40px;
+    padding: 5px 50px;
     cursor: default;
     background-color: #E43F3F;
     border-radius: 1.5rem;
