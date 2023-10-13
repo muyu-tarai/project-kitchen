@@ -203,6 +203,14 @@
     color: #020abd;
     padding: none;
   }
+
+  .err {
+    text-align: center;
+    font-size: 2rem;
+    background-color: #d14646;
+    color: white;
+    
+  }
 }
 
 /* タブレット用 */
@@ -315,6 +323,14 @@
     max-width: 100%;
   }
 
+  .err {
+    text-align: center;
+    font-size: 2rem;
+    background-color: #d14646;
+    color: white;
+    
+  }
+
 }
 
 /* スマホ用 */
@@ -422,5 +438,11 @@
   .main {
     max-width: 100%;
   }
-
+  .err {
+    text-align: center;
+    font-size: 2rem;
+    background-color: #d14646;
+    color: white;
+    
+  }
 }

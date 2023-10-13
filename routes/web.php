@@ -34,6 +34,7 @@ Route::post('/mypage', 'MypageController@edit')->name('mypage');
 //退会処理
 Route::post('/leave_account', 'Leave_accountController@leave_account')->name('leave_account');
 Route::post('/leave_account_complete', 'Leave_account_completeController@delete')->name('leave_account_complete');
+Route::get('/leave_account_complete', 'Leave_account_completeController@leave_account_complete')->name('leave_account_complete');
 
 //詳細登録画面
 Route::get('/store_register', 'storeRegisterController@storeRegisterDisplay')->name('store_register');
