@@ -2,7 +2,11 @@
  let menu_flags = document.getElementsByClassName("menu_flag");
  let menu_items = document.getElementsByClassName("menu");
  let soldouts =  document.getElementsByClassName("soldout");
+ let o_flag = document.getElementById("o_flag");
 
+ if(o_flag.value==0){
+  document.getElementById("closing-datetime").innerText="閉店中";
+ }
 for (let i = 0; i < menu_items.length; i++) {
   if(menu_flags[i].value=='1'){
     menu_items[i].classList.add('dark');

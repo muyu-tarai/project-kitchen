@@ -2,7 +2,7 @@
 @section('header_right')
 @if(Auth::check())
 <div class="hamburger-menu">
-          <div  id="menu-btn-check">
+          <div id="menu-btn-check">
           <label for="menu-btn-check" class="menu-btn"><span></span></label>
 </div>
       </nav>

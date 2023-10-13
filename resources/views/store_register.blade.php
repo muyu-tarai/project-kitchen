@@ -5,20 +5,20 @@
 @section('content')
 <h1 class="top-title">詳細登録画面</h1>
 <hr>
-@if($errors->any())
 <div class="alert alert-danger">
-  <ul>
+  <ul id="err-msg-zone">
+    @if($errors->any())
     @foreach($errors->all() as $message)
     <li class="validation">{{ $message }}</li>
     @endforeach
+    @endif
   </ul>
 </div>
-@endif
-<form action="/store_register_after" method="POST" enctype="multipart/form-data">
+<form action="/store_register_after" method="POST" enctype="multipart/form-data" onsubmit="return cancelSubmit()">
   @csrf
   <div class="inner-top">
     <h2>店舗名</h2>
-    <input type="text" name="store_name" value="{{ isset($storeName) ? $storeName : old('store_name') }}">
+    <input type="text" id="store-name" name="store_name" value="{{ isset($storeName) ? $storeName : old('store_name') }}">
     <h2>店舗画像</h2>
     <div class="store-figure-display">
       <img src="data:image/{{ $ext }};base64,{{ $storeImage }}" class="store-figure" id="store-figure" name="image_file" alt="">
@@ -32,12 +32,12 @@
   <div class="inner-middle">
     <div>
       <h2>店舗紹介コメント</h2>
-      <textarea name="store_comment" id="" cols="30" rows="10">{{ isset($storeComment) ? $storeComment : old('store_comment') }}</textarea>
+      <textarea name="store_comment" id="store-comment" cols="30" rows="10">{{ isset($storeComment) ? $storeComment : old('store_comment') }}</textarea>
     </div>
     <div class="stores-items" id="stores-items">
       @if(isset($menus))
       @foreach($menus as $menu)
-      <div class="stores-item">
+      <div class="stores-item" id="stores-item">
         <div class="store-figure-display">
           <img src="data:image/{{ $menu->ext }};base64,{{ $menu->menu_image }}" class="store-figure" id="added-menu-figure" alt="">
         </div>
@@ -63,39 +63,39 @@
         <div class="store-figure-display">
           <img src="data:image/jpg;base64,{{ base64_encode(Storage::disk('dropbox')->get('store/noImage.jpg')) }}" class="store-figure" id="menu-figure" alt="">
         </div>
-          <div class="for-button" id="add-menu-images">
-            <label id="add-menu-image-label" class="add-menu-image-label">
-              <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
-            </label>
-          </div>
-        </div>
-        <div>
-          <h3>メニュー名</h3>
-          <input type="text" name="menu_name" id="add-menu-name">
-        </div>
-        <div>
-          <h3>メニュー金額</h3>
-          <div class="add-menu-price">
-            <input type="text" name="menu_price" id="add-menu-price">
-            <p>円</p>
-          </div>
-        </div>
-        <div>
-          <h3>メニュー紹介コメント</h3>
-          <textarea name="menu_comment" id="add-menu-comment" cols="30" rows="10"></textarea>
-        </div>
-        <div class="for-button">
-          <label>
-            <button type="button" id="add-menu"></button>メニューを追加する
+        <div class="for-button" id="add-menu-images">
+          <label id="add-menu-image-label" class="add-menu-image-label">
+            <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
           </label>
         </div>
       </div>
-      <div class="for-button register-button">
+      <div>
+        <h3 id="menu-name-text">メニュー名</h3>
+        <input type="text" name="menu_name" id="add-menu-name">
+      </div>
+      <div>
+        <h3 id="menu-price-text">メニュー金額</h3>
+        <div class="add-menu-price">
+          <input type="text" name="menu_price" id="add-menu-price">
+          <p>円</p>
+        </div>
+      </div>
+      <div>
+        <h3 id="menu-comment-text">メニュー紹介コメント</h3>
+        <textarea name="menu_comment" id="add-menu-comment" cols="30" rows="3"></textarea>
+      </div>
+      <div class="for-button">
         <label>
-          <input type="submit"></input>店舗情報を登録する
+          <button type="button" id="add-menu"></button>メニューを追加する
         </label>
       </div>
     </div>
+    <div class="for-button register-button">
+      <label>
+        <input type="submit"></input>店舗情報を登録する
+      </label>
+    </div>
+  </div>
 </form>
 @section('js')
 <script src="/js/storeRegister.js"></script>

@@ -19,7 +19,7 @@
     <header>
       <nav class="navbar">
         <div class="logo">
-          <a class="x-large logo"href="/"><img src="/images/icons/ヘッダー (1).png"></a>
+          <a class="x-large logo" href="/"><img src="data:image/png;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/headerLogo.png')) }}"></a>
         </div>
         @yield('header_right')
 
@@ -37,12 +37,10 @@
   </div>
   @yield('js')
   <script>
-    const hamburger =  document.getElementById('menu-btn-check')
+    const hamburger = document.getElementById('menu-btn-check')
     const nav = document.getElementById('nav')
     hamburger.addEventListener('click', function() {
-    console.log(1)
-    nav.classList.toggle('hidden');
-
+      nav.classList.toggle('hidden');
     });
   </script>
 </body>
