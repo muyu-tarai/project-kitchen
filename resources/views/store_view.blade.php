@@ -7,6 +7,7 @@
     <div class="title-bar">
         <h1>{{ isset($store_items->store_name)?$store_items->store_name :''}}</h1>
         <p id="update-at">{{ isset($carbonUpate) ? $carbonUpate : ''}} 更新</p>
+        <input type="hidden" id="o_flag" value="{{ $store_items->opening_flag }}" >
     </div>
     <div class="contents1">
         <p id="closing-datetime"> 閉店予定　{{ isset($carbon_close ) ? $carbon_close  : '' }}</p>
@@ -45,7 +46,6 @@
         @endif
     </div>
     <div class="return-img">
-        <a href="#"><img src="data:image/svg;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/returnTop.svg')) }}"></a>
     </div>
 </div>
 @endsection
