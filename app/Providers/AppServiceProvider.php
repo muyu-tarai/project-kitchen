@@ -35,6 +35,10 @@ class AppServiceProvider extends ServiceProvider
                 $config['authorization_token']
             ));
 
+            // if (App::environment('production','staging')) {
+            URL::forceScheme('https');
+        // }
+
             return new FilesystemAdapter(
                 new Filesystem($adapter, $config),
                 $adapter,
