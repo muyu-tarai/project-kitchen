@@ -38,7 +38,7 @@
             </div>
 
             <div class="input">
-              <input type="text" class="form-control" id="email" name="email" value="{{ isset($gest) ? $gest->email : old('email') }}" />
+              <input type="text" class="form-control" id="email" name="email" value="{{ isset($gest) ? $gest : old('email') }}" />
             </div>
           </div>
           <div class="form-group">

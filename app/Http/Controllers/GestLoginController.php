@@ -13,9 +13,9 @@ class GestLoginController extends Controller
     public function guestLogin()
     {
         $email = 'gest@gmail.com';
-        $gest = User::where('email', $email)->first();
+
         $password = 'gestlogin';
 
-        return view('auth.login',['gest' => $gest, 'password' => $password]);
+        return view('auth.login',['gest' => $email, 'password' => $password]);
     }
 }
