@@ -1,4 +1,4 @@
-@extends('preLoginLayout')
+@extends('preloginLayout')
 @section('header_right')
 @if(Auth::check())
 <div class="hamburger-menu">
