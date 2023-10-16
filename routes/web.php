@@ -5,9 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 //ゲストログイン
-Route::get('/login/gest', 'GestLoginController@guestLogin')->name('login.guest');
+// Route::get('/login/gest', 'GestLoginController@guestLogin')->name('login.guest');
 //ログアウト
-Route::get('/logout', 'LogoutController@logout')->name('logout');
+// Route::get('/logout', 'LogoutController@logout')->name('logout');
 
 
 //マイページへのリンクと更新用

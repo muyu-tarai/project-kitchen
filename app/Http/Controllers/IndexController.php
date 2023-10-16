@@ -8,12 +8,13 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\index;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        $store_items = \DB::table('stores')->where('opening_flag',1)->get();
+        $store_items = DB::table('stores')->where('opening_flag',1)->get();
 
         $i = 0;
         foreach ($store_items as $store_item) {
