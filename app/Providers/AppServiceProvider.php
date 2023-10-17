@@ -31,15 +31,15 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        
+                    // if (App::environment('production','staging')) {
+                    URL::forceScheme('https');
+                // }
         Storage::extend('dropbox', function (Application $app, array $config) {
             $adapter = new DropboxAdapter(new DropboxClient(
                 $config['authorization_token']
             ));
-
-            // if (App::environment('production','staging')) {
-            URL::forceScheme('https');
-        // }
-
+            
             return new FilesystemAdapter(
                 new Filesystem($adapter, $config),
                 $adapter,
