@@ -17,8 +17,9 @@ Route::post('/mypage', 'MypageController@edit')->name('mypage');
 //退会処理
 Route::post('/leave_account', 'Leave_accountController@leave_account')->name('leave_account');
 Route::post('/leave_account_complete', 'Leave_account_completeController@delete')->name('leave_account_complete');
+
 //店舗一覧画面
-Route::get('/', 'indexController@index')->name('index');
+Route::get('/', 'IndexController@index')->name('index');
 //店舗詳細画面
 Route::get('/store/{id}','ViewController@view');
 //ゲストログイン
