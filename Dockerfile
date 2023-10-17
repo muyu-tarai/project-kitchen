@@ -1,9 +1,12 @@
 # 公式のPHP 8.0.0イメージにApache web serverがプリインストールされたベースイメージを設定
 FROM php:8.0.0-apache
 
-# 502エラーの為の記述
+# 502エラーの為の記述,serverNameの指定
 COPY my-httpd.conf /etc/apache2/conf-available/
     RUN a2enconf my-httpd
+
+# 502エラーの為の記述,php.ini書き換え
+RUN sed -i 's/80/8080/g'
 
 # コンテナに必要なパッケージ(zip、unzip、git)をインストール
 # ここを修正 git \
