@@ -19,7 +19,7 @@ class IndexController extends Controller
         $i = 0;
         foreach ($store_items as $store_item) {
             if( $store_item->closing_datetime < Carbon::now() ){
-                $store = store::firstwhere('id',$store_item->id);
+                $store = Store::firstwhere('id',$store_item->id);
                 $store->opening_flag = 0;
                 $store->save();
             }
