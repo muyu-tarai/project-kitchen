@@ -28,7 +28,7 @@ class IndexController extends Controller
 
         $closeStores = Store::where('opening_flag', 0)->get();
         $openStores = Store::where('opening_flag', 1)->get();
-
+dd($store_items);
         foreach ($openStores as $key => $store) {
             $openStores[$key]->ext = File::extension($store->store_image);
             $openStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
