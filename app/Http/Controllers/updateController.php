@@ -69,12 +69,12 @@ class updateController extends Controller
     
         }
         if($request->o_flag == 0){
-            $store = store::firstwhere('user_id',$id);
+            $store = Store::firstwhere('user_id',$id);
             $store->opening_flag = $request->o_flag;
             $store->save();
         }
         else if($request->o_flag == 1){
-            $store = store::firstwhere('user_id',$id);
+            $store = Store::firstwhere('user_id',$id);
             $store->opening_flag = $request->o_flag;
             $store->current_location = $request->locate;
             $store->closing_datetime = $data;
