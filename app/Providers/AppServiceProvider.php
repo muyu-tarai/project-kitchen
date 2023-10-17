@@ -35,17 +35,17 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         // }
 
-        // Storage::extend('dropbox', function (Application $app, array $config) {
-        //     $adapter = new DropboxAdapter(new DropboxClient(
-        //         $config['authorization_token']
-        //     ));
+        Storage::extend('dropbox', function (Application $app, array $config) {
+            $adapter = new DropboxAdapter(new DropboxClient(
+                $config['authorization_token']
+            ));
             
-        //     return new FilesystemAdapter(
-        //         new Filesystem($adapter, $config),
-        //         $adapter,
-        //         $config
-        //     );
-        // });
+            return new FilesystemAdapter(
+                new Filesystem($adapter, $config),
+                $adapter,
+                $config
+            );
+        });
 
     }
 }
