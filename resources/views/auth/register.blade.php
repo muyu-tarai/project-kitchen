@@ -23,8 +23,6 @@
             @endforeach
           </div>
           @endif
-
-
           <div class="panel-body">
             <form action="{{ route('register') }}" method="POST">
               @csrf
@@ -35,30 +33,20 @@
                   <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
                 </div>
               </div>
-
               <div class="form-group">
-
                 <label for="email" class="alert">mail</label><br>
-
-
                 <div class="input">
                   <input type="text" class="form-control" id="email" name="email" value="{{ old('email') }}" />
                 </div>
               </div>
               <div class="form-group">
-
                 <label for="password" class="alert">password</label><br>
-
-
                 <div class="input">
                   <input type="password" class="form-control" id="password" name="password">
                 </div>
-
               </div>
               <div class="form-group">
-
                 <label for="password-confirm" class="alert">password check</label><br>
-
                 <div class="input">
                   <input type="password" class="form-control" id="password-confirm" name="password_confirmation">
                 </div>
@@ -70,7 +58,6 @@
         </div>
         </form>
       </div>
-
     </div>
   </div>
   </div>

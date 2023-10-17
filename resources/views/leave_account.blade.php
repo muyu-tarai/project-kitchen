@@ -12,14 +12,13 @@
           <p>登録された内容は全て消去されますが</p>
         </div>
         <div class="Withdrawal2">
-          <p>本当に退会しますか？</p>
+          <h1>本当に退会しますか？</h1>
         </div>
-        <form action="{{ route('leave_account_complete') }}" method="post">
-          @csrf
-          <div class="button">
-            <input type="submit" class="yes" formaction="{{ route('leave_account_complete') }}" value="はい"></input>
-            <a href="mypage" class="no">いいえ</a>
-          </div>
+
+        <div class="button">
+          <input type="submit" id="modal" class="yes" value="はい"></input>
+          <a href="mypage" class="no">いいえ</a>
+        </div>
         </form>
         <form action="{{ route('mypage') }}" method="get">
           @csrf
@@ -29,3 +28,17 @@
   </div>
 </body>
 @endsection
+@section('js')
+<script src="/js/leave_account.js"></script>
+@endsection
+<div id="myModal" style="display: none;">
+  <p class="modal1">メールアドレスを入力して<br>送信ボタンを押してください</p>
+
+  <form action="{{ route('leave_account_complete') }}" method="post">
+    @csrf
+    <div class="button">
+      <input type="submit" class="send" formaction="{{ route('leave_account_complete') }}" value="送信"></input>
+    </div>
+    <a href="mypage" class="close">閉じる</a>
+  </form>
+</div>
