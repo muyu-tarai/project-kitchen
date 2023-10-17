@@ -14,9 +14,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $store_items = Store::where('opening_flag',1)->get();
-        dd($store_items);
-
+        // $store_items = Store::where('opening_flag',1)->get();
+        
         // $i = 0;
         // foreach ($store_items as $store_item) {
         //     if( $store_item->closing_datetime < Carbon::now() ){
@@ -26,8 +25,9 @@ class IndexController extends Controller
         //     }
         //     $i++;
         // }
-
-        // $closeStores = Store::where('opening_flag', 0)->get();
+        
+        $closeStores = Store::where('opening_flag', 0)->get();
+        dd($closeStores);
         // $openStores = Store::where('opening_flag', 1)->get();
         // foreach ($openStores as $key => $store) {
         //     $openStores[$key]->ext = File::extension($store->store_image);
