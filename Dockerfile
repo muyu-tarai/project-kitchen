@@ -1,5 +1,5 @@
 # 公式のPHP 8.0.0イメージにApache web serverがプリインストールされたベースイメージを設定
-FROM php:8.0.0-apache
+FROM php:8.0-apache
 
 # コンテナに必要なパッケージ(zip、unzip、git)をインストール
 # ここを修正 git \
