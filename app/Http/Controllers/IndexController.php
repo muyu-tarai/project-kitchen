@@ -14,8 +14,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        phpinfo();
-        // $store_items = DB::table('stores')->where('opening_flag',1)->get();
+        dd('aa');
+        // $store_items = Store::where('opening_flag',1)->get();
 
         // $i = 0;
         // foreach ($store_items as $store_item) {
