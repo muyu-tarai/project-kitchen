@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
-
 // //ゲストログイン
 // Route::get('/login/gest', 'GestLoginController@guestLogin')->name('login.guest');
 // //ログアウト
