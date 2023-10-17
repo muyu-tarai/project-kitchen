@@ -1,4 +1,4 @@
-@extends('preLoginLayout')
+@extends('preloginLayout')
 @section('css')
 <link rel="stylesheet" href="/css/register.css"> 
 @endsection
