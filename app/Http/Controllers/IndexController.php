@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-// use App\Store;
+use App\Store;
 // use Illuminate\Support\Facades\Storage;
 // use Carbon\Carbon;
 // use Illuminate\Http\Request;
@@ -14,8 +14,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        dd('aa');
-        // $store_items = Store::where('opening_flag',1)->get();
+        $store_items = Store::where('opening_flag',1)->get();
+        dd($store_items);
 
         // $i = 0;
         // foreach ($store_items as $store_item) {
