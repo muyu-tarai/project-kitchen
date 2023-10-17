@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Store;
-// use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\index;
@@ -30,7 +30,6 @@ class IndexController extends Controller
         $openStores = Store::where('opening_flag', 1)->get();
         foreach ($openStores as $key => $store) {
             $openStores[$key]->ext = File::extension($store->store_image);
-            dd($store_items);
             $openStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
             $openStores[$key]->store_image = $openStoreImageFromDropbox;
         }
