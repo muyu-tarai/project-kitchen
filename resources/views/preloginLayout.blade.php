@@ -11,11 +11,10 @@
   @yield('css')
   <script src="https://kit.fontawesome.com/66cf41360e.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-  <meta na(me="csrf-token" content="{{ csrf_token() }}">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
-  {{dd('throuw')}}
   <div class="header">
     <header>
       <nav class="navbar">
