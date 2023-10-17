@@ -6,7 +6,7 @@ use App\Store;
 // use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\index;
+// use App\index;
 // use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\DB;
 
