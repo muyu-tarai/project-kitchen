@@ -27,7 +27,6 @@ class IndexController extends Controller
         }
         
         $closeStores = Store::where('opening_flag', 0)->get();
-        dd($closeStores);
         $openStores = Store::where('opening_flag', 1)->get();
         foreach ($openStores as $key => $store) {
             $openStores[$key]->ext = File::extension($store->store_image);
