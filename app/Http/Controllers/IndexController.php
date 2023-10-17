@@ -13,7 +13,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-dd(22);
         $store_items = \DB::table('stores')->where('opening_flag',1)->get();
 
         $i = 0;

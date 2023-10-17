@@ -4,19 +4,19 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
-// //ゲストログイン
-// Route::get('/login/gest', 'GestLoginController@guestLogin')->name('login.guest');
-// //ログアウト
-// Route::get('/logout', 'LogoutController@logout')->name('logout');
+//ゲストログイン
+Route::get('/login/gest', 'GestLoginController@guestLogin')->name('login.guest');
+//ログアウト
+Route::get('/logout', 'LogoutController@logout')->name('logout');
 
 
-// //マイページへのリンクと更新用
-// Route::get('/mypage', 'MypageController@mypage')->name('mypage');
-// Route::post('/mypage', 'MypageController@edit')->name('mypage');
+//マイページへのリンクと更新用
+Route::get('/mypage', 'MypageController@mypage')->name('mypage');
+Route::post('/mypage', 'MypageController@edit')->name('mypage');
 
-// //退会処理
-// Route::post('/leave_account', 'Leave_accountController@leave_account')->name('leave_account');
-// Route::post('/leave_account_complete', 'Leave_account_completeController@delete')->name('leave_account_complete');
+//退会処理
+Route::post('/leave_account', 'Leave_accountController@leave_account')->name('leave_account');
+Route::post('/leave_account_complete', 'Leave_account_completeController@delete')->name('leave_account_complete');
 
 //店舗一覧画面
 Route::get('/', 'IndexController@index')->name('index');
