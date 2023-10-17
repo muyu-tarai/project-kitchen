@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\store_update;
-use App\store;
-use App\menu;
+use App\Store;
+use App\Menu;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Requests\Storeupdate;

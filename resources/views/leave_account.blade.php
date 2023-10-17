@@ -1,4 +1,4 @@
-@extends('Layout')
+@extends('layout')
 @section('css')
 <link rel="stylesheet" href="/css/leave_account.css">
 @endsection
