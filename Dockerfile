@@ -5,8 +5,6 @@ FROM php:8.0.0-apache
 COPY my-httpd.conf /etc/apache2/conf-available/
     RUN a2enconf my-httpd
 
-# 502エラーの為の記述,php.ini書き換え
-RUN sed -i 's/memory_limit = 128M/memory_limit = -1/g' "$PHP_INI_DIR/php.ini"
 
 # コンテナに必要なパッケージ(zip、unzip、git)をインストール
 # ここを修正 git \
@@ -35,6 +33,9 @@ RUN cd /etc/apache2/mods-enabled \
 
 # php.ini-productionをphp.iniにリネーム（サーバー環境に適したPHPの設定を、PHP設定ファイルとして使用）
 RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+
+# 502エラーの為の記述,php.ini書き換え
+RUN sed -i 's/memory_limit = 128M/memory_limit = -1/g' "$PHP_INI_DIR/php.ini"
 
 # コンテナの作業ディレクトリを/var/www/htmlに設定
 WORKDIR /var/www/html
