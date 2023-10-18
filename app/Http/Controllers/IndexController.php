@@ -18,30 +18,28 @@ class IndexController extends Controller
 
         $i = 0;
 
-        if (!empty($store_items)) {
-            foreach ($store_items as $store_item) {
-                if ($store_item->closing_datetime < Carbon::now()) {
-                    $store = Store::firstwhere('id', $store_item->id);
-                    $store->opening_flag = 0;
-                    $store->save();
-                }
-                $i++;
+        foreach ($store_items as $store_item) {
+            if ($store_item->closing_datetime < Carbon::now()) {
+                $store = Store::firstwhere('id', $store_item->id);
+                $store->opening_flag = 0;
+                $store->save();
             }
+            $i++;
         }
 
         $closeStores = Store::where('opening_flag', 0)->get();
         $openStores = Store::where('opening_flag', 1)->get();
 
-        if (!empty($openStores)) {
-            foreach ($openStores as $key => $store) {
+        foreach ($openStores as $key => $store) {
+            if (Storage::disk('dropbox')->exists($store->store_image)) {
                 $openStores[$key]->ext = File::extension($store->store_image);
                 $openStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
                 $openStores[$key]->store_image = $openStoreImageFromDropbox;
             }
         }
 
-        if (!empty($closeStores)) {
-            foreach ($closeStores as $key => $store) {
+        foreach ($closeStores as $key => $store) {
+            if (Storage::disk('dropbox')->exists($store->store_image)) {
                 $closeStores[$key]->ext = File::extension($store->store_image);
                 $closeStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
                 $closeStores[$key]->store_image = $closeStoreImageFromDropbox;
