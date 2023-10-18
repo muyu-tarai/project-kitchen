@@ -30,6 +30,7 @@ class IndexController extends Controller
         $closeStores = Store::where('opening_flag', 0)->get();
         $openStores = Store::where('opening_flag', 1)->get();
         
+        dd($store_items);
         foreach ($openStores as $key => $store) {
             if (Storage::disk('dropbox')->exists($store->store_image)) {
                 $openStores[$key]->ext = File::extension($store->store_image);
@@ -45,7 +46,6 @@ class IndexController extends Controller
                 $closeStores[$key]->store_image = $closeStoreImageFromDropbox;
             }
         }
-        dd($closeStores);
 
         // return view('index', [
         //     'close_stores' => $closeStores,
