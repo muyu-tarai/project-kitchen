@@ -36,7 +36,6 @@
             <div>
               <label for="email" class="label">mail</label>
             </div>
-
             <div class="input">
               <input type="text" class="form-control" id="email" name="email" value="{{ isset($gest) ? $gest : old('email') }}" />
             </div>

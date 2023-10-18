@@ -28,7 +28,6 @@
               @csrf
               <div class="form-group">
                 <label for="name" class="alert">username</label><br>
-
                 <div class="input">
                   <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" />
                 </div>
@@ -51,16 +50,16 @@
                   <input type="password" class="form-control" id="password-confirm" name="password_confirmation">
                 </div>
               </div>
-          </div>
-          <div class="text-right">
-            <button type="submit" class="btn-primary">SIGN UP</button>
+
+              <div class="text-right">
+                <button type="submit" class="btn-primary">SIGN UP</button>
+              </div>
+
+            </form>
           </div>
         </div>
-        </form>
       </div>
     </div>
-  </div>
-  </div>
   </div>
 </body>
 @endsection
