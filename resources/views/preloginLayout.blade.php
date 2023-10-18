@@ -39,11 +39,11 @@
   <script>
     const hamburger = document.getElementById('menu-btn-check')
     const nav = document.getElementById('nav')
-    if(hamburger != null){
-    hamburger.addEventListener('click', function() {
-      nav.classList.toggle('hidden');
-    });
-  }
+    if (hamburger != null) {
+      hamburger.addEventListener('click', function() {
+        nav.classList.toggle('hidden');
+      });
+    }
   </script>
 </body>
 
