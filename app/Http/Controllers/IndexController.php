@@ -14,7 +14,6 @@ class IndexController extends Controller
 {
     public function index()
     {
-        dd('lol');
         // $store_items = Store::where('opening_flag', 1)->get();
         
         // $i = 0;
@@ -47,6 +46,6 @@ class IndexController extends Controller
         //     }
         // }
 
-        // return view('index');
+        return view('index');
     }
 }
