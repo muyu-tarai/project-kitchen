@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Store;
 use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
-// use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\File;
 // use Illuminate\Http\Request;
 // use App\index;
 // use Illuminate\Support\Facades\DB;
@@ -32,8 +32,7 @@ class IndexController extends Controller
         
         foreach ($openStores as $key => $store) {
             if (is_string($store->store_image) && Storage::disk('dropbox')->exists($store->store_image)) {
-                $openStores[$key]->ext =
-                pathinfo($store->store_image, PATHINFO_EXTENSION);
+                $openStores[$key]->ext = File::extension($store->store_image);
                 $openStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
                 $openStores[$key]->store_image = $openStoreImageFromDropbox;
             }
@@ -41,8 +40,7 @@ class IndexController extends Controller
 
         foreach ($closeStores as $key => $store) {
             if (is_string($store->store_image) && Storage::disk('dropbox')->exists($store->store_image)) {
-                $closeStores[$key]->ext =
-                pathinfo($store->store_image, PATHINFO_EXTENSION);
+                $closeStores[$key]->ext = File::extension($store->store_image);
                 $closeStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
                 $closeStores[$key]->store_image = $closeStoreImageFromDropbox;
             }
