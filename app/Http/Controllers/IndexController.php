@@ -30,9 +30,8 @@ class IndexController extends Controller
         $closeStores = Store::where('opening_flag', 0)->get();
         $openStores = Store::where('opening_flag', 1)->get();
         
-        dd($store_items);
         foreach ($openStores as $key => $store) {
-            if (Storage::disk('dropbox')->exists($store->store_image)) {
+            if (is_string($store->store_image) && Storage::disk('dropbox')->exists($store->store_image)) {
                 $openStores[$key]->ext = File::extension($store->store_image);
                 $openStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
                 $openStores[$key]->store_image = $openStoreImageFromDropbox;
@@ -40,16 +39,16 @@ class IndexController extends Controller
         }
 
         foreach ($closeStores as $key => $store) {
-            if (Storage::disk('dropbox')->exists($store->store_image)) {
+            if (is_string($store->store_image) && Storage::disk('dropbox')->exists($store->store_image)) {
                 $closeStores[$key]->ext = File::extension($store->store_image);
                 $closeStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
                 $closeStores[$key]->store_image = $closeStoreImageFromDropbox;
             }
         }
 
-        // return view('index', [
-        //     'close_stores' => $closeStores,
-        //     'open_stores' => $openStores,
-        // ]);
+        return view('index', [
+            'close_stores' => $closeStores,
+            'open_stores' => $openStores,
+        ]);
     }
 }
