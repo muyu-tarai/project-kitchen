@@ -14,9 +14,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        dd('lol');
         $store_items = Store::where('opening_flag', 1)->get();
-
+        
         $i = 0;
 
         foreach ($store_items as $store_item) {
@@ -27,10 +26,11 @@ class IndexController extends Controller
             }
             $i++;
         }
-
+        
         $closeStores = Store::where('opening_flag', 0)->get();
         $openStores = Store::where('opening_flag', 1)->get();
-
+        
+        dd('lol');
         // foreach ($openStores as $key => $store) {
         //     if (Storage::disk('dropbox')->exists($store->store_image)) {
         //         $openStores[$key]->ext = File::extension($store->store_image);
