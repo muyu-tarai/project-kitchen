@@ -12,6 +12,4 @@ public function leave_account()
 {
     return view('leave_account');
 }
-
-// 3
 }
