@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Store;
-// use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Storage;
 use Carbon\Carbon;
-// use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\File;
 // use Illuminate\Http\Request;
 // use App\index;
 // use Illuminate\Support\Facades\DB;
@@ -30,22 +30,22 @@ class IndexController extends Controller
         $closeStores = Store::where('opening_flag', 0)->get();
         $openStores = Store::where('opening_flag', 1)->get();
         
-        dd('lol');
-        // foreach ($openStores as $key => $store) {
-        //     if (Storage::disk('dropbox')->exists($store->store_image)) {
-        //         $openStores[$key]->ext = File::extension($store->store_image);
-        //         $openStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
-        //         $openStores[$key]->store_image = $openStoreImageFromDropbox;
-        //     }
-        // }
+        foreach ($openStores as $key => $store) {
+            if (Storage::disk('dropbox')->exists($store->store_image)) {
+                $openStores[$key]->ext = File::extension($store->store_image);
+                $openStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
+                $openStores[$key]->store_image = $openStoreImageFromDropbox;
+            }
+        }
 
-        // foreach ($closeStores as $key => $store) {
-        //     if (Storage::disk('dropbox')->exists($store->store_image)) {
-        //         $closeStores[$key]->ext = File::extension($store->store_image);
-        //         $closeStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
-        //         $closeStores[$key]->store_image = $closeStoreImageFromDropbox;
-        //     }
-        // }
+        foreach ($closeStores as $key => $store) {
+            if (Storage::disk('dropbox')->exists($store->store_image)) {
+                $closeStores[$key]->ext = File::extension($store->store_image);
+                $closeStoreImageFromDropbox = base64_encode(Storage::disk('dropbox')->get($store->store_image));
+                $closeStores[$key]->store_image = $closeStoreImageFromDropbox;
+            }
+        }
+        dd($closeStores);
 
         // return view('index', [
         //     'close_stores' => $closeStores,
