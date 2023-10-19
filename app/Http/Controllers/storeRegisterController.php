@@ -81,20 +81,24 @@ class storeRegisterController extends Controller
 
     public function registerOrUpdateJudge(StoreRegister $request)
     {
+        $userId = Auth::user()->id;
+        $store = Store::firstWhere('user_id', $userId);
         if (isset($request->menu_image)) {
             foreach ($request->file('menu_image') as $menuImage) {
                 $this->menuImageToDropbox[] = Storage::disk('dropbox')->put('menu', $menuImage);
             }
-        }else{
+        } else {
             $this->menuImageToDropbox[] = "store/noImage.jpg";
         }
+
         if (isset($request->store_image)) {
+            if ($store->store_image != "store/noImage.jpg") {
+                Storage::disk('dropbox')->delete($store->store_image);
+            }
             $this->storeImageToDropbox = Storage::disk('dropbox')->put('store', $request->store_image);
         } else {
             $this->storeImageToDropbox = "store/noImage.jpg";
         }
-        $userId = Auth::user()->id;
-        $store = Store::firstWhere('user_id', $userId);
 
         if (isset($store)) {
             $this->updateStore($request);
@@ -104,7 +108,16 @@ class storeRegisterController extends Controller
 
         $store = Store::firstWhere('user_id', $userId);
         $postText = $request->send_menu_name;
+        // if($store->store_image != "store/noImage.jpg"){
+        //     Storage::delete($store->store_image);
+        // }
         if (isset($postText)) {
+            $deleteMenuImages = Menu::where('store_id', $store->id)->whereNotIn('menu_name', ...[$postText ? $postText : ''])->get();
+            foreach ($deleteMenuImages as $deleteMenuImage) {
+                if ($deleteMenuImage->menu_image != "store/noImage.jpg") {
+                    Storage::disk('dropbox')->delete($deleteMenuImage->menu_image);
+                }
+            }
             Menu::where('store_id', $store->id)->whereNotIn('menu_name', ...[$postText ? $postText : ''])->delete();
             $send_menus = [];
             for ($i = 0; $i < count($request->send_menu_name); $i++) {
