@@ -90,7 +90,6 @@ if(m_flag==0){
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
                 };
-                console.log(userLatLng);
                 document.getElementById("locate").value=[  position.coords.latitude, position.coords.longitude];
   
                 // ユーザーの位置情報を地図の中心に設定

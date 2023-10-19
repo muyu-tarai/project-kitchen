@@ -6,7 +6,7 @@
 <div class="wrapper">
     <div class="title-bar">
         <h1>{{ isset($store_items->store_name)?$store_items->store_name :''}}</h1>
-        <p id="update-at">{{ isset($carbonUpate) ? $carbonUpate : ''}} 更新</p>
+        <p id="update-at">{{ isset($carbonUpdate) ? $carbonUpdate : ''}} 更新</p>
         <input type="hidden" id="o_flag" value="{{ $store_items->opening_flag }}" >
     </div>
     <div class="contents1">

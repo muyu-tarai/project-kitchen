@@ -112,18 +112,19 @@ p {
     padding: 13px 60px;
     margin: 0 30px;
     border-radius: 1.5rem;
-    font-size: 4rem;
+    font-size: 3rem;
     background-color: #2F3F93;
     color: white;
     border: none;
   }
 
   .no {
-    padding: 5px 50px;
+    padding: 0px 20px;
+    margin: 0 40px;
     cursor: default;
     background-color: #E43F3F;
     border-radius: 1.5rem;
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
     border: none;
     text-decoration: none;
@@ -146,6 +147,8 @@ p {
     color: black;
     text-decoration: none;
   }
+
+  
 }
 
 
