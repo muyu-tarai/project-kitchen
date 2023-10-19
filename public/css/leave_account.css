@@ -39,13 +39,14 @@ p {
 
 .mymodal {
 
-  background-color: rgb(240, 220, 220);
+  background-color: rgb(240, 172, 172);
   margin: 0 auto;
   padding: 30px;
   position: fixed;
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
+  border: 2px solid #000;
 }
 
 .close {
