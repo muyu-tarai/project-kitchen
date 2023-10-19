@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\store_view;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -12,11 +12,11 @@ class ViewController extends Controller
 {
     public function view($id){
 // データベースから取得
-        $store_items = \DB::table('stores')->find($id);
+        $store_items = DB::table('stores')->find($id);
         if(is_null($store_items)){
             return redirect()->route('index');
         }
-        $menu_items = \DB::table('menus')
+        $menu_items = DB::table('menus')
         ->where('store_id', $store_items->id)
         ->get();
 
@@ -52,7 +52,7 @@ class ViewController extends Controller
         return view('store_view', [
             'store_items' => $store_items,
             'menu_items' => $menu_items,
-            'carbonUpate' => $carbonUpdate,
+            'carbonUpdate' => $carbonUpdate,
             'carbon_close' => $carbon_close,
         ]);
     }
