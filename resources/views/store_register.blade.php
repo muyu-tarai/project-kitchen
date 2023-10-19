@@ -34,12 +34,12 @@
       <h2>店舗紹介コメント</h2>
       <textarea name="store_comment" id="store-comment" cols="30" rows="10">{{ isset($storeComment) ? $storeComment : old('store_comment') }}</textarea>
     </div>
-    <div class="stores-items" id="stores-items">
+    <div class="store-items" id="store-items">
       @if(isset($menus))
       @foreach($menus as $menu)
-      <div class="stores-item" id="stores-item">
+      <div class="store-item" id="store-item">
         <div class="store-figure-display">
-          <img src="data:image/{{ $menu->ext }};base64,{{ $menu->menu_image }}" class="store-figure" id="added-menu-figure" alt="">
+          <img src="data:image/{{ $menu->ext }};base64,{{ $menu->menu_image }}" class="store-figure" alt="">
         </div>
         <p class="menu-title">{{ $menu->menu_name }}</p>
         <p class="menu-price" name="menu_price_display">{{ $menu->price }} 円</p>

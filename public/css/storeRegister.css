@@ -110,14 +110,14 @@ textarea {
   margin-top: 3rem;
 }
 
-.stores-items {
+.store-items {
   margin-top: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 5rem 5rem;
 }
 
-.stores-item {
+.store-item {
   position: relative;
 }
 
@@ -185,7 +185,7 @@ h2,h3 {
       font-size: 1.5rem;
     }
 
-  .stores-items {
+  .store-items {
     grid-template-columns: 1fr 1fr;
     gap: 5rem 2rem;
   }
@@ -236,7 +236,7 @@ h2,h3 {
     text-align: center;
   }
   
-  .stores-items {
+  .store-items {
     grid-template-columns: 1fr;
   }
 
