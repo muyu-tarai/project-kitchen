@@ -32,7 +32,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
           // if (App::environment('production','staging')) {
-            URL::forceScheme('https');
+            URL::forceScheme('http');
         // }
 
         Storage::extend('dropbox', function (Application $app, array $config) {

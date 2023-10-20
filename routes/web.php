@@ -5,6 +5,9 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/stores', 'StoresController@StoresControl');
+
+
 //店舗一覧画面
 Route::get('/', 'IndexController@index')->name('index');
 //店舗詳細画面

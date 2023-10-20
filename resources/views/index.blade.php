@@ -18,7 +18,12 @@
     </div>
   </div>
 </div>
-
+<div class="search-form">
+  <form action="/stores" method="get">
+  <input type="text" name="keyword">
+  <input type="submit" value="検索">
+  </form>
+</div>
 <div class="stores">
   <div class="stores-open">
     <div class="stores-title">
