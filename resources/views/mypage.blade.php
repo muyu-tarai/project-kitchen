@@ -14,7 +14,6 @@
   </style>
   <div class="container">
     <div class="row">
-
       <p class="panel-heading">マイページ</p>
       <div>
         <form action="{{ route('mypage') }}" method="post">
@@ -43,7 +42,6 @@
               @endif
             </div>
           </div>
-
         </form>
         <form action="{{ route('leave_account') }}"></form>
       </div>

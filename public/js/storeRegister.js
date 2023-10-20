@@ -126,6 +126,9 @@ if(menuName.value == ""){
 if(menuPrice.value == ""){
   document.querySelector('#menu-price-text').insertAdjacentHTML('beforeend', `<p id="menu-price-err" class="err-msg">メニュー金額は必須入力です</p>`)
   err = 1
+}else if(!menuPrice.value.match(/^[0-9]+$/)){
+  document.querySelector('#menu-price-text').insertAdjacentHTML('beforeend', `<p id="menu-price-err" class="err-msg">メニュー金額は半角数字で入力してください</p>`)
+  err = 1
 }else if(menuPrice.value >= 100001){
   document.querySelector('#menu-price-text').insertAdjacentHTML('beforeend', `<p id="menu-price-err" class="err-msg">メニュー金額は100000円以下で入力してください</p>`)
   err = 1

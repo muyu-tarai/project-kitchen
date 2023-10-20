@@ -1,5 +1,5 @@
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 p {
@@ -7,9 +7,65 @@ p {
 }
 
 .modal1 {
-text-align: center;
+  text-align: center;
 }
 
+.input {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
+.send {
+  text-align: center;
+}
+
+.send2 {
+  margin-top: 5px;
+  padding: 10px 40px;
+  
+  font-size: 20px;
+  border: none;
+  background-color: rgb(233, 249, 243);
+  text-align: center;
+}
+
+.form-control {
+  padding-right: 100px;
+  padding-top: 5px;
+  font-size: 20px;
+}
+
+.mymodal {
+max-width: 70%;
+max-height: 50%;
+  background-color: rgb(240, 172, 172);
+  margin: 0 auto;
+  padding: 30px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: 2px solid #000;
+ 
+}
+
+.close {
+  
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 5px;
+  }
+
+.error {
+  text-align: center;
+}
+
+#error {
+  color: #E43F3F;
+  font-size: 2rem;
+}
 
 @media (max-width: 2560px) {
   * {
@@ -26,7 +82,7 @@ text-align: center;
     padding-bottom: 1%;
     opacity: 0.95;
     border-radius: 6rem;
-    
+
   }
 
   .y {
@@ -57,24 +113,25 @@ text-align: center;
     padding: 13px 60px;
     margin: 0 30px;
     border-radius: 1.5rem;
-    font-size: 4rem;
+    font-size: 3rem;
     background-color: #2F3F93;
     color: white;
     border: none;
   }
 
   .no {
-    padding: 5px 50px;
+    padding: 0px 20px;
+    margin: 0 40px;
     cursor: default;
     background-color: #E43F3F;
     border-radius: 1.5rem;
-    font-size: 4rem;
+    font-size: 3rem;
     color: white;
     border: none;
-   text-decoration: none;
-   text-align: center;
-   line-height: 75px;
-   white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
+    line-height: 75px;
+    white-space: nowrap;
   }
 
   .button {
@@ -83,14 +140,16 @@ text-align: center;
     padding-top: 5rem;
     max-width: 100%;
     display: flex;
-   align-items: center; 
-   justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
 
   .header a {
     color: black;
     text-decoration: none;
   }
+
+  
 }
 
 
@@ -109,7 +168,7 @@ text-align: center;
     padding-bottom: 1%;
     opacity: 0.95;
     border-radius: 6rem;
-    
+
   }
 
   .y {
@@ -155,10 +214,10 @@ text-align: center;
     font-size: 3rem;
     color: white;
     border: none;
-   text-decoration: none;
-   text-align: center;
-   line-height: 75px;
-   white-space: nowrap;
+    text-decoration: none;
+    text-align: center;
+    line-height: 75px;
+    white-space: nowrap;
   }
 
   .button {
@@ -167,8 +226,8 @@ text-align: center;
     padding-top: 5rem;
     max-width: 100%;
     display: flex;
-   align-items: center; 
-   justify-content: center;
+    align-items: center;
+    justify-content: center;
   }
 
   .header a {
@@ -176,12 +235,12 @@ text-align: center;
     text-decoration: none;
   }
 
-  
+
 }
 
 @media screen and (max-width: 840px) {
 
- 
+
   * {
     box-sizing: border-box;
     font-size: 62.5%;
@@ -233,21 +292,21 @@ text-align: center;
     white-space: nowrap;
   }
 
-  
-    
-    .no {
-      padding: 4px 20px;
-      margin: 0 0 0 10px;
-      cursor: default;
-      background-color: #E43F3F;
-      border-radius: 1.5rem;
-      font-size: 2rem;
-      color: white;
-      border: none;
-     text-decoration: none;
-     text-align: center;
-     line-height: 50px;
-     white-space: nowrap;
+
+
+  .no {
+    padding: 4px 20px;
+    margin: 0 0 0 10px;
+    cursor: default;
+    background-color: #E43F3F;
+    border-radius: 1.5rem;
+    font-size: 2rem;
+    color: white;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    white-space: nowrap;
   }
 
   .button {
@@ -297,7 +356,7 @@ text-align: center;
   .Withdrawal {
     font-size: 1rem;
     margin-top: 50px;
-    
+
 
   }
 
@@ -322,20 +381,20 @@ text-align: center;
     white-space: nowrap;
   }
 
-  
-    .no {
-      padding: 1px 12px;
-      margin: 0 20px;
-      cursor: default;
-      background-color: #E43F3F;
-      border-radius: 1.5rem;
-      font-size: 1.5rem;
-      color: white;
-      border: none;
-     text-decoration: none;
-     text-align: center;
-     line-height: 50px;
-     white-space: nowrap;
+
+  .no {
+    padding: 1px 12px;
+    margin: 0 20px;
+    cursor: default;
+    background-color: #E43F3F;
+    border-radius: 1.5rem;
+    font-size: 1.5rem;
+    color: white;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    white-space: nowrap;
   }
 
   .button {
@@ -345,7 +404,7 @@ text-align: center;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-       
+
   }
 
   .header a {
