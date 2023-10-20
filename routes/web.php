@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 Auth::routes();
-
 //店舗一覧画面
 Route::get('/', 'IndexController@index')->name('index');
 //店舗詳細画面
