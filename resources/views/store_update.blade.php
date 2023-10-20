@@ -69,5 +69,5 @@
 
 @section('js')
 <script src="/js/update.js "></script>
-<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDCipJ9Mk5Gn8xK2NlQksyz9D4fQgszTOM&callback=initMap"></script>
+<script  src="https://maps.googleapis.com/maps/api/js?key={{env('GEO_API_KEY', ''),}}&callback=initMap"></script>
 @endsection

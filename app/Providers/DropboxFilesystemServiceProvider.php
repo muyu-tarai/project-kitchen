@@ -24,6 +24,7 @@ class DropboxFilesystemServiceProvider extends ServiceProvider
             CURLOPT_PASSWORD => $config['secret'],
             CURLOPT_RETURNTRANSFER => true
         );
+        
         curl_setopt_array($ch, $options);
         $response = json_decode(curl_exec($ch));
         curl_close($ch);
