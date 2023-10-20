@@ -66,7 +66,7 @@
         </div>
         <div class="for-button" id="add-menu-images">
           <label id="add-menu-image-label" class="add-menu-image-label">
-            <input type="file" name="menu_image[]" id="add-menu-image">写真を選択
+            <input type="file" name="menu_image1" id="add-menu-image">写真を選択
           </label>
         </div>
       </div>
