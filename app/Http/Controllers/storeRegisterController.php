@@ -106,8 +106,6 @@ class storeRegisterController extends Controller
                 Storage::disk('dropbox')->delete($store->store_image);
             }
             $this->storeImageToDropbox = Storage::disk('dropbox')->put('store', $request->store_image);
-        } else {
-            $this->storeImageToDropbox = "store/noImage.jpg";
         }
 
         if (isset($store)) {
