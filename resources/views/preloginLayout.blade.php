@@ -15,6 +15,7 @@
 </head>
 
 <body>
+  <div class="header-main">
   <div class="header">
     <header>
       <nav class="navbar">
@@ -28,10 +29,11 @@
   <main class="main">
     @yield('content')
   </main>
+  </div>
   <div class="footer">
     <footer>
       <p class="small">
-        © 2023 キッチンカー情報局 Inc
+        ©&nbsp;2023&nbsp;キッチンカー情報局&nbsp;Inc
       </p>
     </footer>
   </div>

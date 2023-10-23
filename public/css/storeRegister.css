@@ -5,6 +5,9 @@ h3 {
   margin: 5rem 0 2rem 3rem;
 
 }
+.main{
+  background-color:#FFF8F9;
+}
 
 label {
   font-size: 2rem;
@@ -45,7 +48,7 @@ textarea {
 
 .top-title {
   font-size: 5rem;
-  margin: 5rem 0 0 5rem;
+  padding: 5rem 0 0 5rem;
 }
 
 .validation{
@@ -71,15 +74,15 @@ textarea {
 
 /*メイン*/
 .inner-top {
-  margin: 8rem 15%;
+  margin: 8rem 25%;
 }
 
 .inner-middle {
-  margin: 8rem 12%;
+  margin: 8rem 20%;
 }
 
 .inner-bottom {
-  margin: 8rem 8%;
+  padding: 8rem 12%;
 }
 
 .inner-menu {
@@ -177,10 +180,30 @@ textarea {
 .button2 {
   border: none;
   background-color: transparent;
-  font-size: 50px;
+  font-size: 5rem;
+}
+@media (max-width: 1024px) {
+  .inner-top {
+    margin: 8rem 20%;
+  }
+  
+  .inner-middle {
+    margin: 8rem 16%;
+  }
+  
+  .inner-bottom {
+    padding: 8rem 10%;
+  }
+  .stores-items {
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem 2rem;
+  }
+  .inner-add-menu {
+    padding: 0 5rem 5rem 5rem;
+  }
 }
 @media (max-width: 768px) {
-h2,h3 {
+  h2,h3 {
     font-size: 2.5rem;
     margin: 5rem 0 2rem 1rem;
   }
@@ -189,10 +212,6 @@ h2,h3 {
       font-size: 1.5rem;
     }
 
-  .stores-items {
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem 2rem;
-  }
 
   .top-section-buttons img {
     width: 100%;
@@ -207,16 +226,13 @@ h2,h3 {
   }
 
   .inner-bottom {
-    margin: 8rem 2rem;
+    padding: 8rem 2rem;
   }
   
   .inner-menu {
     margin: 1rem 50rem;
   }
   
-  .inner-add-menu {
-    padding: 0 5rem 5rem 5rem;
-  }
   .add-menu-price {
     width: 60%;
     font-size: 2rem;
@@ -227,16 +243,22 @@ h2,h3 {
   input[type="text"] {
     font-size: 2rem;
   }
+  .register-button {
+    margin-top: 5rem;
+  }
   
-    .register-button label {
-      font-size: 3rem;
-    }
+  .register-button label {
+    font-size: 3rem;
+  }
+  .button2 {
+    font-size: 3rem;
+  }
 }
 
 @media (max-width: 425px) {
   .top-title {
     font-size: 4rem;
-    margin: 5rem 0 0 0;
+    padding:3rem 0 0 0;
     text-align: center;
   }
   
@@ -247,9 +269,12 @@ h2,h3 {
   .register-button {
     margin-top: 5rem;
   }
-
+  
   .inner-add-menu {
     padding: 0 2rem 5rem 2rem;
+  }
+  .button2 {
+    font-size: 2.5rem;
   }
 
 }

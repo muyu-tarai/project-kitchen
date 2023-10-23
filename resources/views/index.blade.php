@@ -11,7 +11,7 @@
   </style>
   <div class="top-section-items">
     <h1 class="large">出店様へ</h1>
-    <p class="medium">このサイトはフードカーを盛り上げるために制作さ<br>れたサイトです。もし興味がありましたら、下のア<br>イコンから登録をお願いします。</p>
+    <p class="medium">このサイトはフードカーを盛り上げる<br>ために制作されたサイトです。<br>もし興味がありましたら、<br>下のアイコンから登録をお願いします。</p>
     <div class="top-section-buttons">
       <a class="" href="/register"><img src="data:image/png;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/signInButton.png')) }}"></a>
       <a class="" href="/login"><img src="data:image/png;base64,{{ base64_encode(Storage::disk('dropbox')->get('view/loginButton.png')) }}"></a>
