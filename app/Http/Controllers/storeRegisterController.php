@@ -94,6 +94,7 @@ class storeRegisterController extends Controller
         }
     // $files配列は選択されたファイルとnullを含む
 
+    //メニュー画像が選択されているかチェックし適切な処理を行う
             for ($i = 1; $i <= $request->count_menu_image; $i++) {
                 $menuImages[] = $request->{'menu_image' . $i};
             }
@@ -103,12 +104,6 @@ class storeRegisterController extends Controller
                 }else{
                     $this->menuImageToDropbox[] = "store/noImage.jpg";                }
             }
-
-        // if (isset($request->menu_image)) {
-        //     foreach ($request->file('menu_image') as $menuImage) {
-        //         $this->menuImageToDropbox[] = Storage::disk('dropbox')->put('menu', $menuImage);
-        //     }
-        // }
 
         if (isset($request->store_image)) {
             if (isset($store->store_image) && $store->store_image != "store/noImage.jpg") {
@@ -125,9 +120,6 @@ class storeRegisterController extends Controller
 
         $store = Store::firstWhere('user_id', $userId);
         $postText = $request->send_menu_name;
-        // if($store->store_image != "store/noImage.jpg"){
-        //     Storage::delete($store->store_image);
-        // }
         if (isset($postText)) {
             $deleteMenuImages = Menu::where('store_id', $store->id)->whereNotIn('menu_name', ...[$postText ? $postText : ''])->get();
             foreach ($deleteMenuImages as $deleteMenuImage) {
