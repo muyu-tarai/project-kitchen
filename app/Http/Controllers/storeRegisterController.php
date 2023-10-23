@@ -95,6 +95,7 @@ class storeRegisterController extends Controller
     // $files配列は選択されたファイルとnullを含む
 
     //メニュー画像が選択されているかチェックし適切な処理を行う
+    if($request->count_menu_image!=0){
             for ($i = 1; $i <= $request->count_menu_image; $i++) {
                 $menuImages[] = $request->{'menu_image' . $i};
             }
@@ -104,6 +105,7 @@ class storeRegisterController extends Controller
                 }else{
                     $this->menuImageToDropbox[] = "store/noImage.jpg";                }
             }
+        }
 
         if (isset($request->store_image)) {
             if (isset($store->store_image) && $store->store_image != "store/noImage.jpg") {
