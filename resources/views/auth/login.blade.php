@@ -15,7 +15,7 @@
       }
     </style>
     <div class="container">
-      <form action="{{ route('login') }}">
+      <form onsubmit="return false;" action="{{ route('login') }}">
         @csrf
         <div class="text-center">
           <a class="guest" href="{{ route('login.guest') }}">ゲスト</a>
@@ -30,7 +30,7 @@
           @endforeach
         </div>
         @endif
-        <form action="{{ route('login') }}" method="POST" class="form">
+        <form onsubmit="return false;" action="{{ route('login') }}" method="POST" class="form">
           @csrf
           <div class="form-group">
             <div>
@@ -51,7 +51,8 @@
             </div>
           </div>
           <div class="text-right">
-            <button type="submit" class="btn btn-primary">LOG IN</button>
+            <!-- <button type="button" class="btn btn-primary">LOG IN</button> -->
+            <input type="button" class="btn btn-primary"  value="LOG IN" onclick="submit();">
           </div>
         </form>
 
@@ -60,4 +61,7 @@
   </div>
   </div>
 </body>
+@endsection
+@section('js')
+<script src="/login.js"></script>
 @endsection

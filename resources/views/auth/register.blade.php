@@ -1,6 +1,6 @@
 @extends('preloginLayout')
 @section('css')
-<link rel="stylesheet" href="/css/register.css"> 
+<link rel="stylesheet" href="/css/register.css">
 @endsection
 @section('content')
 
@@ -24,7 +24,7 @@
           </div>
           @endif
           <div class="panel-body">
-            <form action="{{ route('register') }}" method="POST">
+            <form onsubmit="return false;" action="{{ route('register') }}" method="POST">
               @csrf
               <div class="form-group">
                 <label for="name" class="alert">username</label><br>
@@ -52,7 +52,7 @@
               </div>
 
               <div class="text-right">
-                <button type="submit" class="btn-primary">SIGN UP</button>
+                <input type="button" class="btn-primary" value="SIGN UP" onclick="submit();">
               </div>
 
             </form>

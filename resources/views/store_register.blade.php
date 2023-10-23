@@ -93,7 +93,7 @@
     </div>
     <div class="for-button register-button">
       <label>
-        <input type="submit"></input>店舗情報を登録する
+        <input type="button" onclick="submit();" class="button2" value="店舗情報を登録する"></input>
       </label>
     </div>
   </div>

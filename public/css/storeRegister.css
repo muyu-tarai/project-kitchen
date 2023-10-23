@@ -174,7 +174,11 @@ textarea {
 .add-menu-image-label-none {
   display: none;
 }
-
+.button2 {
+  border: none;
+  background-color: transparent;
+  font-size: 50px;
+}
 @media (max-width: 768px) {
 h2,h3 {
     font-size: 2.5rem;
