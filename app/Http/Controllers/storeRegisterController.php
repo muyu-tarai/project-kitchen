@@ -84,7 +84,6 @@ class storeRegisterController extends Controller
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);
         $files = [];
-dd($request);
         for ($i = 1; $i <= 5; $i++) {
             $fileName = 'menu_image' . $i;
             if ($request->hasFile($fileName)) {
@@ -95,7 +94,6 @@ dd($request);
         }
     // $files配列は選択されたファイルとnullを含む
 
-        dd($files);
         if (isset($request->menu_image)) {
             foreach ($request->file('menu_image') as $menuImage) {
                 $this->menuImageToDropbox[] = Storage::disk('dropbox')->put('menu', $menuImage);
