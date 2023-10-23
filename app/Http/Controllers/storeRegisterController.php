@@ -83,6 +83,7 @@ class storeRegisterController extends Controller
     {
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);
+        // dd($store);
         $files = [];
         for ($i = 1; $i <= 5; $i++) {
             $fileName = 'menu_image' . $i;
@@ -101,7 +102,7 @@ class storeRegisterController extends Controller
         }
 
         if (isset($request->store_image)) {
-            if ($store->store_image != "store/noImage.jpg") {
+            if (isset($store->store_image) && $store->store_image != "store/noImage.jpg") {
                 Storage::disk('dropbox')->delete($store->store_image);
             }
             $this->storeImageToDropbox = Storage::disk('dropbox')->put('store', $request->store_image);
