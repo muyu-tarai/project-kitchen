@@ -83,7 +83,6 @@ class storeRegisterController extends Controller
     {
         $userId = Auth::user()->id;
         $store = Store::firstWhere('user_id', $userId);
-        // dd($store);
         $files = [];
         for ($i = 1; $i <= 5; $i++) {
             $fileName = 'menu_image' . $i;
@@ -95,11 +94,21 @@ class storeRegisterController extends Controller
         }
     // $files配列は選択されたファイルとnullを含む
 
-        if (isset($request->menu_image)) {
-            foreach ($request->file('menu_image') as $menuImage) {
-                $this->menuImageToDropbox[] = Storage::disk('dropbox')->put('menu', $menuImage);
+            for ($i = 1; $i <= $request->count_menu_image; $i++) {
+                $menuImages[] = $request->{'menu_image' . $i};
             }
-        }
+            foreach ($menuImages as $menuImage) {
+                if(isset($menuImage)){
+                $this->menuImageToDropbox[] = Storage::disk('dropbox')->put('menu', $menuImage);
+                }else{
+                    $this->menuImageToDropbox[] = "store/noImage.jpg";                }
+            }
+
+        // if (isset($request->menu_image)) {
+        //     foreach ($request->file('menu_image') as $menuImage) {
+        //         $this->menuImageToDropbox[] = Storage::disk('dropbox')->put('menu', $menuImage);
+        //     }
+        // }
 
         if (isset($request->store_image)) {
             if (isset($store->store_image) && $store->store_image != "store/noImage.jpg") {

@@ -82,8 +82,6 @@ function cancelSubmit() {
         window.scroll({ top: 0, behavior: "smooth" });
         return false;
     }
-
-    console.log($(".count_menu_image").length);
 }
 
 // メニュー追加の記述
@@ -193,6 +191,8 @@ $("#add-menu").on("click", function () {
         menuPrice.value = "";
         menuComment.value = "";
         addImage("#add-menu-image", "#menu-figure");
+        document.querySelector("#count-menu-image").value =
+            document.getElementsByClassName("count_menu_image").length;
     }
 });
 

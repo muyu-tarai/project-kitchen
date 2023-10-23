@@ -52,6 +52,7 @@
       </div>
       @endforeach
       @endif
+      <input type="hidden" value="0" name="count_menu_image" id="count-menu-image">
     </div>
   </div>
 
