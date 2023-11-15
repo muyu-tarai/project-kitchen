@@ -14,6 +14,7 @@ class IndexController extends Controller
 {
     public function index()
     {
+        dd('a');
         $store_items = Store::where('opening_flag', 1)->get();
         
         $i = 0;
