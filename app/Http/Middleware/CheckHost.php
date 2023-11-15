@@ -1,26 +1,26 @@
 <?php
 
-namespace App\Http\Middleware;
+// namespace App\Http\Middleware;
 
-use Closure;
+// use Closure;
 
-class CheckHost
-{
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
-     * @return mixed
-     */
+// class CheckHost
+// {
+//     /**
+//      * Handle an incoming request.
+//      *
+//      * @param  \Illuminate\Http\Request  $request
+//      * @param  \Closure  $next
+//      * @return mixed
+//      */
 
-    public function handle($request, Closure $next)
-{
-    $allowed_hosts = ['*'];
-    if (!in_array($request->getHost(), $allowed_hosts)) {
-        abort(403);
-    }
-    return $next($request);
-}
+//     public function handle($request, Closure $next)
+// {
+//     $allowed_hosts = ['*'];
+//     if (!in_array($request->getHost(), $allowed_hosts)) {
+//         abort(403);
+//     }
+//     return $next($request);
+// }
     
-}
+// }
