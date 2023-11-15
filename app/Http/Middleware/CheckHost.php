@@ -16,7 +16,7 @@ class CheckHost
 
     public function handle($request, Closure $next)
 {
-    $allowed_hosts = ['kitchencar-station.onrender.com', '127.0.0.1'];
+    $allowed_hosts = ['*'];
     if (!in_array($request->getHost(), $allowed_hosts)) {
         abort(403);
     }
